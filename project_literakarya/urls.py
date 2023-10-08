@@ -1,4 +1,4 @@
-"""project_django URL Configuration
+"""project_literakarya URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/4.1/topics/http/urls/
@@ -18,5 +18,6 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('example_app.urls')),
+    path('', include('main.urls')),
+    path('example_app/', include('example_app.urls')),
 ]
