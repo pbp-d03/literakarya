@@ -1,0 +1,1902 @@
+[
+  {
+    "model": "book_page.book",
+    "pk": 1,
+    "fields": {
+      "nama_buku": "Laskar Pelangi",
+      "gambar_buku": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1489732961i/1362193.jpg",
+      "author": "Andrea Hirata",
+      "description": "Begitu banyak hal menakjubkan yang terjadi dalam masa kecil para anggota Laskar Pelangi. Sebelas orang anak Melayu Belitong yang luar biasa ini tak menyerah walau keadaan tak bersimpati pada mereka. Tengoklah Lintang, seorang kuli kopra cilik yang genius dan dengan senang hati bersepeda 80 kilometer pulang pergi untuk memuaskan dahaganya akan ilmu?bahkan terkadang hanya untuk menyanyikan Padamu Negeri di akhir jam sekolah. Atau Mahar, seorang pesuruh tukang parut kelapa sekaligus seniman dadakan yang imajinatif, tak logis, kreatif, dan sering diremehkan sahabat-sahabatnya, namun berhasil mengangkat derajat sekolah kampung mereka dalam karnaval 17 Agustus. Dan juga sembilan orang Laskar Pelangi lain yang begitu bersemangat dalam menjalani hidup dan berjuang meraih cita-cita. Selami ironisnya kehidupan mereka, kejujuran pemikiran mereka, indahnya petualangan mereka, dan temukan diri Anda tertawa, menangis, dan tersentuh saat membaca setiap lembarnya. Buku ini dipersembahkan buat mereka yang meyakini the magic of childhood memories, dan khususnya juga buat siapa saja yang masih meyakini adanya pintu keajaiban lain untuk mengubah dunia: pendidikan.",
+      "rating": 4.24,
+      "jumlah_rating": "29,566",
+      "genre_1": "Fiction",
+      "genre_2": "Novels",
+      "genre_3": "Indonesian Literature",
+      "genre_4": "Childrens",
+      "genre_5": "Education",
+      "jumlah_halaman": 534,
+      "waktu_publikasi": "January 1, 2005"
+    }
+  },
+  {
+    "model": "book_page.book",
+    "pk": 2,
+    "fields": {
+      "nama_buku": "Bumi Manusia",
+      "gambar_buku": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1565658920i/1398034.jpg",
+      "author": "Pramoedya Ananta Toer",
+      "description": "Roman Tetralogi Buru mengambil latar belakang dan cikal bakal nation Indonesia di awal abad ke-20. Dengan membacanya waktu kita dibalikkan sedemikian rupa dan hidup di era membibitnya pergerakan nasional mula-mula, juga pertautan rasa, kegamangan jiwa, percintaan, dan pertarungan kekuatan anonim para srikandi yang mengawal penyemaian bangunan nasional yang kemudian kelak melahirkan Indonesia modern.\n\nRoman bagian pertama; Bumi Manusia, sebagai periode penyemaian dan kegelisahan dimana Minke sebagai aktor sekaligus kreator adalah manusia berdarah priyayi yang semampu mungkin keluar dari kepompong kejawaannya menuju manusia yang bebas dan merdeka, di sudut lain membelah jiwa ke-Eropa-an yang menjadi simbol dan kiblat dari ketinggian pengetahuan dan peradaban.\n\nPram menggambarkan sebuah adegan antara Minke dengan ayahnya yang sangat sentimentil: Aku mengangkat sembah sebagaimana biasa aku lihat dilakukan punggawa terhadap kakekku dan nenekku dan orangtuaku, waktu lebaran. Dan yang sekarang tak juga kuturunkan sebelum Bupati itu duduk enak di tempatnya. Dalam mengangkat sembah serasa hilang seluruh ilmu dan pengetahuan yang kupelajari tahun demi tahun belakangan ini. Hilang indahnya dunia sebagaimana dijanjikan oleh kemajuan ilmu .... Sembah pengagungan pada leluhur dan pembesar melalui perendahan dan penghinaan diri! Sampai sedatar tanah kalau mungkin! Uh, anak-cucuku tak kurelakan menjalani kehinaan ini.\n\n\"Kita kalah, Ma,\" bisikku.\n\n\"Kita telah melawan, Nak, Nyo, sebaik-baiknya, sehormat-hormatnya.\"",
+      "rating": 4.41,
+      "jumlah_rating": "19,324",
+      "genre_1": "Historical Fiction",
+      "genre_2": "Fiction",
+      "genre_3": "Novels",
+      "genre_4": "Indonesian Literature",
+      "genre_5": "Classics",
+      "jumlah_halaman": 535,
+      "waktu_publikasi": "August 1, 1980"
+    }
+  },
+  {
+    "model": "book_page.book",
+    "pk": 3,
+    "fields": {
+      "nama_buku": "5 cm",
+      "gambar_buku": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1472231689i/1499340.jpg",
+      "author": "Donny Dhirgantoro",
+      "description": "Bestseller book di Gramedia Bookstore selama 2 tahun berturut-turut!\n\nLima sahabat telah menjalin persahabatan selama tujuh tahun. Mereka adalah Arial yang paling tampan, Riani sebagai satu-satunya wanita dalam kelompok itu, Zafran yang berlagak seperti seorang penyair, Ian yang paling subur badannya, dan Genta yang dianggap sebagai leader dalam kelompok itu. Kegemaran mereka adalah mengeksekusi hal-hal yang tidak mungkin dan mencoba segala hal, mulai dari kafe paling terkenal di Jakarta, sampai nonton layar tancap. Semuanya penggemar film, dari film Hollywood sampai film yang nggak kelas?kecuali film India karena mereka punya prinsip bahwa semua persoalan di dunia atau masalah pasti ada jalan keluarnya, tapi bukan dalam bentuk joget.\n\nSuatu saat, karena terdorong oleh rasa bosan di antara satu dan yang lain, mereka memutuskan untuk tidak saling berkomunikasi dan bertemu satu sama lain selama tiga bulan. Selama tiga bulan berpisah itulah telah terjadi banyak hal yang membuat hati mereka lebih kaya dari sebelumnya. Pertemuan setelah tiga bulan yang penuh dengan rasa kangen akhirnya terjadi dan dirayakan dengan sebuah perjalanan. Sebuah perjalanan yang penuh dengan keyakinan, mimpi, cita-cita, dan cinta. Sebuah perjalanan yang telah mengubah mereka menjadi manusia sesungguhnya, bukan Cuma seonggok daging yang bisa berbicara, berjalan, dan punya nama.\n\n?Ada yang pernah bilang kalau idealisme adalah kemewahan terakhir yang dimiliki oleh generasi muda?.?",
+      "rating": 3.88,
+      "jumlah_rating": "15,013",
+      "genre_1": "Novels",
+      "genre_2": "Fiction",
+      "genre_3": "Indonesian Literature",
+      "genre_4": "Romance",
+      "genre_5": "Adventure",
+      "jumlah_halaman": 381,
+      "waktu_publikasi": "January 1, 2005"
+    }
+  },
+  {
+    "model": "book_page.book",
+    "pk": 4,
+    "fields": {
+      "nama_buku": "Negeri 5 Menara",
+      "gambar_buku": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1249749162i/6688121.jpg",
+      "author": "Ahmad Fuadi",
+      "description": "Alif lahir di pinggir Danau Maninjau dan tidak pernah menginjak tanah di luar ranah Minangkabau. Masa kecilnya adalah berburu durian runtuh di rimba Bukit Barisan, bermain bola di sawah berlumpur dan tentu mandi berkecipak di air biru Danau Maninjau.\n\nTiba-tiba saja dia harus naik bus tiga hari tiga malam melintasi punggung Sumatera dan Jawa menuju sebuah desa di pelosok Jawa Timur. Ibunya ingin dia menjadi Buya Hamka walau Alif ingin menjadi Habibie. Dengan setengah hati dia mengikuti perintah Ibunya: belajar di pondok.\n\nDi kelas hari pertamanya di Pondok Madani (PM), Alif terkesima dengan ?mantera? sakti man jadda wajada. Siapa yang bersungguh-sungguh pasti sukses.\n\nDia terheran-heran mendengar komentator sepakbola berbahasa Arab, anak menggigau dalam bahasa Inggris, merinding mendengar ribuan orang melagukan Syair Abu Nawas dan terkesan melihat pondoknya setiap pagi seperti melayang di udara.\n\nDipersatukan oleh hukuman jewer berantai, Alif berteman dekat dengan Raja dari Medan, Said dari Surabaya, Dulmajid dari Sumenep, Atang dari Bandung dan Baso dari Gowa. Di bawah menara masjid yang menjulang, mereka berenam kerap menunggu maghrib sambil menatap awan lembayung yang berarak pulang ke ufuk. Di mata belia mereka, awan-awan itu menjelma menjadi negara dan benua impian masing-masing. Kemana impian jiwa muda ini membawa mereka? Mereka tidak tahu. Yang mereka tahu adalah: Jangan pernah remehkan impian, walau setinggi apa pun. Tuhan sungguh Maha Mendengar.\n\nBagaimana perjalanan mereka ke ujung dunia ini dimulai? Siapa horor nomor satu mereka? Apa pengalaman mendebarkan di tengah malam buta di sebelah sungai tempat jin buang anak? Bagaimana sampai ada yang kasak-kusuk menjadi mata-mata misterius? Siapa Princess of Madani yang mereka kejar-kejar? Kenapa mereka harus botak berkilat-kilat? Bagaimana sampai Icuk Sugiarto, Arnold Schwarzenegger, Ibnu Rusyd, bahkan Maradona sampai akhirnya ikut campur? Ikuti perjalanan hidup yang inspiratif ini langsung dari mata para pelakunya. Negeri Lima Menara adalah buku pertama dari sebuah trilogi.",
+      "rating": 4.14,
+      "jumlah_rating": "13,392",
+      "genre_1": "Novels",
+      "genre_2": "Fiction",
+      "genre_3": "Indonesian Literature",
+      "genre_4": "Islam",
+      "genre_5": "Inspirational",
+      "jumlah_halaman": 432,
+      "waktu_publikasi": "July 1, 2009"
+    }
+  },
+  {
+    "model": "book_page.book",
+    "pk": 5,
+    "fields": {
+      "nama_buku": "Perahu Kertas",
+      "gambar_buku": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1356225544i/6765740.jpg",
+      "author": "Dee Lestari",
+      "description": "Namanya Kugy. Mungil, pengkhayal, dan berantakan. Dari benaknya, mengalir untaian dongeng indah. Keenan belum pernah bertemu manusia seaneh itu.\n\n...\n\nNamanya Keenan. Cerdas, artistik, dan penuh kejutan. Dari tangannya, mewujud lukisan-lukisan magis. Kugy belum pernah bertemu manusia seajaib itu.\n\n...\n\nDan kini mereka berhadapan di antara hamparan misteri dan rintangan. Akankah dongeng dan lukisan itu bersatu?\n\nAkankah hati dan impian mereka bertemu?",
+      "rating": 3.99,
+      "jumlah_rating": "18,092",
+      "genre_1": "Romance",
+      "genre_2": "Novels",
+      "genre_3": "Fiction",
+      "genre_4": "Indonesian Literature",
+      "genre_5": "Young Adult",
+      "jumlah_halaman": 542,
+      "waktu_publikasi": "January 1, 2004"
+    }
+  },
+  {
+    "model": "book_page.book",
+    "pk": 6,
+    "fields": {
+      "nama_buku": "Aku Ini Binatang Jalang",
+      "gambar_buku": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1417055734i/1446004.jpg",
+      "author": "Chairil Anwar",
+      "description": "Koleksi Sajak 1942-1949\n\nSelama ini kita tidak bisa menemukan sajak-sajak Chairil Anwar dalam satu buku. sebagian kita temukan dalam Deru Campur Debu dan Kerikil Tajam dan Yang Terampas dan Yang Putus, sedangkan sebagian lagi kita jumpai dalam Tiga Menguak Takdir dan Chairil Anwar Pelopor Angkatan 45. Akan tetapi, sajak-sajak yang terdapat dalam pelbagai buku itu sekarang disatukan dalam Aku Ini Binatang Jalang.\n\nSelain keseluruhan sajak-asli, dalam koleksi ini juga dimuat untuk pertama kalinya surat-surat Chairil - yang menggambarkan \"keadaan jiwa\"nya - kepada karibnya, H.B. Jassin.",
+      "rating": 4.16,
+      "jumlah_rating": "3,351",
+      "genre_1": "Poetry",
+      "genre_2": "Indonesian Literature",
+      "genre_3": "Literature",
+      "genre_4": "Novels",
+      "genre_5": "Classics",
+      "jumlah_halaman": 111,
+      "waktu_publikasi": "January 1, 1986"
+    }
+  },
+  {
+    "model": "book_page.book",
+    "pk": 7,
+    "fields": {
+      "nama_buku": "Robohnya Surau Kami",
+      "gambar_buku": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1466437017i/1455480.jpg",
+      "author": "A.A. Navis",
+      "description": "Dalam cerpen \"Robohnya Surau Kami\", berdialoglah Tuhan dengan Haji Saleh, seorang warga negara Indonesia yang selama hidupnya hanya beribadah dan beribadah?\n\"kenapa engkau biarkan dirimu melarat, hingga anak cucumu teraniaya semua. Sedang harta bendamu kau biarkan orang lain yang mengambilnya untuk anak cucu mereka. Dan engkau lebih suka berkelahi antara kamu sendiri, saling menipu, saling memeras. Aku beri kau negeri yang kaya raya, tapi kau malas. Kau lebih suka beribadat saja, karena beribadat tidak mengeluarkan peluh, tidak membanting tulang. Sedang aku menyuruh engkau semuanya beramal di samping beribadat. Bagaimana engkau bisa beramal kalau engkau miskin. Engkau kira aku ini suka pujian, mabuk disembah saja, hingga kerjamu lain tidak memuji-muji dan menyembahku saja.\nTidak...\" Semua jadi pucat pasi tak berani berkata apa - apa lagi. Tahulah mereka sekarang apa jalan yang diridai Allah di dunia.",
+      "rating": 4.01,
+      "jumlah_rating": "3,183",
+      "genre_1": "Indonesian Literature",
+      "genre_2": "Fiction",
+      "genre_3": "Short Stories",
+      "genre_4": "Novels",
+      "genre_5": "Literature",
+      "jumlah_halaman": 147,
+      "waktu_publikasi": "January 1, 1956"
+    }
+  },
+  {
+    "model": "book_page.book",
+    "pk": 8,
+    "fields": {
+      "nama_buku": "Catatan Seorang Demonstran",
+      "gambar_buku": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1416554142i/1488085.jpg",
+      "author": "Soe Hok Gie",
+      "description": "Buku yang berisi pemikiran - pemikiran (alm.) Soe Hok Gie, mahasiswa Jurusan Sejarah FSUI. Disusun lewat pengumpulan karya - karya tulisan Gie, baik di jurnal hariannya, maupun dari tulisan - tulisannya di koran nasional.\nmenarik untuk dibaca. terlebih lagi lewat penggambarannya sebagai mahasiswa pada era orde lama, Gie dapat membawa kita menyelami kehidupan rakyat Indonesia sekitar tahun 1960-an.",
+      "rating": 4.11,
+      "jumlah_rating": "4,479",
+      "genre_1": "Nonfiction",
+      "genre_2": "Biography",
+      "genre_3": "Indonesian Literature",
+      "genre_4": "History",
+      "genre_5": "Politics",
+      "jumlah_halaman": 386,
+      "waktu_publikasi": "May 1, 1983"
+    }
+  },
+  {
+    "model": "book_page.book",
+    "pk": 9,
+    "fields": {
+      "nama_buku": "Ayat-Ayat Cinta",
+      "gambar_buku": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1439347437i/969177.jpg",
+      "author": "Habiburrahman El-Shirazy",
+      "description": "Tentang seorang pemuda Indonesia yang mencari ilmu jauh di tanah Arab. Berbekal iman yang kuat dan ketabahan, Fahri mengalami banyak hal yang menggetarkan hidupnya, yang sesaat membuat Fahri mempertanyakan jalan hidupnya.\n\nKesabaran dan keimanan adalah kunci kehidupan. Fahri, Aisyah dan Maria membuktikannya dalam cerita yang halus dan mengalir.",
+      "rating": 3.88,
+      "jumlah_rating": "14,921",
+      "genre_1": "Novels",
+      "genre_2": "Fiction",
+      "genre_3": "Romance",
+      "genre_4": "Indonesian Literature",
+      "genre_5": "Islam",
+      "jumlah_halaman": 418,
+      "waktu_publikasi": "January 1, 2004"
+    }
+  },
+  {
+    "model": "book_page.book",
+    "pk": 10,
+    "fields": {
+      "nama_buku": "Hafalan Shalat Delisa",
+      "gambar_buku": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1303475676i/1376220.jpg",
+      "author": "Tere Liye",
+      "description": "Delisa anak perempuan yang bermata hijau, bening dan umurnya baru mencecah lima tahun. Dia hidup dalam keluarganya yang sebegitu, dia cuba menghafal bacaan dalam solat dengan bantuan ibu dan kakaknya.\n\nNamun Tuhan lebih tahu apa yang lebih baik untuk hamba-Nya. Tsunami datang melumatka senyuman pada wajah Delisa. Tsunami mengambil segala-galanya, keluarga juga kaki kecilnya. Yang tersisa, hanya dia dan ayahnya, dan dalam keadaan sebegitu apakah Delisa mampu tetap tersenyum seperti dahulu dan menyudahkan hafalannya?",
+      "rating": 4.25,
+      "jumlah_rating": "9,923",
+      "genre_1": "Novels",
+      "genre_2": "Fiction",
+      "genre_3": "Indonesian Literature",
+      "genre_4": "Islam",
+      "genre_5": "Family",
+      "jumlah_halaman": 248,
+      "waktu_publikasi": "January 1, 2005"
+    }
+  },
+  {
+    "model": "book_page.book",
+    "pk": 11,
+    "fields": {
+      "nama_buku": "Sitti Nurbaya: Kasih Tak Sampai",
+      "gambar_buku": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1514787378i/1492432.jpg",
+      "author": "Marah Rusli",
+      "description": "Marah Rusli adalah contoh sastrawan besar Indonesia yang benar-benar melampaui zamannya. Ia terus hidup, bersama keindahan cinta Sitti Nurbaya dan Samsulbahri, bersama kenangan dan kebencian orang-orang terhadap peringai Datunk Meringgih yang licik, akan tetapi sekaligus memesona.\n\nBerkali-kali buku Sitti Nurbaya dibaca, berkali-kali pula ditemukan keindahan yang berbeda. Berkali-kali novel ini diperbincangkan, berkali-kali pula ditemukan misteri yang tak sama. Benarkah Samsulbahri adalah tokoh yang baik? Mengapa Datuk Meringgih yang digambarkan jahat pada akhir cerita menjadi patriot yang membela tanah air, dan kemudian wafat dengan darah membasahi ibu pertiwi? Siapakah sesungguhnya yang menjadi pahlawan?\n\nInilah novel tentang cinta yang indah, tentang patriotisme, dan tentang perjuangan nilai-nilai kemanusiaan yang selalu ada pada tiap zaman. Karena itulah, novel ini menjadi abadi.\n\nJoni Ariadinata, redaktur Majalah Horison\n\n\nApabila kita membaca kembali novel Sitti Nurbaya karya Marah Rusli maka sangat boleh jadi kita akan menemukan makna-makna baru.\n\nMaman S. Mahayana, Kritikus Sastra",
+      "rating": 3.77,
+      "jumlah_rating": "1,961",
+      "genre_1": "Indonesian Literature",
+      "genre_2": "Novels",
+      "genre_3": "Fiction",
+      "genre_4": "Romance",
+      "genre_5": "Classics",
+      "jumlah_halaman": 295,
+      "waktu_publikasi": "January 1, 1922"
+    }
+  },
+  {
+    "model": "book_page.book",
+    "pk": 12,
+    "fields": {
+      "nama_buku": "Saman",
+      "gambar_buku": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1406104002i/1337759.jpg",
+      "author": "Ayu Utami",
+      "description": "Saman is a story filtered through the lives of its feisty female protagonists and the enigmatic ?hero? Saman. It is at o?nce an expos� of the oppression of plantation workers in South Sumatra, a lyrical quest to understand the place of religion and spirituality in contemporary lives, a playful exploration of female sexuality and a story about love in all its guises, while touching o?n all of Indonesia?s taboos: extramarital sex, political repression and the relationship between Christians and Muslims.\n\nSaman has taken the Indonesian literary world by storm and sold over 100,000 copies in the Indonesian language, and is now available for the first time in English.\n\nABOUT THE AUTHOR\nAyu Utami was born in Bogor, grew up in Jakarta and obtained her bachelor degree in Literature Studies from University of Indonesia. She worked as a journalist for Matra, Forum Keadilan, and D&R. Not long after the New Order regime closed Tempo, Editor, and Detik, she participated in the founding of Indonesia?s Alliance of Independent Journalists to protest the closure of those three weeklys. Currently she is working for the cultural journal Kalam, and at Teater Utan Kayu. Saman was awarded the Prince Claus Award in the year 2000.",
+      "rating": 3.66,
+      "jumlah_rating": "6,95",
+      "genre_1": "Fiction",
+      "genre_2": "Indonesian Literature",
+      "genre_3": "Novels",
+      "genre_4": "Literature",
+      "genre_5": "Romance",
+      "jumlah_halaman": 197,
+      "waktu_publikasi": "January 1, 1998"
+    }
+  },
+  {
+    "model": "book_page.book",
+    "pk": 13,
+    "fields": {
+      "nama_buku": "Ketika Cinta Bertasbih: Episode 1",
+      "gambar_buku": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1489046749i/1456628.jpg",
+      "author": "Habiburrahman El-Shirazy",
+      "description": "Entah kenapa tiba-tiba ia merasa berdosa. Ia merasa berdosa dan jijik pada dirinya sendiri yang begitu rapuh, mudah terperdaya oleh tampilan luar yang menipu. Ia jijik pada dirinya sendiri yang ia rasa terlalu cair pada lawan jenis yang belum halal baginya. Ia hairan sendiri kenapa jati dirinya seolah pudar saat berhadapan atau berdekatan dengan Eliana. Apakah telah sedemikian lemah imannya sehingga kecantikan jasadi telah sedemikian mudah menyihir dirinya. la beristighfar dalam hatinya. Berkali-kali ia meminta ampun pada Dzat yang menguasai hatinya.\n\nAzzam meratapi kekhilafannya dan memarahi dirinya sendiri. Dalam hati ia bersumpah akan lebih menjaga diri, dan hal yang menistakan seperti itu tidak boleh terjadi lagi. la juga bersumpah untuk segera menemukan orang yang tidak kalah hebatnya dengan Eliana, tapi bertudung litup, solehah, boleh berbahasa Arab dan berbahasa Inggeris dengan fasih. Kalau terpaksa gadis itu orang Mesir tidak mengapa. Yang jelas rasa terhinanya harus ia simakan.\n\nla harus menemukan kembali kehormatannya sebagai seorang Azzam yang memiliki harga diri. Meskipun masyarakat Indonesia di Mesir mengenalinya hanya sebagai tukang masak atau penjual tempe, tapi harga diri dan kesucian diri tidak boleh diremehkan oleh siapapun juga. la yakin akan memperolehi isteri yang lebih jelita dari Eliana, dan lebih balk darinya. Ia yakin itu tekadnya. Ia ulang-ulang tekad itu dalam hatinya. Ia rajut dengan doa. Ia bawa tekad itu ke dalam tidurnya. Ke dalam mimpinya. Dan ke dalam alam bawah sedarnya.",
+      "rating": 3.74,
+      "jumlah_rating": "6,816",
+      "genre_1": "Novels",
+      "genre_2": "Fiction",
+      "genre_3": "Romance",
+      "genre_4": "Indonesian Literature",
+      "genre_5": "Islam",
+      "jumlah_halaman": 477,
+      "waktu_publikasi": "January 1, 2007"
+    }
+  },
+  {
+    "model": "book_page.book",
+    "pk": 14,
+    "fields": {
+      "nama_buku": "Salah Asuhan",
+      "gambar_buku": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1470493746i/1592712.jpg",
+      "author": "Abdoel Moeis",
+      "description": "Novel ini dianggap sebagai karya monumental terbaik dalam bidang sastra Indonesia yang memulai babak modern. Dahulu novel Salah Asuhan ini sempat ditolak diterbitkan oleh Balai Pustaka dan kemudian ditulis kembali dengan menampilkan karakter Eropa yang baik pada jaman itu. Memang saat itu Balai Pustaka hanya mengijinkan buku ?putih? untuk dicetak. Yakni buku yang tidak ada muatan pemberontakan dan haruslah memakai bahasa Melayu yang formal. Bagaimana kisah dalam Salah Asuhan dimulai? Sederhana saja, kisah cinta antara dua anak manusia, Corrie Du Bussee dengan seorang pemuda Minang bernama Hanafi.",
+      "rating": 3.71,
+      "jumlah_rating": "1,973",
+      "genre_1": "Indonesian Literature",
+      "genre_2": "Novels",
+      "genre_3": "Fiction",
+      "genre_4": "Classics",
+      "genre_5": "Romance",
+      "jumlah_halaman": 262,
+      "waktu_publikasi": "January 1, 1928"
+    }
+  },
+  {
+    "model": "book_page.book",
+    "pk": 15,
+    "fields": {
+      "nama_buku": "Di Bawah Lindungan Ka'bah",
+      "gambar_buku": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1484377793i/1645513.jpg",
+      "author": "Hamka",
+      "description": "... Maksud yang engkau terangkat itu, amat saya setujui, itulah suatu maksud yang baik, sebab itu adalah suatu hikayat dan kejadian yang mendukakan hati dan merawankan pikiran, yang kerap kali benar kejadian dalam kalangan pemuda-pemudi kita.\n\n... Demi bila buku itu telah selesai, kirimkanlah kiranya kepadaku barang senaskah, guna menghidangkan kenang-kenanganku kepada masa yang telah lampau, semasa kita masih bernaung DI BAWAH LINDUNGAN KA'BAH",
+      "rating": 4.10,
+      "jumlah_rating": "3,327",
+      "genre_1": "Novels",
+      "genre_2": "Fiction",
+      "genre_3": "Indonesian Literature",
+      "genre_4": "Romance",
+      "genre_5": "Classics",
+      "jumlah_halaman": 56,
+      "waktu_publikasi": "January 1, 1938"
+    }
+  },
+  {
+    "model": "book_page.book",
+    "pk": 16,
+    "fields": {
+      "nama_buku": "Rectoverso",
+      "gambar_buku": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1222564447i/4815886.jpg",
+      "author": "Dee Lestari",
+      "description": "Dewi Lestari yang bernama pena Dee, kali ini hadir dengan mahakarya unik dan pertama di Indonesia. \"Rectoverso\" merupakan hibrida dari fiksi dan musik, terdiri dari sebelas cerita pendek dan sebelas lagu yang bisa dinikmati secara terpisah maupun bersama-sama. Keduanya saling melengkapi bagaikan dua imaji yang seolah berdiri sendiri tapi sesungguhnya merupakan satu kesatuan. Inilah cermin dari dua dunia Dewi Lestari yang ia ekspresikan dalam napas kreatifitas tunggal bertajuk \"Rectoverso\". Dengar fiksinya. Baca musiknya. Lengkapi penghayatan anda dan temukanlah sebuah pengalaman baru.",
+      "rating": 3.89,
+      "jumlah_rating": "7,254",
+      "genre_1": "Fiction",
+      "genre_2": "Indonesian Literature",
+      "genre_3": "Romance",
+      "genre_4": "Novels",
+      "genre_5": "Short Stories",
+      "jumlah_halaman": 148,
+      "waktu_publikasi": "July 1, 2008"
+    }
+  },
+  {
+    "model": "book_page.book",
+    "pk": 17,
+    "fields": {
+      "nama_buku": "Atheis",
+      "gambar_buku": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1297134842i/1283619.jpg",
+      "author": "Achdiat K. Mihardja",
+      "description": "Roman Atheis mengetengahkan perkembangan yang khas bagi masyarakat Indonesia sejak permulaan abad kedua puluh, yakni pergeseran gaya hidup tradisional ke gaya hidup modern. Pergeseran itu membawa serta perselisihan dan bentrokan antara paham-paham lama dan baru, terjadi khususnya di lapangan sosial budaya dan politik.\n\nPerkembangan di dalam masyarakat tidak luput meninggalkan perngaruh pada pengalaman batin manusia. Keresahan batin di tengah-tengah bergeloranya pertentangan paham di zaman penjajahan Belanda dan Jepang menjadi pokok perhatian roman ini.",
+      "rating": 3.89,
+      "jumlah_rating": "1,972",
+      "genre_1": "Novels",
+      "genre_2": "Indonesian Literature",
+      "genre_3": "Fiction",
+      "genre_4": "Classics",
+      "genre_5": "Romance",
+      "jumlah_halaman": 180,
+      "waktu_publikasi": "January 1, 1949"
+    }
+  },
+  {
+    "model": "book_page.book",
+    "pk": 18,
+    "fields": {
+      "nama_buku": "Maryamah Karpov: Mimpi-mimpi Lintang",
+      "gambar_buku": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1271605823i/4212386.jpg",
+      "author": "Andrea Hirata",
+      "description": "Keberanian dan keteguhan hati telah membawa Ikal pada banyak tempat dan peristiwa. Sudut-sudut dunia telah dia kunjungi demi menemukan A Ling. Apa pun Ikal lakukan demi perempuan itu. Keberaniannya ditantang ketika tanda-tanda keberadaan A Ling tampak. Dia tetap mencari, meski tanda-tanda itu masih samar.\nDapatkah keduanya bertemu kembali?\n-",
+      "rating": 3.69,
+      "jumlah_rating": "9,876",
+      "genre_1": "Novels",
+      "genre_2": "Fiction",
+      "genre_3": "Indonesian Literature",
+      "genre_4": "Romance",
+      "genre_5": "Adventure",
+      "jumlah_halaman": 504,
+      "waktu_publikasi": "November 1, 2008"
+    }
+  },
+  {
+    "model": "book_page.book",
+    "pk": 19,
+    "fields": {
+      "nama_buku": "Tenggelamnya Kapal Van Der Wijck",
+      "gambar_buku": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1468645608i/1307394.jpg",
+      "author": "Hamka",
+      "description": "Cerita ini berkisar tentang semangat juang Zainuddin, bagaimana merana dan melaratnya hidup Zainuddin setelah cintanya ditolak oleh keluarga Hayati. Kemudian beliau bangun semula dari segala kedukaan, membuka lembaran baru dalam hidupnya menjadi seorang penulis yang ternama dan berjaya. Ia menceritakan tentang kesetiaan, cinta dan kasihnya Zainuddin terhadap Hayati. Meski Hayati sudah berkahwin tetapi sebaik mendapat tahu tentang kesusahan yang dihadapi Hayati, lantaran suaminya yang suka berpoya-poya serta tidak bertanggung-jawab, Zainuddin terus membantu tanpa ada dendam dan benci. Sesungguhnya cinta yang suci itu akan terus mekar di dalam hati hingga ke hujung nyawa begitulah jua cinta antara Zainuddin dan Hayati.\nSumber: Laman web KKUM.",
+      "rating": 4.27,
+      "jumlah_rating": "5,632",
+      "genre_1": "Novels",
+      "genre_2": "Fiction",
+      "genre_3": "Indonesian Literature",
+      "genre_4": "Romance",
+      "genre_5": "Classics",
+      "jumlah_halaman": 188,
+      "waktu_publikasi": "January 1, 1937"
+    }
+  },
+  {
+    "model": "book_page.book",
+    "pk": 20,
+    "fields": {
+      "nama_buku": "Habis Gelap Terbitlah Terang",
+      "gambar_buku": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1220433958i/4526775.jpg",
+      "author": "Raden Adjeng Kartini",
+      "description": "Buku ini berisi/menceritakan perjalanan hidup seorang pahlawan wanita R.A Kartini, dan surat-suratnya yang ia tujukan kepada saudari dan sahabat-sahabatnya. Adapun isi dari surat-surat itu adalah tentang cita-citanya untuk memajukan kaum wanita, harapan-harapanya dan perjalanan hidupnya.",
+      "rating": 4.08,
+      "jumlah_rating": "1,514",
+      "genre_1": "Nonfiction",
+      "genre_2": "Indonesian Literature",
+      "genre_3": "Classics",
+      "genre_4": "History",
+      "genre_5": "Biography",
+      "jumlah_halaman": 214,
+      "waktu_publikasi": "January 1, 1911"
+    }
+  },
+  {
+    "model": "book_page.book",
+    "pk": 21,
+    "fields": {
+      "nama_buku": "Hujan Bulan Juni",
+      "gambar_buku": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1464443303i/1441445.jpg",
+      "author": "Sapardi Djoko Damono",
+      "description": "Hujan Bulan Juni pertama kali diterbitkan oleh Grasindo tahun 1994 dan telah dicetak ulang beberapa kali. Tidak ada perubahan penting dalam buku terbitan editum ini, kecuali penambahan dan penghapusan beberapa sajak berdasarkan pertimbangan praktis. Sajak-sajak dalam buku ini dipilih dari beberapa buku puisi yang pernah terbit sebelumnya, yakni duka-Mu abadi (1969), Mata Pisau (1974), Akuarium (1974), dan Perahu Kertas (1983), ditambah dengan beberapa sajak yang tidak sempat masuk ke dalam buku-buku tersebut, yang ditulis tahun 1964-1994. Sajak-sajak yang tidak dimasukkan ke dalam bunga rampai ini diterbitkan waktunya bersamaan waktunya dengan judul Mata Jendela, yang pernah diterbitkan oleh IndoneSiatera tahun 2001, yang memuat sajak-sajak yang ditulis tauhn 1958-2001.",
+      "rating": 4.23,
+      "jumlah_rating": "4,094",
+      "genre_1": "Poetry",
+      "genre_2": "Indonesian Literature",
+      "genre_3": "Literature",
+      "genre_4": "Fiction",
+      "genre_5": "Novels",
+      "jumlah_halaman": 120,
+      "waktu_publikasi": "October 1, 1994"
+    }
+  },
+  {
+    "model": "book_page.book",
+    "pk": 22,
+    "fields": {
+      "nama_buku": "Kambing Jantan: Sebuah Catatan Harian Pelajar Bodoh",
+      "gambar_buku": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1406103629i/1242729.jpg",
+      "author": "Raditya Dika",
+      "description": "Blogs/Journal Book",
+      "rating": 3.63,
+      "jumlah_rating": "9,71",
+      "genre_1": "Comedy",
+      "genre_2": "Indonesian Literature",
+      "genre_3": "Humor",
+      "genre_4": "Nonfiction",
+      "genre_5": "Biography",
+      "jumlah_halaman": 236,
+      "waktu_publikasi": "January 1, 2005"
+    }
+  },
+  {
+    "model": "book_page.book",
+    "pk": 23,
+    "fields": {
+      "nama_buku": "Ketika Cinta Bertasbih: Episode 2",
+      "gambar_buku": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1324960574i/2267679.jpg",
+      "author": "Habiburrahman El-Shirazy",
+      "description": "Lulus S-1 dari sebuah perguruan tinggi yang memiliki pengaruh wibawa ?kealiman?, tidak menyebabkan Azzam mendapat kemudahan dalam segala urusan. Dia bahkan gamang untuk mendapatkan pekerjaan yang pas. Belum lagi cibiran tetangga yang mengira bahwa lulusan Al-Azhar University otomatis menjadi kiyai, atau ulama besar. Itu kenapa sang ibu menjadi gelisah, bahkan menyuruh adik Azzam, Husna untuk mencarikan pekerjaan, apa saja yang penting asal kesannya bekerja, keluar dari rumah.\n\nDengan latar belakang pengalaman berwirausaha selama di Mesir, Azzam pun tidak patah semangat untuk membangun usahanya sendiri. Tetapi bagaimana dengan menikah, hal yang selalu disinggung oleh ibunya. Wanita yang ia dambakan, Anna Althafunnisa telah dipinang sahabatnya sendiri. Sedangkan dengan Eliana yang jelas-jelas menaruh hati padanya belum bisa ia terima, karena ia masih mendambakan wanita muslimah. Azzam pun berusaha mencari tambatan hatinya, walaupun cukup banyak hambatan yang ia hadapi, apalagi ditambah ibunya yang meninggal dunia karena kecelakaan saat dibonceng naik motor yang kemudian membuatnya hampir putus asa.\n\nNamun Allah berkehendak lain pada suatu ketika di mana pernikahan Anna Althafunnisa akhirnya cerai dan Azzam ditawari ayahnya Anna Althafunnisa untuk menjadi suaminya. Sebaik dan sehebat apapun usaha manusia tentu semua kembali kepada takdir Tuhan kalau memang Tuhan mengizinkan semua bisa terjadi. Kalau kita selalu berlaku ikhlas segalanya karena Allah dan mengharap ridha-NYA pasti Allah akan memberikan yang terbaik untuk kita juga pasangan kita karena Allah maha tahu akan segala sesuatu di luar batas kemampuan manusia.",
+      "rating": 3.77,
+      "jumlah_rating": "5,622",
+      "genre_1": "Novels",
+      "genre_2": "Fiction",
+      "genre_3": "Romance",
+      "genre_4": "Indonesian Literature",
+      "genre_5": "Islam",
+      "jumlah_halaman": 412,
+      "waktu_publikasi": "January 1, 2007"
+    }
+  },
+  {
+    "model": "book_page.book",
+    "pk": 24,
+    "fields": {
+      "nama_buku": "Para Priyayi: Sebuah Novel",
+      "gambar_buku": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1484380572i/984819.jpg",
+      "author": "Umar Kayam",
+      "description": "Novel ini bercerita tentang Soedarsono seorang anak dari keluarga buruh tani yang oleh orang tua dan sanak saudaranya diharapkan dapat menjadi ?sang pemula? untuk membangun dinasti keluarga priyayi kecil. Berkat dorongan Asisten Wedana Ndoro Seten ia bisa sekolah dan kemudian menjadi guru desa.\n\nDari sinilah ia memasuki dunia elite birokrasi sebagai priyayi pangreh praja. Ketiga anaknya melawati zaman Belanda dan zaman Jepang tumbuh sebagai guru opsir PETA dan istri asisten wedana. Cita-cita keluarganya berhasil. Benarkah? Lalu apakah sesungguhnya ?priyayi? itu? Status kelas? Pandangan dunia kelas menengah elite birokrasi? Sekadar gaya hidup? Atau kesemuanya?",
+      "rating": 4.16,
+      "jumlah_rating": "2,342",
+      "genre_1": "Indonesian Literature",
+      "genre_2": "Novels",
+      "genre_3": "Fiction",
+      "genre_4": "Historical Fiction",
+      "genre_5": "Literature",
+      "jumlah_halaman": 308,
+      "waktu_publikasi": "January 1, 1992"
+    }
+  },
+  {
+    "model": "book_page.book",
+    "pk": 25,
+    "fields": {
+      "nama_buku": "The Naked Traveler",
+      "gambar_buku": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1407053661i/1644590.jpg",
+      "author": "Trinity",
+      "description": "Ada banyak kisah menarik yang dituturkan dengan gaya bahasa yang santai dan ringan oleh Trinity dalam buku ini. Lucu, sedih, mendebarkan, bahkan menyebalkan. Semua itu menjadi bumbu sedap dalam pengalamannya menjadi \" Backpacker \" yang melanglang buana ke berbagai tempat, baik di dalam maupun diluar negeri.\n\nMembaca buku ini, kita akan memperoleh bermacam informasi tentang kebudayaan berbagai bangsa yang unik, tempat-tempat yang \"harus\" dikunjungi atau dihindari, serta tips dan trik saat travelling ke sebuah negeri. Pada akhirnya, setelah menutup buku ini, bisa jadi kita semakin mencintai negeri sendiri.\n\nHappy Traveling!",
+      "rating": 3.82,
+      "jumlah_rating": "4,286",
+      "genre_1": "Travel",
+      "genre_2": "Nonfiction",
+      "genre_3": "Indonesian Literature",
+      "genre_4": "Adventure",
+      "genre_5": "True Story",
+      "jumlah_halaman": 282,
+      "waktu_publikasi": "June 1, 2007"
+    }
+  },
+  {
+    "model": "book_page.book",
+    "pk": 26,
+    "fields": {
+      "nama_buku": "Filosofi Kopi: Kumpulan Cerita dan Prosa Satu Dekade",
+      "gambar_buku": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1356018939i/1244286.jpg",
+      "author": "Dee Lestari",
+      "description": "Pemaknaan kembali kembali kopi, Buddha, Herman, surat tak tarkirimkan, cinta sejenis yang manis atau apa pun, membuktikan Dee tetap memesona. Kalau kemarin panitia Nobel sastra masih maju mundur dengan nama Pramoedya, sekarang bisa memaknai kembali, melalui karya-karya ini.\n\nRuang cerpen yang sempit dijadikannya wahana yang intens namun tidak sesak untuk mengungkapkan apa yang tak selalu mampu dikatakan. Lewat refleksi dan monolog interior yang digarap dengan cakap dan jernih. pembaca diajaknya menjelajahi halaman-halaman kecil dalam cerpen yang kini dijadikannya semesta kehidupan.\n\nCerpen-cerpen Dee itu persis racikan kopi dari tangan seorang ahli peracik kopi: harum, menyegarkan, dan nikmat: pahit, tapi sekaligus mengandung manis.",
+      "rating": 3.86,
+      "jumlah_rating": "10,995",
+      "genre_1": "Fiction",
+      "genre_2": "Novels",
+      "genre_3": "Short Stories",
+      "genre_4": "Indonesian Literature",
+      "genre_5": "Literature",
+      "jumlah_halaman": 134,
+      "waktu_publikasi": "January 1, 2006"
+    }
+  },
+  {
+    "model": "book_page.book",
+    "pk": 27,
+    "fields": {
+      "nama_buku": "Supernova: Petir",
+      "gambar_buku": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1404292897i/1421046.jpg",
+      "author": "Dee Lestari",
+      "description": "Tak ada cara untuk menggambarkannya dengan tepat. Tapi coba bayangkan ada sepuluh ribu ikan piranha yang menyergapmu langsung. Kau tak mungkin berpikir. Tak mungin mengucapkan kalimat perpisahan apalagi membacakan wasiat. Lupakan untuk berpisah dengan manis dan mesra seperti di film-film. Listrik membunuhmu dengan sensasi. Begitu dashyatnya. engkau hanya mampu terkulai lemas. Engkau mati tergoda.",
+      "rating": 3.95,
+      "jumlah_rating": "9,349",
+      "genre_1": "Fiction",
+      "genre_2": "Novels",
+      "genre_3": "Indonesian Literature",
+      "genre_4": "Fantasy",
+      "genre_5": "Science Fiction",
+      "jumlah_halaman": 201,
+      "waktu_publikasi": "January 1, 2004"
+    }
+  },
+  {
+    "model": "book_page.book",
+    "pk": 28,
+    "fields": {
+      "nama_buku": "House of Glass",
+      "gambar_buku": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1464943196i/174442.jpg",
+      "author": "Pramoedya Ananta Toer",
+      "description": "With House Of Glass comes the final chapter of Pramoedya's epic quartet, set in the Dutch East Indies at the turn of the century. A novel of heroism, passion, and betrayal, it provides a spectacular conclusion to a series hailed as one of the great works of modern literature. At the start of House of Glass , Minke, writer and leader of the dissident movement, is now imprisoned?and the narrative has switched to Pangemanann, a former policeman, who has the task of spying and reporting on those who continue the struggle for independence. But the hunter is becoming the hunted. Pangemanann is a victim of his own conscience and has come to admire his adversaries. He must decide whether the law is to safeguard the rights of the people or to control the people. He fears the loss of his position, his family, and his self-respect. At last Pangemanann sees that his true opponents are not Minke and his followers, but rather the dynamism and energy of a society awakened.",
+      "rating": 4.33,
+      "jumlah_rating": "4,032",
+      "genre_1": "Fiction",
+      "genre_2": "Novels",
+      "genre_3": "Indonesian Literature",
+      "genre_4": "Historical Fiction",
+      "genre_5": "Literature",
+      "jumlah_halaman": 384,
+      "waktu_publikasi": "January 1, 1988"
+    }
+  },
+  {
+    "model": "book_page.book",
+    "pk": 29,
+    "fields": {
+      "nama_buku": "Gadis Pantai",
+      "gambar_buku": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1484031705i/735248.jpg",
+      "author": "Pramoedya Ananta Toer",
+      "description": "...Roman ini menusuk feodalisme Jawa yang tak memiliki adab dan jiwa kemanusiaan tepat langsung di jantungnya yang paling dalam.",
+      "rating": 4.11,
+      "jumlah_rating": "4,57",
+      "genre_1": "Fiction",
+      "genre_2": "Indonesian Literature",
+      "genre_3": "Novels",
+      "genre_4": "Historical Fiction",
+      "genre_5": "Literature",
+      "jumlah_halaman": 232,
+      "waktu_publikasi": "January 1, 1962"
+    }
+  },
+  {
+    "model": "book_page.book",
+    "pk": 30,
+    "fields": {
+      "nama_buku": "Padang Bulan",
+      "gambar_buku": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1276569400i/8460524.jpg",
+      "author": "Andrea Hirata",
+      "description": "Melalui pergolakan nasib seorang perempuan dan huru-hara kecemburuan, Andrea Hirata kembali memilih sudut yang tidak terduga untuk menampilkan kisah yang inspiratif tentang kegigihan karakter-karakter di dalam novelnya. Novel Padang Bulan bermula dari kisah seorang gadis kecil berusia 14 tahun, Enong namanya, yang sangat gemar pada pelajaran bahasa Inggris, namun secara mendadak terpaksa harus berhenti sekolah dan mengambil alih seluruh tanggung jawab keluarga. Tersambung pada sekuel novel ini, Cinta di Dalam Gelas, perjalanan nasib anak perempuan kecil itu, melalui gaya khasnya: menertawakan kepedihan, memarodikan tragedi, mengkritik tanpa menjadi sarkastik, kisah Enong menjadi seperti panggung di dalam lembaran-lembaran kertas. Membaca novel ini seperti melihat sebuah gambar.\n\nDengan menceritakan kisah Enong seperti sebuah epos, Andrea berhasil memperlihatkan kepada pembaca kekuatan-kekuatan besar yang tersembunyi di dalam diri manusia, kekuatan yang sering tidak disadari seseorang berada di dalam dirinya. Enong jatuh, bangun, jatuh lagi, dan bangun lagi. Kisah Enong tidak sekadar kisah sebuah keluarga yang sederhana, namun tentang impian seorang anak kecil, tentang keberanian menjalani hidup, dan tentang seorang lelaki yang menjadi berantakan karena tragedi cinta pertama.\n\n\"Cemburu adalah perahu Nabi Nuh yang tergenang di dalam hati yang karam. Lalu, naiklah ke geladak perahu itu, binatang yang berpasang-pasangan: perasaan tak berdaya-ingin mengalahkan, rencana jahat-penyesalan, kesedihan-gengsi....,\" kata lelaki itu.\n\nSalman Faridi",
+      "rating": 3.87,
+      "jumlah_rating": "5,412",
+      "genre_1": "Novels",
+      "genre_2": "Fiction",
+      "genre_3": "Indonesian Literature",
+      "genre_4": "Romance",
+      "genre_5": "Literature",
+      "jumlah_halaman": 254,
+      "waktu_publikasi": "January 1, 2010"
+    }
+  },
+  {
+    "model": "book_page.book",
+    "pk": 31,
+    "fields": {
+      "nama_buku": "Daun Yang Jatuh Tak Pernah Membenci Angin",
+      "gambar_buku": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1485759293i/8343444.jpg",
+      "author": "Tere Liye",
+      "description": "Dia bagai malaikat bagi keluarga kami. Merengkuh aku, adikku, dan Ibu dari kehidupan jalanan yang miskin dan nestapa. Memberikan makan, tempat berteduh, sekolah, dan janji masa depan yang lebih baik.\nDia sungguh bagai malaikat bagi keluarga kami. Memberikan kasih sayang, perhatian, dan teladan tanpa mengharap budi sekali pun. Dan lihatlah, aku membalas itu semua dengan membiarkan mekar perasaan ini.\nIbu benar, tak layak aku mencintai malaikat keluarga kami. Tak pantas. Maafkan aku, Ibu. Perasaan kagum, terpesona, atau entahlah itu muncul tak tertahankan bahkan sejak rambutku masih dikepang dua.\nSekarang, ketika aku tahu dia boleh jadi tidak pernah menganggapku lebih dari seorang adik yang tidak tahu diri, biarlah... Biarlah aku luruh ke bumi seperti sehelai daun... daun yang tidak pernah membenci angin meski harus terenggutkan dari tangkai pohonnya.",
+      "rating": 4.00,
+      "jumlah_rating": "16,797",
+      "genre_1": "Novels",
+      "genre_2": "Romance",
+      "genre_3": "Fiction",
+      "genre_4": "Indonesian Literature",
+      "genre_5": "Family",
+      "jumlah_halaman": 264,
+      "waktu_publikasi": "June 1, 2010"
+    }
+  },
+  {
+    "model": "book_page.book",
+    "pk": 32,
+    "fields": {
+      "nama_buku": "Ranah 3 Warna",
+      "gambar_buku": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1294322982i/10135719.jpg",
+      "author": "Ahmad Fuadi",
+      "description": "Alif baru saja tamat dari Pondok Madani. Dia bahkan sudah bisa bermimpi dalam bahasa Arab dan Inggris. Impiannya? Tinggi betul. Ingin belajar teknologi tinggi di Bandung seperti Habibie, lalu merantau sampai ke Amerika.\n\nDengan semangat menggelegak dia pulang ke Maninjau dan tak sabar ingin segera kuliah. Namun kawan karibnya, Randai, meragukan dia mampu lulus UMPTN. Lalu dia sadar, ada satu hal penting yang dia tidak punya. Ijazah SMA. Bagaimana mungkin mengejar semua cita-cita tinggi tadi tanpa ijazah?\n\nTerinspirasi semangat tim dinamit Denmark, dia mendobrak rintangan berat. Baru saja dia bisa tersenyum, badai masalah menggempurnya silih berganti tanpa ampun. Alif letih dan mulai bertanya-tanya: \"Sampai kapan aku harus teguh bersabar menghadapi semua cobaan hidup ini?\" Hampir saja dia menyerah.\n\nRupanya \"mantra\" man jadda wajada saja tidak cukup sakti dalam memenangkan hidup. Alif teringat \"mantra\" kedua yang diajarkan di Pondok Madani: man shabara zhafira. Siapa yang bersabar akan beruntung. Berbekal kedua mantra itu dia songsong badai hidup satu persatu. Bisakah dia memenangkan semua impiannya?\n\nKe mana nasib membawa Alif? Apa saja 3 ranah berbeda warna itu? Siapakah Raisa? Bagaimana persaingannya dengan Randai? Apa kabar Sahibul Menara? Kenapa sampai muncul Obelix, orang Indian dan Michael Jordan dan Kesatria Berpantun? Apa hadiah Tuhan buat sebuah kesabaran yang kukuh?\n\nRanah 3 Warna adalah hikayat bagaimana impian tetap wajib dibela habis-habisan walau hidup terus digelung nestapa tak berkesudahan. Tuhan sungguh bersama orang yang sabar.",
+      "rating": 4.17,
+      "jumlah_rating": "7,612",
+      "genre_1": "Novels",
+      "genre_2": "Fiction",
+      "genre_3": "Indonesian Literature",
+      "genre_4": "Inspirational",
+      "genre_5": "Islam",
+      "jumlah_halaman": 473,
+      "waktu_publikasi": "January 25, 2011"
+    }
+  },
+  {
+    "model": "book_page.book",
+    "pk": 33,
+    "fields": {
+      "nama_buku": "Arus Balik",
+      "gambar_buku": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1463799193i/963151.jpg",
+      "author": "Pramoedya Ananta Toer",
+      "description": "Semasa jayanya Majapahit, Nusantara merupakan kesatuan maritim dan kerajaan laut terbesar di antara bangsa-bangsa beradab di muka bumi. Arus bergerak dari selatan ke utara, segalanya: kapal-kapalnya, manusianya, amal perbuatannya dan cita-citanya, semua bergerak dari Nusantara di selatan ke 'Atas Angin' di utara. Tapi zaman berubah...\n\nArus berbalik -- bukan lagi dari selatan ke utara tetapi sebaliknya dari utara ke selatan. Utara kuasai selatan, menguasai urat nadi kehidupan Nusantara... Perpecahan dan kekalahan seakan menjadi bagian dari Jawa yang beruntun tiada hentinya.\n\nWiranggaleng -- pemuda desa sederhana, menjadi tokoh protagonis dalam epos kepahlawanan yang maha dahsyat ini. Dia bertarung sampai ke pusat kekuasaan Portugis di Malaka, memberi segala-galanya -- walau hanya secauk pasir sekalipun -- untuk membendung arus utara.\n\nMasih dapatkah arus balik membalik lagi?\n\nKarya Pramoedya Ananta Toer\nSebuah epos besar dari seorang penulis besar",
+      "rating": 4.38,
+      "jumlah_rating": "1,504",
+      "genre_1": "Novels",
+      "genre_2": "Fiction",
+      "genre_3": "Indonesian Literature",
+      "genre_4": "Classics",
+      "genre_5": "Historical Fiction",
+      "jumlah_halaman": 760,
+      "waktu_publikasi": "January 1, 1995"
+    }
+  },
+  {
+    "model": "book_page.book",
+    "pk": 34,
+    "fields": {
+      "nama_buku": "Pada Sebuah Kapal",
+      "gambar_buku": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1489719571i/1337885.jpg",
+      "author": "Nh. Dini",
+      "description": "Setelah tunangannya (Saputro) tewas dalam kecelakaan pesawat terbang, akhirnya Sri menikah dengan Charles Vincent. Pasangan ini kemudian bermukim di Kobe, Jepang. Meskipun sudah memperoleh seorang anak dari diplomat Perancis itu, Sri sesungguhnya tidak merasa bahagia.\n\nTidak dinyana, dalam perjalanan liburan dari Saigon menuju Marseille, Sri menemukan kembali kemesraan dan kelembutan yang telah sekian lama didambakannya itu pada Michael Dubanton, komandan kapal yang sudah beristri dan mempunyai dua orang anak. Sri yang tidak mencintai suaminya sejak semula itu pun menjalin kasih dengan Michael yang kecewa dengan isterinya (Nicole)!\n\nNh. Dini mengungkapkan kisah Sri-Michel yang terjadi pada sebuah kapal dengan goresan amat halus dan memikat.",
+      "rating": 3.68,
+      "jumlah_rating": "1,524",
+      "genre_1": "Indonesian Literature",
+      "genre_2": "Fiction",
+      "genre_3": "Romance",
+      "genre_4": "Novels",
+      "genre_5": "Literature",
+      "jumlah_halaman": 351,
+      "waktu_publikasi": "January 1, 1985"
+    }
+  },
+  {
+    "model": "book_page.book",
+    "pk": 35,
+    "fields": {
+      "nama_buku": "Harimau! Harimau!",
+      "gambar_buku": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1377676472i/1455669.jpg",
+      "author": "Mochtar Lubis",
+      "description": "Harimau! Harimau! telah mendapat Hadiah Yayasan Buku Utama sebagai buku penulisan sastra terbaik tahun 1975.\n\nBuku ini dapat dibaca sebagai sebuah cerita petualangan di rimba raya oleh sekelompok pengumpul damar yang diburu oleh seekor harimau yang kelaparan. Berhari-hari mereka mencoba menyelamatkan diri mereka dan seorang demi seorang di antara mereka jatuh menjadi korban terkaman harimau.\nDi tingkat lain, juga terjadi petualangan dalam diri masing-masing anggota kelompok pengumpul damar ini. Di bawah tekanan ancaman harimau yang terus-menerus memburu mereka, dalam diri meraka masing-masing, yang mempertinggi pula kesadaran mereka tentang kekuatan dan kelemahan-kelemahan para anggota kelompok mereka yang lain.\n\nDi antara mereka malahan sampai pada kesadaran bahwa sebelum membunuh harimau yang memburu-buru mereka, tak kalah pentingnya ialah untuk membunuh terlebih dahulu harimau yang berada dalam setiap anak manusia.\n\nBuku ini telah diterjemahkan ke dalam bahasa Inggris, Belanda, Jerman, dan sebuah terjemahan dalam bahasa Jepang sedang dilakukan pula.",
+      "rating": 4.05,
+      "jumlah_rating": "2,716",
+      "genre_1": "Indonesian Literature",
+      "genre_2": "Novels",
+      "genre_3": "Fiction",
+      "genre_4": "Classics",
+      "genre_5": "Literature",
+      "jumlah_halaman": 214,
+      "waktu_publikasi": "January 1, 1975"
+    }
+  },
+  {
+    "model": "book_page.book",
+    "pk": 36,
+    "fields": {
+      "nama_buku": "Cinta di Dalam Gelas",
+      "gambar_buku": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1276569634i/8460546.jpg",
+      "author": "Andrea Hirata",
+      "description": "CINTA DI DALAM GELAS bertutur tentang tugas berat di pundak Ikal. Dia harus membantu Maryamah memenangkan pertandingan catur saat 17 Agustus nanti. Maryamah, yang menyentuh bidak catur saja belum pernah, harus mengalahkan juara catur selama dua tahun berturut-turut yang sekaligus juga mantan suaminya. Namun, lebih dari itu, jenis kelamin Maryamah menjadi tantangan berat untuk bisa mencebur ke dalam pertandingan penuh harkat bagi kaum lelaki ini.\n\nBagi penonton yang pro maupun kontra, usaha Maryamah jelas sebuah suguhan yang sangat menarik. Begitu pulakah dengan Maryamah?",
+      "rating": 4.01,
+      "jumlah_rating": "5,541",
+      "genre_1": "Novels",
+      "genre_2": "Fiction",
+      "genre_3": "Indonesian Literature",
+      "genre_4": "Romance",
+      "genre_5": "Literature",
+      "jumlah_halaman": 270,
+      "waktu_publikasi": "June 1, 2010"
+    }
+  },
+  {
+    "model": "book_page.book",
+    "pk": 37,
+    "fields": {
+      "nama_buku": "Rahasia Meede: Misteri Harta Karun VOC",
+      "gambar_buku": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1212559170i/2016000.jpg",
+      "author": "E.S. Ito",
+      "description": "Sebuah terowongan tua ditemukan di perut bumi Jakarta. Pintu masuknya terletak dalam Museum Sejarah Jakarta. Rutenya diyakini menuju tempat persembunyian emas VOC.\n\nSementara itu, di atas permukaan, Jakarta dicekam oleh teror pembunuhan misterius. Satu per satu orang penting ditemukan tewas mengenaskan, di tempat-tempat berawalan huruf B, disertai pesan aneh berupa Tujuh Dosa Sosial yang pernah dicetuskan oleh Mahatma Gandhi. Entah apa makna semua itu.\n\nHet Geheim van Meede--Rahasia Meede, misteri emas VOC itu, perlahan terungkap. Dan, untuk mendapatkan jawabannya, seorang laki-laki muda intelijen militer harus berhadapan dengan seorang anarkis, karibnya ketika sama-sama sekolah di SMA Taruna Nusantara. Tak hanya bersaing dalam hal itu, mereka pun sama-sama berusaha mencuri perhatian seorang gadis Belanda, seorang mahasiswi peneliti Sejarah Ekonomi Kolonial, yang menyimpan lebih banyak misteri dari apa yang ditampakkannya.\n\nLika-liku pencarian Rahasia Meede melintasi sejarah ratusan tahun Indonesia, melewati pelarian, pengkhianatan, dan persahabatan. Kegelisahan sebuah generasi berusaha menemukan jalan keluarnya sendiri.",
+      "rating": 4.03,
+      "jumlah_rating": "1,756",
+      "genre_1": "Indonesian Literature",
+      "genre_2": "Novels",
+      "genre_3": "Fiction",
+      "genre_4": "Thriller",
+      "genre_5": "Historical Fiction",
+      "jumlah_halaman": 675,
+      "waktu_publikasi": "January 1, 2007"
+    }
+  },
+  {
+    "model": "book_page.book",
+    "pk": 38,
+    "fields": {
+      "nama_buku": "Rara Mendut: Sebuah Trilogi",
+      "gambar_buku": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1404789346i/3060904.jpg",
+      "author": "Y.B. Mangunwijaya",
+      "description": "Rara Mendut, budak rampasan yang menolak diperistri oleh Tumenggung Wiraguna demi cintanya kepada Pranacitra. Dibesarkan di kampung nelayan pantai utara Jawa, ia tumbuh menjadi gadis yang trengginas dan tak pernah ragu menyuarakan isi pikirannya. Sosoknya dianggap nyebal tatanan di lingkungan istana di mana perempuan diharuskan bersikap serba halus dan serba patuh. Tetapi ia tak gentar. Baginya, lebih baik menyambut ajal di ujung keris Sang Tumenggung daripada dipaksa melayani nafsu panglima tua itu.\n\nGenduk Duku, sahabat Rara Mendut yang membantunya menerobos benteng Keraton Mataram dan melarikan diri dari kejaran Tumenggung Wiraguna. Setelah kematian Rara Mendut dan Pranacitra, Genduk Duku menjadi saksi perseteruan diam-diam antara Wiraguna dan Pangeran Aria Mataram, putra mahkota yang kelak bergelar Sunan Amangkurat I dan sesungguhnya juga jatuh hati kepada Rara Mendut - perempuan rampasan yang oleh ayahnya dihadiahkan kepada panglimanya yang berjasa.\n\nLusi Lindri, anak Genduk Duku dipilih menjadi anggota pasukan pengawal Sunan Amangkurat I oleh Ibu Suri. Lusi Lindri menjalani kehidupan penuh warna di balik dinding-dinding istana yang menyimpan ribuan rahasia dan intrik-intrik jahat. Sebagai istri perwira mata-mata Mataram, ia tahu banyak... Bahkan terlalu banyak... Semakin lama nuraninya semakin terusik melihat kezaliman junjungannya. Tiada pilihan lain! Bulat sudah tekadnya, baginya lebih baik mati sebagai pemberontak penentang kezaliman daripada hidup nyaman bergelimang kemewahan.",
+      "rating": 4.20,
+      "jumlah_rating": 776,
+      "genre_1": "Novels",
+      "genre_2": "Indonesian Literature",
+      "genre_3": "Fiction",
+      "genre_4": "Historical Fiction",
+      "genre_5": "Historical",
+      "jumlah_halaman": 806,
+      "waktu_publikasi": "January 1, 2008"
+    }
+  },
+  {
+    "model": "book_page.book",
+    "pk": 39,
+    "fields": {
+      "nama_buku": "Child of All Nations",
+      "gambar_buku": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1464925751i/248069.jpg",
+      "author": "Pramoedya Ananta Toer",
+      "description": "In Child of All Nations, the reader is immediately swept up by a story that is profoundly feminist, devastatingly anticolonialist?and full of heartbreak, suspense, love, and fury. Pramoedya immerses the reader in a world that is astonishing in its vividness: the cultural whirlpool that was the Dutch East Indies of the 1890s. A story of awakening, it follows Minke, the main character of This Earth of Mankind, as he struggles to overcome the injustice all around him. Pramoedya?s full literary genius is evident in the brilliant characters that populate this world: Minke?s fragile Mixed-Race wife; a young Chinese revolutionary; an embattled Javanese peasant and his impoverished family; the French painter Jean Marais, to name just a few.",
+      "rating": 4.41,
+      "jumlah_rating": "7,047",
+      "genre_1": "Fiction",
+      "genre_2": "Novels",
+      "genre_3": "Indonesian Literature",
+      "genre_4": "Historical Fiction",
+      "genre_5": "Literature",
+      "jumlah_halaman": 352,
+      "waktu_publikasi": "January 1, 1975"
+    }
+  },
+  {
+    "model": "book_page.book",
+    "pk": 40,
+    "fields": {
+      "nama_buku": "Negeri Para Bedebah",
+      "gambar_buku": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1340606900i/15721334.jpg",
+      "author": "Tere Liye",
+      "description": "Di negeri para bedebah, kisah fiksi kalah seru dibanding kisah nyata.\n\nDi negeri para bedebah, musang berbulu domba berkeliaran di halaman rumah.\n\nTetapi setidaknya, Kawan, di negeri para bedebah, petarung sejati tidak akan pernah berkhianat.",
+      "rating": 4.35,
+      "jumlah_rating": "9,848",
+      "genre_1": "Fiction",
+      "genre_2": "Novels",
+      "genre_3": "Action",
+      "genre_4": "Indonesian Literature",
+      "genre_5": "Thriller",
+      "jumlah_halaman": 440,
+      "waktu_publikasi": "July 1, 2012"
+    }
+  },
+  {
+    "model": "book_page.book",
+    "pk": 41,
+    "fields": {
+      "nama_buku": "Muhammad: Lelaki Penggenggam Hujan",
+      "gambar_buku": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1447145843i/7948706.jpg",
+      "author": "Tasaro G.K.",
+      "description": "Kashva pergi dari Suriah, meninggalkan Khosrou, sang penguasa Persia tempatnya mengabdikan hidup demi menemukan lelaki itu: Muhammad. Al-Amin yang kelahirannya akan membawa rahmat bagi semesta alam, pembela kaum papa, penguasa yang adil kepada rakyatnya.\n\nKehidupan Kashva setelah itu berubah menjadi pelarian penuh kesakitan dan pencarian yang tiada henti terhadap sosok yang dijanjikan. Seorang Pangeran Kedamaian yang dijanjikan oleh semua kitab suci yang dia cari dari setiap ungkapan ayat-ayat Zardusht sampai puncak-puncak salju di perbatasan India, Pegunungan Tibet, biara di Suriah, Istana Heraklius, dan berakhir di Yatsrib, sang Kota Cahaya.\n\nHasrat dalam diri Kashva sudah tak terbendung lagi. Keinginannya untuk bisa bertemu dengan Muhammad demikian besar hingga tak ada sesuatu pun yang membuatnya jerih. Bahkan maut yang mengintai dari ujung pedang tentara Khosrou tak juga menyurutkan kerinduannya bertemu Muhammad.\n\nKisah pencarian Kashva yang syahdu dalam novel ini akan membawa kita menelusur Jazirah Arab, India, Barrus, hinga Tibet.",
+      "rating": 4.39,
+      "jumlah_rating": "3,436",
+      "genre_1": "Novels",
+      "genre_2": "Islam",
+      "genre_3": "Indonesian Literature",
+      "genre_4": "Fiction",
+      "genre_5": "Religion",
+      "jumlah_halaman": 546,
+      "waktu_publikasi": "January 1, 2010"
+    }
+  },
+  {
+    "model": "book_page.book",
+    "pk": 42,
+    "fields": {
+      "nama_buku": "Anak Bajang Menggiring Angin",
+      "gambar_buku": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1416983455i/1439798.jpg",
+      "author": "Sindhunata",
+      "description": "Terimalah perhiasanku ini, Nak,\" kata Dewi Sukesi. Dan perempuan tua ini pun mengalungkan untaian kembang kenanga di dada Kumbakarna! Mendadak alam pun membalik ke masa lalu. Tanpa malu-malu. Jeritan kedukaan menjadi madah syukur sukacita. Bermain-main anak-anak bajang di tepi pantai, padahal kematian sedang berjalan mengintai-intai. Gelombang lautan hendak menelan anak-anak bajang, tapi dengan kapal kematian anak-anak bajang malah berenang-renang menyelami kehidupan. Hujan kembang kenanga di mana-mana, dan Dewi Sukesi pun tahu, penderitaan itu ternyata demikian indahnya. Di dunia macam ini, kebahagiaan seakan hanya keindahan yang menipu. Sukesi terbang ke masa lalunya, ke pelataran kembang kenanga. Ia tahu kegagalannya untuk memperoleh Sastra Jendra ternyata disebabkan oleh ketaksanggupannya untuk menderita. Ia rindu akan kebahagiaan yang belum dimilikinya, dan karena kerinduannya itu ia malah membuang miliknya sendiri yang paling berharga, penderitaannya sendiri. Dan pada Kumbakarna lah kini penderitaan itu menjadi raja.\n\nSejak penerbitannya yang pertama, buku Anak Bajang Menggiring Angin ini sangat disukai para pembaca. Oleh banyak pengamat sastra, buku ini dianggap sebagai kisah wayang yang bernilai sastra. Pengarang menimba ilham penulisan buku ini dari kisah Ramayana, yang hidup dalam masyarakat Jawa.\n\nKarena gaya bahasa sastranya yang khas, karena imajinasi simboliknya yang kaya, dan karena penggalian makna-makna filosofis yang dalam, buku ini tak dapat dianggap sebagai sekadar salah satu versi dari kisah Ramayana, melainkan sebagai penciptaan kembali kisah tradisional Ramayana ke dalam bentuk sebuah kisah sastra. Buku ini menampilkan suatu kisah, yang mengandung sesuatu kemustahilan, sesuatu yang asing bagi pengalaman biasa, sesuatu impian kosong bila dipandang dari kenyataan harian manusia. Tapi kekuatan dari karya sastra ini justru terletak dalam menampilkan impian-impian itu menjadi suatu jalinan kisah insani, yang membuat impian-impian itu tampil sebagai cita-cita yang dirindukan manusia. Siapa dapat memastikan : apakah kenyataan itu sesungguhnya impian dan impian itu justru sesungguhnya kenyataan? Karya sastra ini memberi harga yang mahal dan nilai yang tinggi terhadap impian manusia",
+      "rating": 4.27,
+      "jumlah_rating": "1,318",
+      "genre_1": "Novels",
+      "genre_2": "Indonesian Literature",
+      "genre_3": "Fiction",
+      "genre_4": "Classics",
+      "genre_5": "Literature",
+      "jumlah_halaman": 363,
+      "waktu_publikasi": "January 1, 1983"
+    }
+  },
+  {
+    "model": "book_page.book",
+    "pk": 43,
+    "fields": {
+      "nama_buku": "Gajah Mada",
+      "gambar_buku": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1205411392i/1337353.jpg",
+      "author": "Langit Kresna Hariadi",
+      "description": "Damai yang senantiasa menyelimuti tiba-tiba koyak. Lepas pelukan mimpi tidak mungkin dituntaskan karena genderang perang membangunkan isi kehidupan Majapahit. Pada sebuah fajar yang masih beku, para Rakrian Dharmaputra Winehsuka menebar tembang duka. Ra Kuti menaburkan aroma pembantaian, pemerkosaan, dan penjarahan. Kemegahan bumi Wilwatika seketika porak-poranda. Akan tetapi, tetes darah, keringat, dan air mata Gajahmada serta pasukan Bhayangkara akhirnya mampu mengembalikan kehormatan dan mempersembahkan kejayaan yang bakal terus dikenang oleh sejarah.\n\n***\n\nGajah Mada telah mendapat informasi penting tentang akan adanya makar. Telik sandi tak dikenal terus menyalurkan beberapa keterangan penting dengan menggunakan kata sendi hingga Gajah Mada dan pasukan Bhayangkaranya yang hanya berjumlah tak lebih dari dua puluh orang, berhasil menyelamatkan Raja yang terus diburu. Gajah Mada harus menyelamatkan Jayanegara hingga ke Bedander (Bojonegoro).\n\nGajah Mada dan pasukan Bhayangkara selanjutnya menyerang balik dan berhasil mengjungkalkan Ra Kuti dari dhampar yang bukan haknya.",
+      "rating": 4.00,
+      "jumlah_rating": "1,502",
+      "genre_1": "Novels",
+      "genre_2": "Fiction",
+      "genre_3": "Indonesian Literature",
+      "genre_4": "Historical Fiction",
+      "genre_5": "Historical",
+      "jumlah_halaman": 582,
+      "waktu_publikasi": "January 1, 2004"
+    }
+  },
+  {
+    "model": "book_page.book",
+    "pk": 44,
+    "fields": {
+      "nama_buku": "Jalan Raya Pos, Jalan Daendels",
+      "gambar_buku": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1420953152i/1460788.jpg",
+      "author": "Pramoedya Ananta Toer",
+      "description": "Sebuah buku tentang kesaksian. Dan buku ini adalah kesaksian tentang peristiwa genosida kemanusiaan paling mengerikan di balik pembangunan Jalan Raya Pos atau yang lebih dikenal dengan Jalan Daendels; jalan yang membentang 1000 kilometer sepanjang utara pulau Jawa, dari Anyer hingga Panarukan. Inilah satu dari beberapa kisah tragedi kerjapaksa terbesar sepanjang sejarah di Tanah Hindia.",
+      "rating": 3.80,
+      "jumlah_rating": "1,759",
+      "genre_1": "History",
+      "genre_2": "Nonfiction",
+      "genre_3": "Indonesian Literature",
+      "genre_4": "Literature",
+      "genre_5": "Memoir",
+      "jumlah_halaman": 148,
+      "waktu_publikasi": "January 1, 2005"
+    }
+  },
+  {
+    "model": "book_page.book",
+    "pk": 45,
+    "fields": {
+      "nama_buku": "Lagak Jakarta: 100 'Tokoh' yang Mewarnai Jakarta",
+      "gambar_buku": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1417763968i/2935566.jpg",
+      "author": "Benny Rachmadi",
+      "description": "Siapakah tokoh yang paling berpengaruh di Jakarta? Benny dan Mice mengajukan 100 tokoh yang paling banyak menyumbang dalam peri kehidupan Jakarta sehari-hari.\n\nBisa jadi, Anda lah salah seorang di antara mereka.",
+      "rating": 3.99,
+      "jumlah_rating": "1,512",
+      "genre_1": "Comics",
+      "genre_2": "Komik",
+      "genre_3": "Indonesian Literature",
+      "genre_4": "Humor",
+      "genre_5": "Comedy",
+      "jumlah_halaman": 160,
+      "waktu_publikasi": "January 1, 2008"
+    }
+  },
+  {
+    "model": "book_page.book",
+    "pk": 46,
+    "fields": {
+      "nama_buku": "Badai Pasti Berlalu",
+      "gambar_buku": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1491885638i/1761088.jpg",
+      "author": "Marga T.",
+      "description": "Siska patah hati. Tunangannya membatalkan perkawinan mereka dan menikah dengan gadis lain. Kehilangan semangat hidup, Siska keluar dari pekerjaannya dan hidup menyendiri.\n\nLeo, teman karib abang Siska, mendekatinya. Sebenarnya Leo yang dikenal sebagai Don Juan mempunyai motif tersendiri untuk membangkitkan semangat hidup Siska yang sudah terlelap dalam apati dan beku bagaikan gunung es. Tetapi?\n\nMuncul pula Helmi, seniman pegawai nite-club, seorang pemuda yang lincah, perayu, dan licik.\n\nBadai demi badai yang hitam pekat melanda hati Siska. Kapankah badai dalam hidupnya akan berlalu?\n\n***\n\nNovel klasik Indonesia yang sudah berkali-kali dicetak ulang; sudah terjual lebih dari 80.000 eksemplar. Sudah difilmkan di tahun 1974 dengan bintang Christine Hakim, Roy Marten, dan sutradara Teguh Karya. Pernah disinetronkan dengan bintang Dian Nitami dan Ari Wibowo. Tahun ini difilmkan ulang dengan bintang Vino Bastian, Raihaanun, dan Winky Wiryawan. Film re-make ini akan diputar mulai tanggal 14 Februari 2007.",
+      "rating": 3.69,
+      "jumlah_rating": 815,
+      "genre_1": "Romance",
+      "genre_2": "Indonesian Literature",
+      "genre_3": "Novels",
+      "genre_4": "Fiction",
+      "genre_5": "Contemporary Romance",
+      "jumlah_halaman": 480,
+      "waktu_publikasi": "January 1, 1974"
+    }
+  },
+  {
+    "model": "book_page.book",
+    "pk": 47,
+    "fields": {
+      "nama_buku": "Bilangan Fu",
+      "gambar_buku": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1221453778i/3492825.jpg",
+      "author": "Ayu Utami",
+      "description": "Yuda, \"si iblis\", seorang pemanjat tebing dan petaruh yang melecehkan nilai-nilai masyarakat. Parang Jati, \"si malaikat\", seorang pemuda berjari duabelas yang dibentuk oleh ayah angkatnya untuk menanggung duka dunia. Marja, \"si manusia\", seorang gadis bertubuh kuda feji dan berjiwa matahari.\n\nMereka terlibat dalam segitiga cinta yang lembut, di antara pengalaman-pengalaman keras yang berawal dari sebuah kejadian aneh-- orang mati yang bangkit dari kubur-- menuju penyelamatan perbukitan gamping di selatan Jawa.\nDi antara semua itu, Bilangan Fu sayup-sayup menyingkapkan diri.\n\n\nPengarang menamai nafas novelnya \"spiritualisme kritis\". Yaitu, yang mengangkat wacana spiritual-- keagamaan, kebatinan, maupun mistik-- ke dalam kerangka yang menghormatinya sekaligus bersikap kritis kepadanya, yang mengangkat wacana keberimanan, tanpa terjebak dalam dakwah hitam dan putih.\n\nNovel ini adalah manifesto Ayu Utami tentang sebuah sikap yang dianggap perlu diutamakan di zaman ini: sikap religius ataupun spiritual, yang kritis.",
+      "rating": 3.91,
+      "jumlah_rating": "2,871",
+      "genre_1": "Novels",
+      "genre_2": "Indonesian Literature",
+      "genre_3": "Fiction",
+      "genre_4": "Literature",
+      "genre_5": "Adult",
+      "jumlah_halaman": 548,
+      "waktu_publikasi": "January 1, 2008"
+    }
+  },
+  {
+    "model": "book_page.book",
+    "pk": 48,
+    "fields": {
+      "nama_buku": "Lupus Kecil",
+      "gambar_buku": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1451929685i/1598656.jpg",
+      "author": "Hilman Hariwijaya",
+      "description": "LUPUS selalu ada-ada saja ternyata. Dia selalu ada bila di situ banyak kembang gula. Anak ini suka sekali kembang gula. Tau kembang gula? Itu lho, makanan yang terbuat dari kembang, yang diatasnya ditaburi gula.hihihi...\n\nDan sekali caplok, mulut Lupus bisa memuat lima atau enam kembang gula. Bukannya serakah, biar rasanya meriah kayak taman ria, ujar Lupus.\n\nMungkin di antara kalian sudah ada yang pernah mendengar cerita dia setelah besar. Setelah kelas dua SMA. Nah, ini memang catatan saat Lupus masih kecil. Masih kelas satu SD. Wow, ceritanya tak kalah seru. Simak aja...",
+      "rating": 3.52,
+      "jumlah_rating": "1,19",
+      "genre_1": "Indonesian Literature",
+      "genre_2": "Fiction",
+      "genre_3": "Comedy",
+      "genre_4": "Humor",
+      "genre_5": "Childrens",
+      "jumlah_halaman": 112,
+      "waktu_publikasi": "January 1, 1989"
+    }
+  },
+  {
+    "model": "book_page.book",
+    "pk": 49,
+    "fields": {
+      "nama_buku": "Nyanyi Sunyi Seorang Bisu 2",
+      "gambar_buku": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1270099645i/6036910.jpg",
+      "author": "Pramoedya Ananta Toer",
+      "description": "Sebuah autobiografi yang cukup canti dan indah ditulis oleh Pram kepada naak-anaknya dan juag cerita jatuh bangunnya dalam klehiudpan dan rumahtangga. Dalam edidisi Bahasa Indonesia. Tapi ada edisi dalam Inggeris.",
+      "rating": 4.38,
+      "jumlah_rating": 486,
+      "genre_1": "History",
+      "genre_2": "Indonesian Literature",
+      "genre_3": "Politics",
+      "genre_4": "Nonfiction",
+      "genre_5": "Banned Books",
+      "jumlah_halaman": 295,
+      "waktu_publikasi": "January 1, 1995"
+    }
+  },
+  {
+    "model": "book_page.book",
+    "pk": 50,
+    "fields": {
+      "nama_buku": "Pengakuan Pariyem",
+      "gambar_buku": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1464093590i/1763363.jpg",
+      "author": "Linus Suryadi",
+      "description": "Pariyem, nama saya // Lahir di Wonosari Gunung Kidul Pulau Jawa // Tapi kerja di kota pedalaman Ngayogyakarta // Umur saya 25 tahun sekarang // - tapi nuwun sewu // tanggal lahir saya lupa // Tapi saya ingat betul weton saya: // Wukunya Kuningan // di bawah lindungan bethara Indra // Jumat Wage waktunya // ketika hari bangun fajar.\n\nPengakuan Pariyem adalah prosa liris pertama yang lahir dari tangan Linus Suryadi Ag. dan menjadi inspirasi bagaimana kebudayaan Jawa masuk ke dalam khazanah sastra Indonesia modern.",
+      "rating": 3.88,
+      "jumlah_rating": 821,
+      "genre_1": "Indonesian Literature",
+      "genre_2": "Novels",
+      "genre_3": "Literature",
+      "genre_4": "Fiction",
+      "genre_5": "Poetry",
+      "jumlah_halaman": 244,
+      "waktu_publikasi": "January 1, 1981"
+    }
+  },
+  {
+    "model": "book_page.book",
+    "pk": 51,
+    "fields": {
+      "nama_buku": "Belenggu",
+      "gambar_buku": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1309710735i/2179306.jpg",
+      "author": "Armijn Pane",
+      "description": "Banyak yang hendak saya nyatakan, apakah yang dapat menghalangi saya, kalau menurut keyakinan saya, saya patut berbicara? Karena cara saya melahirkan keyakinan akan dicela setengah orang?\nKarena soal yang saya kemukakan, menurut setengah orang mesti didiamkan?\nKarena saya akan dihinakan orang?\nKarena saya akan dimaki?\nKalau keyakinan sudah menjadi pohon beringin, robohlah segala pertimbangan lain-lain.\nPerahu tumpangan keyakinanku, berlayarlah engkau, jangan enggan menempuh angin ribut, taufan badai, ke tempat pelabuhan yang hendak engkau tuju. Berlayarlah engkau ke dunia baru\"\n\nArmijn Pane\nOktober-Desember 193",
+      "rating": 3.61,
+      "jumlah_rating": 859,
+      "genre_1": "Indonesian Literature",
+      "genre_2": "Classics",
+      "genre_3": "Novels",
+      "genre_4": "Fiction",
+      "genre_5": "Feminism",
+      "jumlah_halaman": 159,
+      "waktu_publikasi": "January 1, 1940"
+    }
+  },
+  {
+    "model": "book_page.book",
+    "pk": 52,
+    "fields": {
+      "nama_buku": "Senopati Pamungkas",
+      "gambar_buku": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1597804841i/1394010.jpg",
+      "author": "Arswendo Atmowiloto",
+      "description": "Baginda Raja Sri Kertanegara membawa Keraton Singasari ke puncak kejayaan yang tiada taranya pada awal sejarah keemasan. Pasukan Tartar yang berhasil menaklukkan dunia dipecundangi. Umbul-umbul berlambang singa berkibar ke seberang lautan.\n\nIdenya mendirikan Ksatria Pingitan, semacam asrama yang mendidik para prajurit sejak usia dini, menghasilkan banyak ksatria. Diantaranya Upasara Wulung, yang sepanjang usianya dihabiskan di situ.\n\nUpasara Wulung terlibat dalam intrik Keraton, perebutan kekuasaan, pengkhianatan, keculasan, terseret arus jago-jago kelas utama: mulai dari Tartar di negeri Cina, Pu'un Banten, puncak gunung, dengan segala ilmu yang aneh. Juga lintasan asmara yang menggeletarkan.\n\nIlmu segala ilmu itu adalah Tepukan Satu Tangan, di mana satu tangan lebih terdengar daripada dua tangan. Di banyak negara diberi nama berbeda, tetapi intinya sama. Pasrah diri secara total.\n\nDiangkat sebagai senopati oleh Raden Wijaya, yang mendirikan Majapahit dengan satu tekad: \"Seorang brahmana yang suci bisa bersemadi, tetapi seorang ksatria mempunyai tugas bertempur, membela tanah kelahiran.\"",
+      "rating": 4.02,
+      "jumlah_rating": 409,
+      "genre_1": "Indonesian Literature",
+      "genre_2": "Novels",
+      "genre_3": "Fiction",
+      "genre_4": "Historical",
+      "genre_5": "Epic",
+      "jumlah_halaman": 1115,
+      "waktu_publikasi": "January 1, 1986"
+    }
+  },
+  {
+    "model": "book_page.book",
+    "pk": 53,
+    "fields": {
+      "nama_buku": "Sandal jepit",
+      "gambar_buku": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1348747354i/1341577.jpg",
+      "author": "Hilman Hariwijaya",
+      "description": "Oi, mau dengar cerita baru, gak? mau syukur, gak mau benzol... (hi hi hi, tawaran yang mematikan!) Gini lho, ternyata si lupis, eh lupus tu' kena penyakit sandal jepit mania. Nah, lho pada gak tau, kan? itu lo, penyakit kegilaan akan sandal jepit, ke mana-mana tu' anak selalu always pake sandal jepit. Ke lapangan basket, ke rumah temen, atau juga ke pesta-pesta perkawinan sodara yang orangtuanya agak mau ngertiin kekurangajaran tamunya... tapi sayang beribu sayang...Suatu ketika sandal jepit itu lenyap, nyap! padahal sendal jepit itu cukup centil lo...berwarna-warni... lantas, bagaimana dengan nasibmu, nak? baca... baca aja sendiri... seru deh!",
+      "rating": 3.49,
+      "jumlah_rating": "1,249",
+      "genre_1": "Fiction",
+      "genre_2": "Indonesian Literature",
+      "genre_3": "Comedy",
+      "genre_4": "Humor",
+      "genre_5": "Novels",
+      "jumlah_halaman": 138,
+      "waktu_publikasi": "January 1, 1989"
+    }
+  },
+  {
+    "model": "book_page.book",
+    "pk": 54,
+    "fields": {
+      "nama_buku": "Cantik itu Luka",
+      "gambar_buku": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1502464714i/1353409.jpg",
+      "author": "Eka Kurniawan",
+      "description": "Di akhir masa kolonial, seorang perempuan dipaksa menjadi pelacur. Kehidupan itu terus dijalaninya hingga ia memiliki tiga anak gadis yang kesemuanya cantik. Ketika mengandung anaknya yang keempat, ia berharap anak itu akan lahir buruk rupa. Itulah yang terjadi, meskipun secara ironik ia memberinya nama si Cantik.\n\nLewat novel ini, Eka mengisahkan nasib anak-anak manusia dalam gelombang sejarah bangsa. Manusia-manusia yang telah menjadi korban kekuasaan dan ?kutukan karma?. Lebih dari itu, lewat tokoh-tokohnya, Eka juga mendedahkan absurditas kecantikan yang bertengger di wajah perempuan. Kisah seorang perempuan cantik keturunan Belanda bernama Dewi Ayu yang menjadi korban kekejaman perang dan perebutan kekuasaan.",
+      "rating": 4.06,
+      "jumlah_rating": "13,733",
+      "genre_1": "Fiction",
+      "genre_2": "Historical Fiction",
+      "genre_3": "Magical Realism",
+      "genre_4": "Indonesian Literature",
+      "genre_5": "Asia",
+      "jumlah_halaman": 537,
+      "waktu_publikasi": "December 12, 2002"
+    }
+  },
+  {
+    "model": "book_page.book",
+    "pk": 55,
+    "fields": {
+      "nama_buku": "Harry Potter and the Sorcerer's Stone",
+      "gambar_buku": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1474154022i/3.jpg",
+      "author": "J.K. Rowling",
+      "description": "Harry Potter has no idea how famous he is. That's because he's being raised by his miserable aunt and uncle who are terrified Harry will learn that he's really a wizard, just as his parents were. But everything changes when Harry is summoned to attend an infamous school for wizards, and he begins to discover some clues about his illustrious birthright. From the surprising way he is greeted by a lovable giant, to the unique curriculum and colorful faculty at his unusual school, Harry finds himself drawn deep inside a mystical world he never knew existed and closer to his own noble destiny.",
+      "rating": 4.47,
+      "jumlah_rating": "9,546,448",
+      "genre_1": "Fiction",
+      "genre_2": "Young Adult",
+      "genre_3": "Magic",
+      "genre_4": "Childrens",
+      "genre_5": "Middle Grade",
+      "jumlah_halaman": 309,
+      "waktu_publikasi": "June 26, 1997"
+    }
+  },
+  {
+    "model": "book_page.book",
+    "pk": 56,
+    "fields": {
+      "nama_buku": "The Lightning Thief",
+      "gambar_buku": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1400602609i/28187.jpg",
+      "author": "Rick Riordan",
+      "description": "Alternate cover for this ISBN can be found here\n\nPercy Jackson is a good kid, but he can't seem to focus on his schoolwork or control his temper. And lately, being away at boarding school is only getting worse - Percy could have sworn his pre-algebra teacher turned into a monster and tried to kill him. When Percy's mom finds out, she knows it's time that he knew the truth about where he came from, and that he go to the one place he'll be safe. She sends Percy to Camp Half Blood, a summer camp for demigods (on Long Island), where he learns that the father he never knew is Poseidon, God of the Sea. Soon a mystery unfolds and together with his friends?one a satyr and the other the demigod daughter of Athena - Percy sets out on a quest across the United States to reach the gates of the Underworld (located in a recording studio in Hollywood) and prevent a catastrophic war between the gods.",
+      "rating": 4.30,
+      "jumlah_rating": "2,790,247",
+      "genre_1": "Fantasy",
+      "genre_2": "Young Adult",
+      "genre_3": "Mythology",
+      "genre_4": "Middle Grade",
+      "genre_5": "Adventure",
+      "jumlah_halaman": 377,
+      "waktu_publikasi": "July 28, 2005"
+    }
+  },
+  {
+    "model": "book_page.book",
+    "pk": 57,
+    "fields": {
+      "nama_buku": "The Hunger Games",
+      "gambar_buku": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1586722975i/2767052.jpg",
+      "author": "Suzanne Collins",
+      "description": "Could you survive on your own in the wild, with every one out to make sure you don't live to see the morning?\n\nIn the ruins of a place once known as North America lies the nation of Panem, a shining Capitol surrounded by twelve outlying districts. The Capitol is harsh and cruel and keeps the districts in line by forcing them all to send one boy and one girl between the ages of twelve and eighteen to participate in the annual Hunger Games, a fight to the death on live TV.\n\nSixteen-year-old Katniss Everdeen, who lives alone with her mother and younger sister, regards it as a death sentence when she steps forward to take her sister's place in the Games. But Katniss has been close to dead before?and survival, for her, is second nature. Without really meaning to, she becomes a contender. But if she is to win, she will have to start making choices that weight survival against humanity and life against love.",
+      "rating": 4.33,
+      "jumlah_rating": "8,187,864",
+      "genre_1": "Young Adult",
+      "genre_2": "Fiction",
+      "genre_3": "Fantasy",
+      "genre_4": "Dystopia",
+      "genre_5": "Science Fiction",
+      "jumlah_halaman": 374,
+      "waktu_publikasi": "September 14, 2008"
+    }
+  },
+  {
+    "model": "book_page.book",
+    "pk": 58,
+    "fields": {
+      "nama_buku": "Twilight",
+      "gambar_buku": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1361039443i/41865.jpg",
+      "author": "Stephenie Meyer",
+      "description": "About three things I was absolutely positive.\n\nFirst, Edward was a vampire.\n\nSecond, there was a part of him - and I didn't know how dominant that part might be - that thirsted for my blood.\n\nAnd third, I was unconditionally and irrevocably in love with him.\n\nDeeply seductive and extraordinarily suspenseful, Twilight is a love story with bite.",
+      "rating": 3.64,
+      "jumlah_rating": "6,296,389",
+      "genre_1": "Fantasy",
+      "genre_2": "Young Adult",
+      "genre_3": "Romance",
+      "genre_4": "Fiction",
+      "genre_5": "Vampires",
+      "jumlah_halaman": 498,
+      "waktu_publikasi": "October 5, 2005"
+    }
+  },
+  {
+    "model": "book_page.book",
+    "pk": 59,
+    "fields": {
+      "nama_buku": "The Giver",
+      "gambar_buku": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1342493368i/3636.jpg",
+      "author": "Lois Lowry",
+      "description": "At the age of twelve, Jonas, a young boy from a seemingly utopian, futuristic world, is singled out to receive special training from The Giver, who alone holds the memories of the true joys and pain of life.",
+      "rating": 4.12,
+      "jumlah_rating": "2,352,673",
+      "genre_1": "Young Adult",
+      "genre_2": "Fiction",
+      "genre_3": "Classics",
+      "genre_4": "Dystopia",
+      "genre_5": "Science Fiction",
+      "jumlah_halaman": 208,
+      "waktu_publikasi": "April 26, 1993"
+    }
+  },
+  {
+    "model": "book_page.book",
+    "pk": 60,
+    "fields": {
+      "nama_buku": "The Fault in Our Stars",
+      "gambar_buku": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1660273739i/11870085.jpg",
+      "author": "John Green",
+      "description": "Despite the tumor-shrinking medical miracle that has bought her a few years, Hazel has never been anything but terminal, her final chapter inscribed upon diagnosis. But when a gorgeous plot twist named Augustus Waters suddenly appears at Cancer Kid Support Group, Hazel's story is about to be completely rewritten.\n\nInsightful, bold, irreverent, and raw, The Fault in Our Stars is award-winning author John Green's most ambitious and heartbreaking work yet, brilliantly exploring the funny, thrilling, and tragic business of being alive and in love.",
+      "rating": 4.14,
+      "jumlah_rating": "4,899,369",
+      "genre_1": "Young Adult",
+      "genre_2": "Fiction",
+      "genre_3": "Contemporary",
+      "genre_4": "Realistic Fiction",
+      "genre_5": "Teen",
+      "jumlah_halaman": 313,
+      "waktu_publikasi": "January 10, 2012"
+    }
+  },
+  {
+    "model": "book_page.book",
+    "pk": 61,
+    "fields": {
+      "nama_buku": "City of Bones",
+      "gambar_buku": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1432730315i/256683.jpg",
+      "author": "Cassandra Clare",
+      "description": "When fifteen-year-old Clary Fray heads out to the Pandemonium Club in New York City, she hardly expects to witness a murder? much less a murder committed by three teenagers covered with strange tattoos and brandishing bizarre weapons. Then the body disappears into thin air. It's hard to call the police when the murderers are invisible to everyone else and when there is nothing?not even a smear of blood?to show that a boy has died. Or was he a boy?\n\nThis is Clary's first meeting with the Shadowhunters, warriors dedicated to ridding the earth of demons. It's also her first encounter with Jace, a Shadowhunter who looks a little like an angel and acts a lot like a jerk. Within twenty-four hours Clary is pulled into Jace's world with a vengeance when her mother disappears and Clary herself is attacked by a demon. But why would demons be interested in ordinary mundanes like Clary and her mother? And how did Clary suddenly get the Sight? The Shadowhunters would like to know...",
+      "rating": 4.08,
+      "jumlah_rating": "1,949,517",
+      "genre_1": "Fantasy",
+      "genre_2": "Young Adult",
+      "genre_3": "Romance",
+      "genre_4": "Paranormal",
+      "genre_5": "Urban Fantasy",
+      "jumlah_halaman": 485,
+      "waktu_publikasi": "March 27, 2007"
+    }
+  },
+  {
+    "model": "book_page.book",
+    "pk": 62,
+    "fields": {
+      "nama_buku": "Divergent",
+      "gambar_buku": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1618526890i/13335037.jpg",
+      "author": "Veronica Roth",
+      "description": "In Beatrice Prior's dystopian Chicago world, society is divided into five factions, each dedicated to the cultivation of a particular virtue?Candor (the honest), Abnegation (the selfless), Dauntless (the brave), Amity (the peaceful), and Erudite (the intelligent). On an appointed day of every year, all sixteen-year-olds must select the faction to which they will devote the rest of their lives. For Beatrice, the decision is between staying with her family and being who she really is?she can't have both. So she makes a choice that surprises everyone, including herself.\n\nDuring the highly competitive initiation that follows, Beatrice renames herself Tris and struggles alongside her fellow initiates to live out the choice they have made. Together they must undergo extreme physical tests of endurance and intense psychological simulations, some with devastating consequences. As initiation transforms them all, Tris must determine who her friends really are?and where, exactly, a romance with a sometimes fascinating, sometimes exasperating boy fits into the life she's chosen. But Tris also has a secret, one she's kept hidden from everyone because she's been warned it can mean death. And as she discovers unrest and growing conflict that threaten to unravel her seemingly perfect society, she also learns that her secret might help her save those she loves . . . or it might destroy her.",
+      "rating": 4.15,
+      "jumlah_rating": "3,800,187",
+      "genre_1": "Young Adult",
+      "genre_2": "Dystopia",
+      "genre_3": "Fantasy",
+      "genre_4": "Fiction",
+      "genre_5": "Science Fiction",
+      "jumlah_halaman": 487,
+      "waktu_publikasi": "April 25, 2011"
+    }
+  },
+  {
+    "model": "book_page.book",
+    "pk": 63,
+    "fields": {
+      "nama_buku": "The Book Thief",
+      "gambar_buku": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1522157426i/19063.jpg",
+      "author": "Markus Zusak",
+      "description": "Librarian's note: An alternate cover edition can be found here\n\nIt is 1939. Nazi Germany. The country is holding its breath. Death has never been busier, and will be busier still.\n\nBy her brother's graveside, Liesel's life is changed when she picks up a single object, partially hidden in the snow. It is The Gravedigger's Handbook, left behind there by accident, and it is her first act of book thievery. So begins a love affair with books and words, as Liesel, with the help of her accordian-playing foster father, learns to read. Soon she is stealing books from Nazi book-burnings, the mayor's wife's library, wherever there are books to be found.\n\nBut these are dangerous times. When Liesel's foster family hides a Jew in their basement, Liesel's world is both opened up, and closed down.\n\nIn superbly crafted writing that burns with intensity, award-winning author Markus Zusak has given us one of the most enduring stories of our time.\n\n(Note: this title was not published as YA fiction)",
+      "rating": 4.39,
+      "jumlah_rating": "2,437,127",
+      "genre_1": "Historical Fiction",
+      "genre_2": "Fiction",
+      "genre_3": "Young Adult",
+      "genre_4": "Historical",
+      "genre_5": "Classics",
+      "jumlah_halaman": 592,
+      "waktu_publikasi": "March 1, 2005"
+    }
+  },
+  {
+    "model": "book_page.book",
+    "pk": 64,
+    "fields": {
+      "nama_buku": "To Kill a Mockingbird",
+      "gambar_buku": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1553383690i/2657.jpg",
+      "author": "Harper Lee",
+      "description": "The unforgettable novel of a childhood in a sleepy Southern town and the crisis of conscience that rocked it. \"To Kill A Mockingbird\" became both an instant bestseller and a critical success when it was first published in 1960. It went on to win the Pulitzer Prize in 1961 and was later made into an Academy Award-winning film, also a classic.\n\nCompassionate, dramatic, and deeply moving, \"To Kill A Mockingbird\" takes readers to the roots of human behavior - to innocence and experience, kindness and cruelty, love and hatred, humor and pathos. Now with over 18 million copies in print and translated into forty languages, this regional story by a young Alabama woman claims universal appeal. Harper Lee always considered her book to be a simple love story. Today it is regarded as a masterpiece of American literature.",
+      "rating": 4.26,
+      "jumlah_rating": "5,839,890",
+      "genre_1": "Classics",
+      "genre_2": "Fiction",
+      "genre_3": "Historical Fiction",
+      "genre_4": "School",
+      "genre_5": "Literature",
+      "jumlah_halaman": 323,
+      "waktu_publikasi": "July 11, 1960"
+    }
+  },
+  {
+    "model": "book_page.book",
+    "pk": 65,
+    "fields": {
+      "nama_buku": "The Perks of Being a Wallflower",
+      "gambar_buku": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1650033115i/22628.jpg",
+      "author": "Stephen Chbosky",
+      "description": "standing on the fringes of life...\noffers a unique perspective. But there comes a time to see\nwhat it looks like from the dance floor.\n\nThis haunting novel about the dilemma of passivity vs. passion marks the stunning debut of a provocative new voice in contemporary fiction: The Perks of Being A WALLFLOWER\n\nThis is the story of what it's like to grow up in high school. More intimate than a diary, Charlie's letters are singular and unique, hilarious and devastating. We may not know where he lives. We may not know to whom he is writing. All we know is the world he shares. Caught between trying to live his life and trying to run from it puts him on a strange course through uncharted territory. The world of first dates and mixed tapes, family dramas and new friends. The world of sex, drugs, and The Rocky Horror Picture Show, when all one requires is that the perfect song on that perfect drive to feel infinite.\n\nThrough Charlie, Stephen Chbosky has created a deeply affecting coming-of-age story, a powerful novel that will spirit you back to those wild and poignant roller coaster days known as growing up.\n\n(back cover)",
+      "rating": 4.23,
+      "jumlah_rating": "1,714,791",
+      "genre_1": "Young Adult",
+      "genre_2": "Fiction",
+      "genre_3": "Coming Of Age",
+      "genre_4": "Classics",
+      "genre_5": "Romance",
+      "jumlah_halaman": 213,
+      "waktu_publikasi": "February 1, 1999"
+    }
+  },
+  {
+    "model": "book_page.book",
+    "pk": 66,
+    "fields": {
+      "nama_buku": "The Hobbit",
+      "gambar_buku": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1546071216i/5907.jpg",
+      "author": "J.R.R. Tolkien",
+      "description": "In a hole in the ground there lived a hobbit. Not a nasty, dirty, wet hole, filled with the ends of worms and an oozy smell, nor yet a dry, bare, sandy hole with nothing in it to sit down on or to eat: it was a hobbit-hole, and that means comfort.\nWritten for J.R.R. Tolkien?s own children, The Hobbit met with instant critical acclaim when it was first published in 1937. Now recognized as a timeless classic, this introduction to the hobbit Bilbo Baggins, the wizard Gandalf, Gollum, and the spectacular world of Middle-earth recounts of the adventures of a reluctant hero, a powerful and dangerous ring, and the cruel dragon Smaug the Magnificent. The text in this 372-page paperback edition is based on that first published in Great Britain by Collins Modern Classics (1998), and includes a note on the text by Douglas A. Anderson (2001).",
+      "rating": 4.28,
+      "jumlah_rating": "3,774,014",
+      "genre_1": "Fantasy",
+      "genre_2": "Classics",
+      "genre_3": "Fiction",
+      "genre_4": "Adventure",
+      "genre_5": "Young Adult",
+      "jumlah_halaman": 366,
+      "waktu_publikasi": "September 21, 1937"
+    }
+  },
+  {
+    "model": "book_page.book",
+    "pk": 67,
+    "fields": {
+      "nama_buku": "Holes",
+      "gambar_buku": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1618269830i/38709.jpg",
+      "author": "Louis Sachar",
+      "description": "Stanley Yelnats is under a curse. A curse that began with his no-good-dirty-rotten-pig-stealing-great-great-grandfather and has since followed generations of Yelnats. Now Stanley has been unjustly sent to a boys? detention center, Camp Green Lake, where the boys build character by spending all day, every day digging holes exactly five feet wide and five feet deep. There is no lake at Camp Green Lake. But there are an awful lot of holes.\n\nIt doesn?t take long for Stanley to realize there?s more than character improvement going on at Camp Green Lake. The boys are digging holes because the warden is looking for something. But what could be buried under a dried-up lake? Stanley tries to dig up the truth in this inventive and darkly humorous tale of crime and punishment?and redemption.",
+      "rating": 3.99,
+      "jumlah_rating": "1,160,410",
+      "genre_1": "Young Adult",
+      "genre_2": "Fiction",
+      "genre_3": "Middle Grade",
+      "genre_4": "Childrens",
+      "genre_5": "Classics",
+      "jumlah_halaman": 272,
+      "waktu_publikasi": "August 20, 1998"
+    }
+  },
+  {
+    "model": "book_page.book",
+    "pk": 68,
+    "fields": {
+      "nama_buku": "The Outsiders",
+      "gambar_buku": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1442129426i/231804.jpg",
+      "author": "S.E. Hinton",
+      "description": "The Outsiders is about two weeks in the life of a 14-year-old boy. The novel tells the story of Ponyboy Curtis and his struggles with right and wrong in a society in which he believes that he is an outsider. According to Ponyboy, there are two kinds of people in the world: greasers and socs. A soc (short for \"social\") has money, can get away with just about anything, and has an attitude longer than a limousine. A greaser, on the other hand, always lives on the outside and needs to watch his back. Ponyboy is a greaser, and he's always been proud of it, even willing to rumble against a gang of socs for the sake of his fellow greasers--until one terrible night when his friend Johnny kills a soc. The murder gets under Ponyboy's skin, causing his bifurcated world to crumble and teaching him that pain feels the same whether a soc or a greaser.\n\nLibrarian note: This record is for one of the three editions published with different covers and with ISBN 0-140-38572-X / 978-0-14-038572-4. The records are for the 1988 cover (this record), the 1995 cover, and the 2008 cover which is also the current in-print cover.",
+      "rating": 4.12,
+      "jumlah_rating": "1,264,597",
+      "genre_1": "Classics",
+      "genre_2": "Young Adult",
+      "genre_3": "Fiction",
+      "genre_4": "School",
+      "genre_5": "Read For School",
+      "jumlah_halaman": 192,
+      "waktu_publikasi": "April 24, 1967"
+    }
+  },
+  {
+    "model": "book_page.book",
+    "pk": 69,
+    "fields": {
+      "nama_buku": "The Host",
+      "gambar_buku": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1318009171i/1656001.jpg",
+      "author": "Stephenie Meyer",
+      "description": "Melanie Stryder refuses to fade away. The earth has been invaded by a species that take over the minds of human hosts while leaving their bodies intact. Wanderer, the invading \"soul\" who has been given Melanie's body, didn't expect to find its former tenant refusing to relinquish possession of her mind.As Melanie fills Wanderer's thoughts with visions of Jared, a human who still lives in hiding, Wanderer begins to yearn for a man she's never met. Reluctant allies, Wanderer and Melanie set off to search for the man they both love.Also see: Alternate Cover Editions for this ISBN [ACE]  \n  ACE #1\n - \n  ACE #2",
+      "rating": 3.86,
+      "jumlah_rating": "988,373",
+      "genre_1": "Young Adult",
+      "genre_2": "Fantasy",
+      "genre_3": "Science Fiction",
+      "genre_4": "Romance",
+      "genre_5": "Fiction",
+      "jumlah_halaman": 624,
+      "waktu_publikasi": "May 6, 2008"
+    }
+  },
+  {
+    "model": "book_page.book",
+    "pk": 70,
+    "fields": {
+      "nama_buku": "Vampire Academy",
+      "gambar_buku": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1361098973i/345627.jpg",
+      "author": "Richelle Mead",
+      "description": "Only a true best friend can protect you from your immortal enemies...\n\nLissa Dragomir is a Moroi princess: a mortal vampire with a rare gift for harnessing the earth's magic. She must be protected at all times from Strigoi; the fiercest vampires?the ones who never die. The powerful blend of human and vampire blood that flows through Rose Hathaway, Lissa's best friend, makes her a dhampir. Rose is dedicated to a dangerous life of protecting Lissa from the Strigoi, who are hell-bent on making Lissa one of them.\n\nAfter two years of freedom, Rose and Lissa are caught and dragged back to St. Vladimir's Academy, a school for vampire royalty and their guardians-to-be, hidden in the deep forests of Montana. But inside the iron gates, life is even more fraught with danger... and the Strigoi are always close by.\n\nRose and Lissa must navigate their dangerous world, confront the temptations of forbidden love, and never once let their guard down, lest the evil undead make Lissa one of them forever...",
+      "rating": 4.11,
+      "jumlah_rating": "633,848",
+      "genre_1": "Young Adult",
+      "genre_2": "Fantasy",
+      "genre_3": "Vampires",
+      "genre_4": "Paranormal",
+      "genre_5": "Romance",
+      "jumlah_halaman": 332,
+      "waktu_publikasi": "August 16, 2007"
+    }
+  },
+  {
+    "model": "book_page.book",
+    "pk": 71,
+    "fields": {
+      "nama_buku": "Uglies",
+      "gambar_buku": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1654202671i/24770.jpg",
+      "author": "Scott Westerfeld",
+      "description": "Tally is about to turn sixteen, and she can't wait. In just a few weeks she'll have the operation that will turn her from a repellent ugly into a stunning pretty. And as a pretty, she'll be catapulted into a high-tech paradise where her only job is to have fun.\n\nBut Tally's new friend Shay isn't sure she wants to become a pretty. When Shay runs away, Tally learns about a whole new side of the pretty world?and it isn't very pretty. The authorities offer Tally a choice: find her friend and turn her in, or never turn pretty at all. Tally's choice will change her world forever....",
+      "rating": 3.85,
+      "jumlah_rating": "646,568",
+      "genre_1": "Young Adult",
+      "genre_2": "Dystopia",
+      "genre_3": "Science Fiction",
+      "genre_4": "Fiction",
+      "genre_5": "Fantasy",
+      "jumlah_halaman": 425,
+      "waktu_publikasi": "February 8, 2005"
+    }
+  },
+  {
+    "model": "book_page.book",
+    "pk": 72,
+    "fields": {
+      "nama_buku": "Clockwork Angel",
+      "gambar_buku": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1693490271i/7171637.jpg",
+      "author": "Cassandra Clare",
+      "description": "In a time when Shadowhunters are barely winning the fight against the forces of darkness, one battle will change the course of history forever. Welcome to the Infernal Devices trilogy, a stunning and dangerous prequel to the New York Times bestselling Mortal Instruments series.\n\nThe year is 1878. Tessa Gray descends into London?s dark supernatural underworld in search of her missing brother. She soon discovers that her only allies are the demon-slaying Shadowhunters?including Will and Jem, the mysterious boys she is attracted to. Soon they find themselves up against the Pandemonium Club, a secret organization of vampires, demons, warlocks, and humans. Equipped with a magical army of unstoppable clockwork creatures, the Club is out to rule the British Empire, and only Tessa and her allies can stop them...",
+      "rating": 4.31,
+      "jumlah_rating": "811,259",
+      "genre_1": "Fantasy",
+      "genre_2": "Young Adult",
+      "genre_3": "Romance",
+      "genre_4": "Paranormal",
+      "genre_5": "Steampunk",
+      "jumlah_halaman": 479,
+      "waktu_publikasi": "August 31, 2010"
+    }
+  },
+  {
+    "model": "book_page.book",
+    "pk": 73,
+    "fields": {
+      "nama_buku": "Ella Enchanted",
+      "gambar_buku": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1410727190i/24337.jpg",
+      "author": "Gail Carson Levine",
+      "description": "At birth, Ella is inadvertently cursed by an imprudent young fairy named Lucinda, who bestows on her the \"gift\" of obedience. Anything anyone tells her to do, Ella must obey. Another girl might have been cowed by this affliction, but not feisty Ella: \"Instead of making me docile, Lucinda's curse made a rebel of me. Or perhaps I was that way naturally.\" When her beloved mother dies, leaving her in the care of a mostly absent and avaricious father, and later, a loathsome stepmother and two treacherous stepsisters, Ella's life and well-being seem to be in grave peril. But her intelligence and saucy nature keep her in good stead as she sets out on a quest for freedom and self-discovery as she tries to track down Lucinda to undo the curse, fending off ogres, befriending elves, and falling in love with a prince along the way. Yes, there is a pumpkin coach, a glass slipper, and a happily ever after, but this is the most remarkable, delightful, and profound version of Cinderella you'll ever read.\n\nGail Carson Levine's examination of traditional female roles in fairy tales takes some satisfying twists and deviations from the original. Ella is bound by obedience against her will, and takes matters in her own hands with ambition and verve. Her relationship with the prince is balanced and based on humor and mutual respect; in fact, it is she who ultimately rescues him. Ella Enchanted has won many well-deserved awards, including a Newbery Honor.",
+      "rating": 4.00,
+      "jumlah_rating": "408,746",
+      "genre_1": "Fantasy",
+      "genre_2": "Young Adult",
+      "genre_3": "Fiction",
+      "genre_4": "Romance",
+      "genre_5": "Middle Grade",
+      "jumlah_halaman": 240,
+      "waktu_publikasi": "April 25, 1997"
+    }
+  },
+  {
+    "model": "book_page.book",
+    "pk": 74,
+    "fields": {
+      "nama_buku": "Little Women",
+      "gambar_buku": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1562690475i/1934.jpg",
+      "author": "Louisa May Alcott",
+      "description": "This is an alternate cover edition of ISBN 9780451529305.\n\nGenerations of readers young and old, male and female, have fallen in love with the March sisters of Louisa May Alcott?s most popular and enduring novel, Little Women. Here are talented tomboy and author-to-be Jo, tragically frail Beth, beautiful Meg, and romantic, spoiled Amy, united in their devotion to each other and their struggles to survive in New England during the Civil War.\n\n\nIt is no secret that Alcott based Little Women on her own early life. While her father, the freethinking reformer and abolitionist Bronson Alcott, hobnobbed with such eminent male authors as Emerson, Thoreau, and Hawthorne, Louisa supported herself and her sisters with \"woman?s work,? including sewing, doing laundry, and acting as a domestic servant. But she soon discovered she could make more money writing. Little Women brought her lasting fame and fortune, and far from being the \"girl?s book? her publisher requested, it explores such timeless themes as love and death, war and peace, the conflict between personal ambition and family responsibilities, and the clash of cultures between Europe and America.",
+      "rating": 4.14,
+      "jumlah_rating": "2,138,411",
+      "genre_1": "Classics",
+      "genre_2": "Fiction",
+      "genre_3": "Historical Fiction",
+      "genre_4": "Young Adult",
+      "genre_5": "Romance",
+      "jumlah_halaman": 449,
+      "waktu_publikasi": "January 1, 1868"
+    }
+  },
+  {
+    "model": "book_page.book",
+    "pk": 75,
+    "fields": {
+      "nama_buku": "The Little Prince",
+      "gambar_buku": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1367545443i/157993.jpg",
+      "author": "Antoine de Saint-Exup�ry",
+      "description": "A pilot stranded in the desert awakes one morning to see, standing before him, the most extraordinary little fellow. \"Please,\" asks the stranger, \"draw me a sheep.\" And the pilot realizes that when life's events are too difficult to understand, there is no choice but to succumb to their mysteries. He pulls out pencil and paper... And thus begins this wise and enchanting fable that, in teaching the secret of what is really important in life, has changed forever the world for its readers.\n\nFew stories are as widely read and as universally cherished by children and adults alike as The Little Prince, presented here in a stunning new translation with carefully restored artwork. The definitive edition of a worldwide classic, it will capture the hearts of readers of all ages.",
+      "rating": 4.32,
+      "jumlah_rating": "1,994,427",
+      "genre_1": "Classics",
+      "genre_2": "Fiction",
+      "genre_3": "Fantasy",
+      "genre_4": "Childrens",
+      "genre_5": "France",
+      "jumlah_halaman": 96,
+      "waktu_publikasi": "April 6, 1943"
+    }
+  },
+  {
+    "model": "book_page.book",
+    "pk": 76,
+    "fields": {
+      "nama_buku": "The Bad Beginning",
+      "gambar_buku": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1436737029i/78411.jpg",
+      "author": "Lemony Snicket",
+      "description": "Dear Reader,\n\nI'm sorry to say that the book you are holding in your hands is extremely unpleasant. It tells an unhappy tale about three very unlucky children. Even though they are charming and clever, the Baudelaire siblings lead lives filled with misery and woe. From the very first page of this book when the children are at the beach and receive terrible news, continuing on through the entire story, disaster lurks at their heels. One might say they are magnets for misfortune.\n\nIn this short book alone, the three youngsters encounter a greedy and repulsive villain, itchy clothing, a disastrous fire, a plot to steal their fortune, and cold porridge for breakfast.\n\nIt is my sad duty to write down these unpleasant tales, but there is nothing stopping you from putting this book down at once and reading something happy, if you prefer that sort of thing.\n\nWith all due respect,\nLemony Snicket",
+      "rating": 4.00,
+      "jumlah_rating": "501,097",
+      "genre_1": "Fiction",
+      "genre_2": "Young Adult",
+      "genre_3": "Childrens",
+      "genre_4": "Fantasy",
+      "genre_5": "Middle Grade",
+      "jumlah_halaman": 176,
+      "waktu_publikasi": "August 25, 1999"
+    }
+  },
+  {
+    "model": "book_page.book",
+    "pk": 77,
+    "fields": {
+      "nama_buku": "Number the Stars",
+      "gambar_buku": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1630542426i/47281.jpg",
+      "author": "Lois Lowry",
+      "description": "Ten-year-old Annemarie Johansen and her best friend Ellen Rosen often think of life before the war. It's now 1943 and their life in Copenhagen is filled with school, food shortages, and the Nazi soldiers marching through town. When the Jews of Denmark are \"relocated,\" Ellen moves in with the Johansens and pretends to be one of the family. Soon Annemarie is asked to go on a dangerous mission to save Ellen's life.",
+      "rating": 4.18,
+      "jumlah_rating": "547,206",
+      "genre_1": "Historical Fiction",
+      "genre_2": "Young Adult",
+      "genre_3": "Fiction",
+      "genre_4": "Classics",
+      "genre_5": "Childrens",
+      "jumlah_halaman": 137,
+      "waktu_publikasi": "April 24, 1989"
+    }
+  },
+  {
+    "model": "book_page.book",
+    "pk": 78,
+    "fields": {
+      "nama_buku": "Ender?s Game",
+      "gambar_buku": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1408303130i/375802.jpg",
+      "author": "Orson Scott Card",
+      "description": "Andrew \"Ender\" Wiggin thinks he is playing computer simulated war games; he is, in fact, engaged in something far more desperate. The result of genetic experimentation, Ender may be the military genius Earth desperately needs in a war against an alien enemy seeking to destroy all human life. The only way to find out is to throw Ender into ever harsher training, to chip away and find the diamond inside, or destroy him utterly. Ender Wiggin is six years old when it begins. He will grow up fast.\n\nBut Ender is not the only result of the experiment. The war with the Buggers has been raging for a hundred years, and the quest for the perfect general has been underway almost as long. Ender's two older siblings, Peter and Valentine, are every bit as unusual as he is, but in very different ways. While Peter was too uncontrollably violent, Valentine very nearly lacks the capability for violence altogether. Neither was found suitable for the military's purpose. But they are driven by their jealousy of Ender, and by their inbred drive for power. Peter seeks to control the political process, to become a ruler. Valentine's abilities turn more toward the subtle control of the beliefs of commoner and elite alike, through powerfully convincing essays. Hiding their youth and identities behind the anonymity of the computer networks, these two begin working together to shape the destiny of Earth-an Earth that has no future at all if their brother Ender fails.",
+      "rating": 4.31,
+      "jumlah_rating": "1,336,112",
+      "genre_1": "Science Fiction",
+      "genre_2": "Fiction",
+      "genre_3": "Young Adult",
+      "genre_4": "Fantasy",
+      "genre_5": "Classics",
+      "jumlah_halaman": 324,
+      "waktu_publikasi": "January 15, 1985"
+    }
+  },
+  {
+    "model": "book_page.book",
+    "pk": 79,
+    "fields": {
+      "nama_buku": "Inkheart",
+      "gambar_buku": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1538266636i/28194.jpg",
+      "author": "Cornelia Funke",
+      "description": "Alternate cover edition: 9780439709101\n\nFrom internationally acclaimed storyteller Cornelia Funke, this bestselling, magical epic is now out in paperback!\n\nOne cruel night, Meggie's father reads aloud from a book called INKHEART-- and an evil ruler escapes the boundaries of fiction and lands in their living room. Suddenly, Meggie is smack in the middle of the kind of adventure she has only read about in books. Meggie must learn to harness the magic that has conjured this nightmare. For only she can change the course of the story that has changed her life forever.\n\nThis is INKHEART--a timeless tale about books, about imagination, about life. Dare to read it aloud.",
+      "rating": 3.91,
+      "jumlah_rating": "414,843",
+      "genre_1": "Fantasy",
+      "genre_2": "Young Adult",
+      "genre_3": "Fiction",
+      "genre_4": "Middle Grade",
+      "genre_5": "Childrens",
+      "jumlah_halaman": 563,
+      "waktu_publikasi": "September 23, 2003"
+    }
+  },
+  {
+    "model": "book_page.book",
+    "pk": 80,
+    "fields": {
+      "nama_buku": "Hush, Hush",
+      "gambar_buku": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1358261334i/6339664.jpg",
+      "author": "Becca Fitzpatrick",
+      "description": "A SACRED OATH\nA FALLEN ANGEL\nA FORBIDDEN LOVE\n\nRomance was not part of Nora Grey's plan. She's never been particularly attracted to the boys at her school, no matter how hard her best friend, Vee, pushes them at her. Not until Patch comes along. With his easy smile and eyes that seem to see inside her, Patch draws Nora to him against her better judgment.\n\nBut after a series of terrifying encounters, Nora's not sure whom to trust. Patch seems to be everywhere she is and seems to know more about her than her closest friends. She can't decide whether she should fall into his arms or run and hide. And when she tries to seek some answers, she finds herself near a truth that is way more unsettling than anything Patch makes her feel.\n\nFor she is right in the middle of an ancient battle between the immortal and those that have fallen - and, when it comes to choosing sides, the wrong choice will cost Nora her life.",
+      "rating": 3.93,
+      "jumlah_rating": "687,37",
+      "genre_1": "Young Adult",
+      "genre_2": "Fantasy",
+      "genre_3": "Romance",
+      "genre_4": "Paranormal",
+      "genre_5": "Angels",
+      "jumlah_halaman": 391,
+      "waktu_publikasi": "October 13, 2009"
+    }
+  },
+  {
+    "model": "book_page.book",
+    "pk": 81,
+    "fields": {
+      "nama_buku": "Thirteen Reasons Why",
+      "gambar_buku": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1555345043i/29844228.jpg",
+      "author": "Jay Asher",
+      "description": "You can?t stop the future.\nYou can?t rewind the past.\nThe only way to learn the secret . . . is to press play.\n\nClay Jensen returns home from school to find a strange package with his name on it lying on his porch. Inside he discovers several cassette tapes recorded by Hannah Baker?his classmate and crush?who committed suicide two weeks earlier. Hannah?s voice tells him that there are thirteen reasons why she decided to end her life. Clay is one of them. If he listens, he?ll find out why.\n\nClay spends the night crisscrossing his town with Hannah as his guide. He becomes a firsthand witness to Hannah?s pain, and as he follows Hannah?s recorded words throughout his town, what he discovers changes his life forever.",
+      "rating": 3.85,
+      "jumlah_rating": "943,032",
+      "genre_1": "Young Adult",
+      "genre_2": "Fiction",
+      "genre_3": "Contemporary",
+      "genre_4": "Realistic Fiction",
+      "genre_5": "Mystery",
+      "jumlah_halaman": 352,
+      "waktu_publikasi": "October 18, 2007"
+    }
+  },
+  {
+    "model": "book_page.book",
+    "pk": 82,
+    "fields": {
+      "nama_buku": "Charlie and the Chocolate Factory",
+      "gambar_buku": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1309211401i/6310.jpg",
+      "author": "Roald Dahl",
+      "description": "Charlie Bucket's wonderful adventure begins when he finds one of Mr. Willy Wonka's precious Golden Tickets and wins a whole day inside the mysterious chocolate factory. Little does he know the surprises that are in store for him!\n(back cover)",
+      "rating": 4.16,
+      "jumlah_rating": "818,183",
+      "genre_1": "Fiction",
+      "genre_2": "Fantasy",
+      "genre_3": "Childrens",
+      "genre_4": "Classics",
+      "genre_5": "Young Adult",
+      "jumlah_halaman": 176,
+      "waktu_publikasi": "January 17, 1964"
+    }
+  },
+  {
+    "model": "book_page.book",
+    "pk": 83,
+    "fields": {
+      "nama_buku": "Anne of Green Gables",
+      "gambar_buku": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1615094578i/8127.jpg",
+      "author": "L.M. Montgomery",
+      "description": "This heartwarming story has beckoned generations of readers into the special world of Green Gables, an old-fashioned farm outside a town called Avonlea. Anne Shirley, an eleven-year-old orphan, has arrived in this verdant corner of Prince Edward Island only to discover that the Cuthberts?elderly Matthew and his stern sister, Marilla?want to adopt a boy, not a feisty redheaded girl. But before they can send her back, Anne?who simply must have more scope for her imagination and a real home?wins them over completely. A much-loved classic that explores all the vulnerability, expectations, and dreams of a child growing up, Anne of Green Gables is also a wonderful portrait of a time, a place, a family? and, most of all, love.\n\nWITH AN AFTERWORD BY JENNIFER LEE CARELL",
+      "rating": 4.30,
+      "jumlah_rating": "939,152",
+      "genre_1": "Classics",
+      "genre_2": "Fiction",
+      "genre_3": "Young Adult",
+      "genre_4": "Historical Fiction",
+      "genre_5": "Childrens",
+      "jumlah_halaman": 320,
+      "waktu_publikasi": "January 1, 1908"
+    }
+  },
+  {
+    "model": "book_page.book",
+    "pk": 84,
+    "fields": {
+      "nama_buku": "The Secret Garden",
+      "gambar_buku": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1327873635i/2998.jpg",
+      "author": "Frances Hodgson Burnett",
+      "description": "In a house full of sadness and secrets, can young, orphaned Mary find happiness?\n\nMary Lennox, a spoiled, ill-tempered, and unhealthy child, comes to live with her reclusive uncle in Misselthwaite Manor on England?s Yorkshire moors after the death of her parents. There she meets a hearty housekeeper and her spirited brother, a dour gardener, a cheerful robin, and her wilful, hysterical, and sickly cousin, Master Colin, whose wails she hears echoing through the house at night.\n\nWith the help of the robin, Mary finds the door to a secret garden, neglected and hidden for years. When she decides to restore the garden in secret, the story becomes a charming journey into the places of the heart, where faith restores health, flowers refresh the spirit, and the magic of the garden, coming to life anew, brings health to Colin and happiness to Mary.",
+      "rating": 4.15,
+      "jumlah_rating": "1,124,378",
+      "genre_1": "Classics",
+      "genre_2": "Fiction",
+      "genre_3": "Childrens",
+      "genre_4": "Young Adult",
+      "genre_5": "Historical Fiction",
+      "jumlah_halaman": 331,
+      "waktu_publikasi": "August 1, 1911"
+    }
+  },
+  {
+    "model": "book_page.book",
+    "pk": 85,
+    "fields": {
+      "nama_buku": "Artemis Fowl",
+      "gambar_buku": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1630661894i/249747.jpg",
+      "author": "Eoin Colfer",
+      "description": "Twelve-year-old Artemis Fowl is a millionaire, a genius, and above all, a criminal mastermind. But even Artemis doesn't know what he's taken on when he kidnaps a fairy, Captain Holly Short of the LEPrecon Unit. These aren't the fairies of bedtime stories?they're dangerous! Full of unexpected twists and turns, Artemis Fowl is a riveting, magical adventure.",
+      "rating": 3.86,
+      "jumlah_rating": "540,881",
+      "genre_1": "Fantasy",
+      "genre_2": "Young Adult",
+      "genre_3": "Fiction",
+      "genre_4": "Middle Grade",
+      "genre_5": "Childrens",
+      "jumlah_halaman": 396,
+      "waktu_publikasi": "April 26, 2001"
+    }
+  },
+  {
+    "model": "book_page.book",
+    "pk": 86,
+    "fields": {
+      "nama_buku": "Stargirl",
+      "gambar_buku": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1335947642i/22232.jpg",
+      "author": "Jerry Spinelli",
+      "description": "A celebration of nonconformity; a tense, emotional tale about the fleeting, cruel nature of popularity--and the thrill and inspiration of first love. Ages 12+\n\nLeo Borlock follows the unspoken rule at Mica Area High School: don't stand out--under any circumstances! Then Stargirl arrives at Mica High and everything changes--for Leo and for the entire school. After 15 years of home schooling, Stargirl bursts into tenth grade in an explosion of color and a clatter of ukulele music, enchanting the Mica student body.\n\nBut the delicate scales of popularity suddenly shift, and Stargirl is shunned for everything that makes her different. Somewhere in the midst of Stargirl's arrival and rise and fall, normal Leo Borlock has tumbled into love with her.\n\nIn a celebration of nonconformity, Jerry Spinelli weaves a tense, emotional tale about the fleeting, cruel nature of popularity--and the thrill and inspiration of first love.",
+      "rating": 3.77,
+      "jumlah_rating": "322,692",
+      "genre_1": "Young Adult",
+      "genre_2": "Fiction",
+      "genre_3": "Contemporary",
+      "genre_4": "Realistic Fiction",
+      "genre_5": "Romance",
+      "jumlah_halaman": 186,
+      "waktu_publikasi": "June 30, 2000"
+    }
+  },
+  {
+    "model": "book_page.book",
+    "pk": 87,
+    "fields": {
+      "nama_buku": "Island of the Blue Dolphins",
+      "gambar_buku": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1533405446i/41044096.jpg",
+      "author": "Scott O'Dell",
+      "description": "In the Pacific there is an island that looks like a big fish sunning itself in the sea. Around it, blue dolphins swim, otters play, and sea elephants and sea birds abound. Once, Indians also lived on the island. And when they left and sailed to the east, one young girl was left behind. ? This is the story of Karana, the Indian girl who lived alone for years on the Island of the Blue Dolphins. Year after year, she watched one season pass into another and waited for a ship to take her away. But while she waited, she kept herself alive by building shelter, making weapons, finding food, and fighting her enemies, the wild dogs. It is not only an unusual adventure of survival, but also a tale of natural beauty and personal discovery.",
+      "rating": 3.86,
+      "jumlah_rating": "326,611",
+      "genre_1": "Young Adult",
+      "genre_2": "Fiction",
+      "genre_3": "Historical Fiction",
+      "genre_4": "Classics",
+      "genre_5": "Childrens",
+      "jumlah_halaman": 194,
+      "waktu_publikasi": "September 9, 1960"
+    }
+  },
+  {
+    "model": "book_page.book",
+    "pk": 88,
+    "fields": {
+      "nama_buku": "Tuck Everlasting",
+      "gambar_buku": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1661030663i/84981.jpg",
+      "author": "Natalie Babbitt",
+      "description": "Doomed to - or blessed with - eternal life after drinking from a magic spring, the Tuck family wanders about trying to live as inconspicuously and comfortably as they can. When ten-year-old Winnie Foster stumbles on their secret, the Tucks take her home and explain why living forever at one age is less a blessing that it might seem. Complications arise when Winnie is followed by a stranger who wants to market the spring water for a fortune.",
+      "rating": 3.90,
+      "jumlah_rating": "267,456",
+      "genre_1": "Fantasy",
+      "genre_2": "Classics",
+      "genre_3": "Young Adult",
+      "genre_4": "Fiction",
+      "genre_5": "Childrens",
+      "jumlah_halaman": 148,
+      "waktu_publikasi": "January 1, 1975"
+    }
+  },
+  {
+    "model": "book_page.book",
+    "pk": 89,
+    "fields": {
+      "nama_buku": "The Sisterhood of the Traveling Pants",
+      "gambar_buku": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1461611233i/452306.jpg",
+      "author": "Ann Brashares",
+      "description": "Carmen got the jeans at a thrift shop. They didn?t look all that great: they were worn, dirty, and speckled with bleach. On the night before she and her friends part for the summer, Carmen decides to toss them.\n\nBut Tibby says they?re great. She'd love to have them. Lena and Bridget also think they?re fabulous. Lena decides that they should all try them on. Whoever they fit best will get them.\n\nNobody knows why, but the pants fit everyone perfectly. Even Carmen (who never thinks she looks good in anything) thinks she looks good in the pants. Over a few bags of cheese puffs, they decide to form a sisterhood and take the vow of the Sisterhood of the Traveling Pants . . . the next morning, they say good-bye.\n\nAnd then the journey of the pants ? and the most memorable summer of their lives ? begins.",
+      "rating": 3.83,
+      "jumlah_rating": "691,539",
+      "genre_1": "Young Adult",
+      "genre_2": "Fiction",
+      "genre_3": "Chick Lit",
+      "genre_4": "Contemporary",
+      "genre_5": "Romance",
+      "jumlah_halaman": 294,
+      "waktu_publikasi": "September 11, 2001"
+    }
+  },
+  {
+    "model": "book_page.book",
+    "pk": 90,
+    "fields": {
+      "nama_buku": "Lord of the Flies",
+      "gambar_buku": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1327869409i/7624.jpg",
+      "author": "William Golding",
+      "description": "At the dawn of the next world war, a plane crashes on an uncharted island, stranding a group of schoolboys. At first, with no adult supervision, their freedom is something to celebrate; this far from civilization the boys can do anything they want. Anything. They attempt to forge their own society, failing, however, in the face of terror, sin and evil. And as order collapses, as strange howls echo in the night, as terror begins its reign, the hope of adventure seems as far from reality as the hope of being rescued. Labeled a parable, an allegory, a myth, a morality tale, a parody, a political treatise, even a vision of the apocalypse, Lord of the Flies is perhaps our most memorable novel about ?the end of innocence, the darkness of man?s heart.?",
+      "rating": 3.69,
+      "jumlah_rating": "2,803,388",
+      "genre_1": "Classics",
+      "genre_2": "Fiction",
+      "genre_3": "Young Adult",
+      "genre_4": "School",
+      "genre_5": "Literature",
+      "jumlah_halaman": 182,
+      "waktu_publikasi": "September 17, 1954"
+    }
+  },
+  {
+    "model": "book_page.book",
+    "pk": 91,
+    "fields": {
+      "nama_buku": "The City of Ember",
+      "gambar_buku": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1591616783i/307791.jpg",
+      "author": "Jeanne DuPrau",
+      "description": "An alternate cover edition can be found here.\n\nMany hundreds of years ago, the city of Ember was created by the Builders to contain everything needed for human survival. It worked?but now the storerooms are almost out of food, crops are blighted, corruption is spreading through the city and worst of all?the lights are failing. Soon Ember could be engulfed by darkness?\n\nBut when two children, Lina and Doon, discover fragments of an ancient parchment, they begin to wonder if there could be a way out of Ember. Can they decipher the words from long ago and find a new future for everyone? Will the people of Ember listen to them?",
+      "rating": 3.89,
+      "jumlah_rating": "275,855",
+      "genre_1": "Young Adult",
+      "genre_2": "Dystopia",
+      "genre_3": "Fantasy",
+      "genre_4": "Science Fiction",
+      "genre_5": "Fiction",
+      "jumlah_halaman": 270,
+      "waktu_publikasi": "May 13, 2003"
+    }
+  },
+  {
+    "model": "book_page.book",
+    "pk": 92,
+    "fields": {
+      "nama_buku": "Coraline",
+      "gambar_buku": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1493497435i/17061.jpg",
+      "author": "Neil Gaiman",
+      "description": "The day after they moved in, Coraline went exploring....\n\nIn Coraline's family's new flat are twenty-one windows and fourteen doors. Thirteen of the doors open and close.\n\nThe fourteenth is locked, and on the other side is only a brick wall, until the day Coraline unlocks the door to find a passage to another flat in another house just like her own.\n\nOnly it's different.\n\nAt first, things seem marvelous in the other flat. The food is better. The toy box is filled with wind-up angels that flutter around the bedroom, books whose pictures writhe and crawl and shimmer, little dinosaur skulls that chatter their teeth. But there's another mother, and another father, and they want Coraline to stay with them and be their little girl. They want to change her and never let her go.\n\nOther children are trapped there as well, lost souls behind the mirrors. Coraline is their only hope of rescue. She will have to fight with all her wits and all the tools she can find if she is to save the lost children, her ordinary life, and herself.\n\nCritically acclaimed and award-winning author Neil Gaiman will delight readers with his first novel for all ages.",
+      "rating": 4.11,
+      "jumlah_rating": "653,214",
+      "genre_1": "Fantasy",
+      "genre_2": "Horror",
+      "genre_3": "Fiction",
+      "genre_4": "Young Adult",
+      "genre_5": "Middle Grade",
+      "jumlah_halaman": 176,
+      "waktu_publikasi": "July 2, 2002"
+    }
+  },
+  {
+    "model": "book_page.book",
+    "pk": 93,
+    "fields": {
+      "nama_buku": "Paper Towns",
+      "gambar_buku": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1349013610i/6442769.jpg",
+      "author": "John Green",
+      "description": "Who is the real Margo?\n\nQuentin Jacobsen has spent a lifetime loving the magnificently adventurous Margo Roth Spiegelman from afar. So when she cracks open a window and climbs into his life?dressed like a ninja and summoning him for an ingenious campaign of revenge?he follows. After their all-nighter ends, and a new day breaks, Q arrives at school to discover that Margo, always an enigma, has now become a mystery. But Q soon learns that there are clues?and they're for him. Urged down a disconnected path, the closer he gets, the less Q sees the girl he thought he knew...",
+      "rating": 3.72,
+      "jumlah_rating": "1,294,026",
+      "genre_1": "Young Adult",
+      "genre_2": "Fiction",
+      "genre_3": "Contemporary",
+      "genre_4": "Romance",
+      "genre_5": "Mystery",
+      "jumlah_halaman": 305,
+      "waktu_publikasi": "October 16, 2008"
+    }
+  },
+  {
+    "model": "book_page.book",
+    "pk": 94,
+    "fields": {
+      "nama_buku": "The Phantom Tollbooth",
+      "gambar_buku": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1558858485i/378.jpg",
+      "author": "Norton Juster",
+      "description": "Librarian's Note: For an alternate cover edition of the same ISBN, click here.\n\nThis beloved story -first published more than fifty years ago- introduces readers to Milo and his adventures in the Lands Beyond.\n\nFor Milo, everything?s a bore. When a tollbooth mysteriously appears in his room, he drives through only because he?s got nothing better to do. But on the other side, things seem different. Milo visits the Island of Conclusions (you get there by jumping), learns about time from a ticking watchdog named Tock, and even embarks on a quest to rescue Rhyme and Reason! Somewhere along the way, Milo realizes something astonishing. Life is far from dull. In fact, it?s exciting beyond his wildest dreams. . . .",
+      "rating": 4.19,
+      "jumlah_rating": "280,058",
+      "genre_1": "Fantasy",
+      "genre_2": "Fiction",
+      "genre_3": "Classics",
+      "genre_4": "Childrens",
+      "genre_5": "Young Adult",
+      "jumlah_halaman": 248,
+      "waktu_publikasi": "January 1, 1961"
+    }
+  },
+  {
+    "model": "book_page.book",
+    "pk": 95,
+    "fields": {
+      "nama_buku": "Hatchet",
+      "gambar_buku": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1385297074i/50.jpg",
+      "author": "Gary Paulsen",
+      "description": "Brian is on his way to Canada to visit his estranged father when the pilot of his small prop plane suffers a heart attack. Brian is forced to crash-land the plane in a lake--and finds himself stranded in the remote Canadian wilderness with only his clothing and the hatchet his mother gave him as a present before his departure.\n\nBrian had been distraught over his parents' impending divorce and the secret he carries about his mother, but now he is truly desolate and alone. Exhausted, terrified, and hungry, Brian struggles to find food and make a shelter for himself. He has no special knowledge of the woods, and he must find a new kind of awareness and patience as he meets each day's challenges. Is the water safe to drink? Are the berries he finds poisonous?\n\nSlowly, Brian learns to turn adversity to his advantage--an invading porcupine unexpectedly shows him how to make fire, a devastating tornado shows him how to retrieve supplies from the submerged airplane. Most of all, Brian leaves behind the self-pity he has felt about his predicament as he summons the courage to stay alive.\n\nA story of survival and of transformation, this riveting book has sparked many a reader's interest in venturing into the wild.",
+      "rating": 3.77,
+      "jumlah_rating": "377,985",
+      "genre_1": "Young Adult",
+      "genre_2": "Fiction",
+      "genre_3": "Classics",
+      "genre_4": "Adventure",
+      "genre_5": "Middle Grade",
+      "jumlah_halaman": 208,
+      "waktu_publikasi": "September 30, 1987"
+    }
+  },
+  {
+    "model": "book_page.book",
+    "pk": 96,
+    "fields": {
+      "nama_buku": "The Princess Bride",
+      "gambar_buku": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1327903636i/21787.jpg",
+      "author": "William Goldman",
+      "description": "What happens when the most beautiful girl in the world marries the handsomest prince of all time and he turns out to be...well...a lot less than the man of her dreams?\n\nAs a boy, William Goldman claims, he loved to hear his father read the S. Morgenstern classic, The Princess Bride. But as a grown-up he discovered that the boring parts were left out of good old Dad's recitation, and only the \"good parts\" reached his ears.\n\nNow Goldman does Dad one better. He's reconstructed the \"Good Parts Version\" to delight wise kids and wide-eyed grownups everywhere.\n\nWhat's it about? Fencing. Fighting. True Love. Strong Hate. Harsh Revenge. A Few Giants. Lots of Bad Men. Lots of Good Men. Five or Six Beautiful Women. Beasties Monstrous and Gentle. Some Swell Escapes and Captures. Death, Lies, Truth, Miracles, and a Little Sex.\n\nIn short, it's about everything.",
+      "rating": 4.27,
+      "jumlah_rating": "882,714",
+      "genre_1": "Fantasy",
+      "genre_2": "Classics",
+      "genre_3": "Fiction",
+      "genre_4": "Romance",
+      "genre_5": "Humor",
+      "jumlah_halaman": 429,
+      "waktu_publikasi": "September 1, 1973"
+    }
+  },
+  {
+    "model": "book_page.book",
+    "pk": 97,
+    "fields": {
+      "nama_buku": "The Selection",
+      "gambar_buku": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1322103400i/10507293.jpg",
+      "author": "Kiera Cass",
+      "description": "For thirty-five girls, the Selection is the chance of a lifetime. The opportunity to escape the life laid out for them since birth. To be swept up in a world of glittering gowns and priceless jewels. To live in a palace and compete for the heart of gorgeous Prince Maxon.\n\nBut for America Singer, being Selected is a nightmare. It means turning her back on her secret love with Aspen, who is a caste below her. Leaving her home to enter a fierce competition for a crown she doesn't want. Living in a palace that is constantly threatened by violent rebel attacks.\n\nThen America meets Prince Maxon. Gradually, she starts to question all the plans she's made for herself?and realizes that the life she's always dreamed of may not compare to a future she never imagined.",
+      "rating": 4.09,
+      "jumlah_rating": "1,464,692",
+      "genre_1": "Romance",
+      "genre_2": "Young Adult",
+      "genre_3": "Dystopia",
+      "genre_4": "Fantasy",
+      "genre_5": "Fiction",
+      "jumlah_halaman": 336,
+      "waktu_publikasi": "April 24, 2012"
+    }
+  },
+  {
+    "model": "book_page.book",
+    "pk": 98,
+    "fields": {
+      "nama_buku": "Just Listen",
+      "gambar_buku": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1358270741i/51738.jpg",
+      "author": "Sarah Dessen",
+      "description": "Last year, Annabel was \"the girl who has everything\" ? at least that's the part she played in the television commercial for Kopf's Department Store.\n\nThis year, she's the girl who has nothing: no best friend because mean-but-exciting Sophie dropped her, no peace at home since her older sister became anorexic, and no one to sit with at lunch. Until she meets Owen Armstrong.\n\nTall, dark, and music-obsessed, Owen is a reformed bad boy with a commitment to truth-telling. With Owen's help, maybe Annabel can face what happened the night she and Sophie stopped being friends.",
+      "rating": 4.05,
+      "jumlah_rating": "245,6",
+      "genre_1": "Young Adult",
+      "genre_2": "Romance",
+      "genre_3": "Contemporary",
+      "genre_4": "Fiction",
+      "genre_5": "Realistic Fiction",
+      "jumlah_halaman": 371,
+      "waktu_publikasi": "April 6, 2006"
+    }
+  },
+  {
+    "model": "book_page.book",
+    "pk": 99,
+    "fields": {
+      "nama_buku": "A Little Princess",
+      "gambar_buku": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1327868556i/3008.jpg",
+      "author": "Frances Hodgson Burnett",
+      "description": "Sara Crewe, an exceptionally intelligent and imaginative student at Miss Minchin's Select Seminary for Young Ladies, is devastated when her adored, indulgent father dies. Now penniless and banished to a room in the attic, Sara is demeaned, abused, and forced to work as a servant. How this resourceful girl's fortunes change again is at the center of A Little Princess , one of the best-loved stories in all of children's literature.\n\nThis unique and fully annotated edition appends excerpts from Frances Hodgson Burnett 's original 1888 novella Sara Crewe and the stage play that preceded the novel, as well as an early story, \"Behind the White Brick,\" allowing readers to see how A Little Princess evolved. In his delightful introduction, U. C. Knoepflmacher considers the fairy-tale allusions and literary touchstones that place the book among the major works of Victorian literature, and shows it to be an exceptionally rich and resonant novel.",
+      "rating": 4.22,
+      "jumlah_rating": "300,636",
+      "genre_1": "Classics",
+      "genre_2": "Fiction",
+      "genre_3": "Childrens",
+      "genre_4": "Young Adult",
+      "genre_5": "Historical Fiction",
+      "jumlah_halaman": 242,
+      "waktu_publikasi": "January 1, 1905"
+    }
+  },
+  {
+    "model": "book_page.book",
+    "pk": 100,
+    "fields": {
+      "nama_buku": "Are You There God? It's Me, Margaret",
+      "gambar_buku": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1388356524i/37732.jpg",
+      "author": "Judy Blume",
+      "description": "Margaret Simon, almost twelve, likes long hair, tuna fish, the smell of rain, and things that are pink. She?s just moved from New York City to Farbook, New Jersey, and is anxious to fit in with her new friends?Nancy, Gretchen, and Janie. When they form a secret club to talk about private subjects like boys, bras, and getting their first periods, Margaret is happy to belong.\n\nBut none of them can believe Margaret doesn?t have religion, and that she isn?t going to the Y or the Jewish Community Center. What they don?t know is Margaret has her own very special relationship with God. She can talk to God about everything?family, friends, even Moose Freed, her secret crush.\n\nMargaret is funny and real, and her thoughts and feelings are oh-so-relatable?you?ll feel like she?s talking right to you, sharing her secrets with a friend.",
+      "rating": 3.94,
+      "jumlah_rating": "229,811",
+      "genre_1": "Young Adult",
+      "genre_2": "Fiction",
+      "genre_3": "Childrens",
+      "genre_4": "Classics",
+      "genre_5": "Middle Grade",
+      "jumlah_halaman": 149,
+      "waktu_publikasi": "January 1, 1970"
+    }
+  }
+]
