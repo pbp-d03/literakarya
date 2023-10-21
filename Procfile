@@ -1,2 +1,2 @@
-release: python manage.py migrate
-web: gunicorn project_literakarya.wsgi --log-file -
+release: django-admin migrate --noinput
+web: gunicorn project_literakarya.wsgi
