@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'example_app',
     'main',
     'book_page',
+    'forum',
 ]
 
 MIDDLEWARE = [
