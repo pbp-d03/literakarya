@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<style>
+    h1 {
+        padding-left: 50px;
+        padding-top: 50px;
+
+    }
+    #reminder {
+        padding-left: 50px;
+    }
+    form {
+        margin: 0 auto; /* This centers the div horizontally */
+        width: 1000px;
+        height: 100px;
+    }
+    #post {
+        text-align: right;
+        padding-top: 25px;
+    }
+</style>
+
+<div class="jumbotron">
+    <h1 class="display-4">Dibawa Santai Aja...</h1>
+    <p class="lead" id="reminder">Ingat kalau penulis favoritmu itu tidak akan membantumu mengejakan TP SDA, maka tidak usah terlalu dibela &#128077;</p>
+    <div class="text-center">
+        <p class="lead">
+            <a class="btn btn-primary btn-lg" href="#" role="button">Buat Topik Baru</a>
+        </p>
+    </div>
+</div>
+
+<form>
+    <div class="form-group">
+      <label for="exampleFormControlInput1">Topik</label>
+      <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Mau ngobrolin apa?">
+    </div>
+    <div class="form-group">
+      <label for="exampleFormControlSelect1">Example select</label>
+      <select class="form-control" id="exampleFormControlSelect1">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="exampleFormControlTextarea1">Example textarea</label>
+      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+    </div>
+
+    <p id="post">
+        <a class="btn btn-primary btn-lg" href="#" role="button">Post</a>
+    </p>
+  </form>
+
+{% endblock content %}
