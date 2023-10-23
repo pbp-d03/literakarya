@@ -19,5 +19,6 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('main.urls')), # HOMEPAGE NANTI
-    path('book-pages/',include("book_page.urls")) # dapatin Buku
+    path('book-pages/',include("book_page.urls")), # dapatin Buku
+    path('forum/',include("forum.urls")),
 ]
