@@ -28,15 +28,14 @@
     #not-login {
       text-align: center;
     }
-    .form-control {
+    #topik-list {
       appearance: none;
       -webkit-appearance: none;
       -moz-appearance: none;
-      background-image: url('static/img/caret-down-fill.svg');
+      background-image: url('../static/img/caret-down-fill.svg');
       background-size: 15px;
       background-repeat: no-repeat;
       background-position: right center;
-      padding-right: 25px;
     }
 </style>
 
@@ -61,7 +60,7 @@
     <div class="form-group">
       <label for="exampleFormControlSelect1">Topik</label>
 
-      <select name="topik" class="form-control" id="exampleFormControlSelect1">
+      <select name="topik" class="form-control" id="topik-list">
         <option>Literasi umum</option>
 
         {% for b in books %}
@@ -92,5 +91,6 @@
 <div id="posts">
 
 </div>
+{{ request.user.username|json_script:"user_username" }}
 
 {% endblock content %}
