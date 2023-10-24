@@ -1,8 +1,8 @@
 from django.urls import path, include
-from forum.views import show_main
+from forum.views import show_forum
 
 app_name = "book_page"
 
 urlpatterns = [
-    path('', show_main,name="show_main"), # ini buat nampilin api (json buku)
+    path('', show_forum,name="show_forum"),
 ]
