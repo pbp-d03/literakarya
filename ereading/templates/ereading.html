@@ -14,6 +14,12 @@
 </style>
 
 <body>
+    <div class="container mt-4">
+        <div class="row row-cols-1 row-cols-md-2" id="ereadings-display">
+            <!-- Data setiap item akan ditunjukkan di bagian ini. -->
+        </div>
+    </div>
+
     <div class="modal fade" id="modalComponent" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -26,26 +32,26 @@
                     <form id="form" onsubmit="return false;">
                         {% csrf_token %}
                         <div class="mb-3">
-                            <label for="name" class="col-form-label">Judul:</label>
-                            <input type="text" class="form-control" name="judul"></input>
+                            <label for="title" class="col-form-label">Title:</label>
+                            <input type="text" class="form-control" id="title" name="title"></input>
                         </div>
                         <div class="mb-3">
-                            <label for="name" class="col-form-label">Penulis:</label>
-                            <input type="text" class="form-control" name="penulis"></input>
+                            <label for="author" class="col-form-label">Author:</label>
+                            <input type="text" class="form-control" id="author" name="author"></input>
                         </div>
                         <div class="mb-3">
-                            <label for="description" class="col-form-label">Deskripsi:</label>
-                            <textarea class="form-control" name="deskripsi"></textarea>
+                            <label for="description" class="col-form-label">Description:</label>
+                            <textarea class="form-control" id="description" name="description"></textarea>
                         </div>
                         <div class="mb-3">
                             <label for="link" class="col-form-label">Link:</label>
-                            <input type="url" class="form-control"name="link" placeholder="https://example.com"></input>
+                            <input type="url" class="form-control" id="link" name="link" placeholder="https://example.com"></input>
                         </div>                        
                     </form>
                 </div>
     
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-warning" id="button_add" data-bs-dismiss="modal">Tambah Bacaan Digital</button>
+                    <button type="button" class="btn btn-warning" id="button_add" data-bs-dismiss="modal">Add Ereading</button>
                 </div>
             </div>
         </div>
@@ -53,7 +59,70 @@
 
     <h4>Tambahkan koleksi bacaan digital yang kamu punya ke katalog pribadimu di LiteraKarya!</h4>
 
-    <button type="button" class="btn btn-info mt-4" data-bs-toggle="modal" data-bs-target="#modalComponent">Tambah Bacaan Digital</button>
+    <button type="button" class="btn btn-info mt-4" data-bs-toggle="modal" data-bs-target="#modalComponent">Add Ereading</button>
 </body>
+
+<script>
+    async function getEreadings() {
+        return fetch("{% url 'ereading:get_json' %}").then((res) => res.json());
+    }
+
+    async function refreshEreadings() {
+        let ereadings = await getEreadings();
+        let htmlString = ``;
+
+        ereadings.forEach((ereading) => {
+            htmlString += `
+                <div class="col mb-4">
+                    <div class="card">
+                        <div class="card-header d-flex justify-content-between align-items-center" 
+                        style="background-color: ${isLast ? 'thistle' : 'papayawhip'}">
+                            <span><strong>${item.fields.name}</strong></span>
+                            <div aria-label="Item Actions">
+                                <a href="edit-item/${item.pk}/" class="btn btn-primary btn-sm">Edit</a>
+                                <button id='button-${item.pk}' class='btn btn-danger btn-sm'>Delete</button> 
+                            </div>
+                        </div>
+    
+                        <div class="card-body text-center"
+                        style="background-color: ${item.fields.is_last ? 'lavenderblush' : 'snow'}">
+                            <p class="card-text"><strong>Desc: </strong>${item.fields.description}</p>
+                            <p class="card-text"><strong>Price: </strong> Rp. ${parseFloat(item.fields.price).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')}</p>
+    
+                            <div class="mb-1">
+                                <form method="POST" action="increase-amount/${item.pk}/" class="d-inline">
+                                    <input type="hidden" name="csrfmiddlewaretoken" value="{{csrf_token}}">
+                                    <button class="btn btn-success btn-sm" type="submit">Inc.</button>
+                                </form>
+    
+                                <label><strong>Amount: </strong> ${item.fields.amount}</label>
+    
+                                <form method="POST" action="decrease-amount/${item.pk}/" class="d-inline">
+                                    <input type="hidden" name="csrfmiddlewaretoken" value="{{csrf_token}}">
+                                    <button class="btn btn-warning btn-sm" type="submit">Dec.</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+        });
+        document.getElementById("ereadings-display").innerHTML = htmlString;
+    }
+
+    refreshEreadings();
+
+
+    function addEreading() {
+        fetch("{% url 'ereading:add_ereading' %}", {
+            method: "POST",
+            body: new FormData(document.querySelector('#form'))
+        }).then(refreshEreadings())
+
+        document.getElementById("form").reset()
+        return false
+    }
+    document.getElementById("button_add").onclick = addEreading
+</script>
 
 {% endblock content %}
