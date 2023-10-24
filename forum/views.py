@@ -1,7 +1,9 @@
 from django.http import JsonResponse
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from book_page.models import Book
 from .models import Post, Reply
+from django.views.decorators.csrf import csrf_exempt
+from django.utils import timezone
 
 def show_forum(request):
     books = Book.objects.all()
@@ -21,7 +23,7 @@ def get_posts_json(request):
         data.append({
             "pk" : post.pk,
             "fields" : {
-                "user" : post.user.username,
+                "user" : post.user,
                 "subject" : post.subject,
                 "topic" : post.topic,
                 "message" : post.message,
@@ -38,7 +40,7 @@ def get_replies_json(request):
         data.append({
             "pk" : reply.pk,
             "fields" : {
-                "user" : reply.user.username,
+                "user" : reply.user,
                 "topic" : reply.topic,
                 "body" : reply.body,
                 "date" : reply.date.strftime("%B %d, %Y at %H:%M %Z")
@@ -46,77 +48,72 @@ def get_replies_json(request):
         })
     return JsonResponse(data,safe=False)
 
-# # AJAX related
-# @csrf_exempt
-# def add_post(request):
-#     if request.method == 'POST':
-#         # retrieving data
-#         pengguna = request.user
-#         judul = request.POST.get('title')
-#         isi = request.POST.get('body')
-#         tanggal = timezone.now()
+# AJAX related
+@csrf_exempt
+def add_post(request):
+    if request.method == 'POST':
+        # ambil dari form
+        op = request.user # op = original poster
+        judul = request.POST.get('subject')
+        kategori = request.POST.get('topik')
+        pesan = request.POST.get('message')
+        tanggal = timezone.now()
         
-#         # making new instance and saving it
-#         new_post = Post(
-#             user = pengguna,
-#             title = judul,
-#             body = isi,
-#             date = tanggal
-#         )
-#         new_post.save()
+        # buat dan save post
+        new_post = Post(
+            user = op,
+            subject = judul,
+            topic = kategori,
+            message = pesan,
+            date = tanggal
+        )
+        new_post.save()
         
-#         return JsonResponse({
-#             "pk" : new_post.pk,
-#             "fields" : {
-#                 "user" : { 
-#                         "username" : new_post.user.username,
-#                         "name"     : new_post.user.name,
-#                         "role"     : new_post.user.role
-#                         },
-#                 "title": new_post.title,
-#                 "body" : new_post.body,
-#                 "date" : new_post.date.strftime("%B %d, %Y at %H:%M %Z")
-#             }
-#         })
+        return JsonResponse({
+            "pk" : new_post.pk,
+            "fields" : {
+                "user" : new_post.user,
+                "subject" : new_post.subject,
+                "topic" : new_post.topic,
+                "message" : new_post.message,
+                "date" : new_post.date.strftime("%B %d, %Y at %H:%M %Z")
+            }
+        })
    
-# @csrf_exempt         
-# def add_comment(request, id):
-#     if request.method == 'POST':
-#         # retrieving data
-#         post = Post.objects.get(pk=id)
-#         pengguna = request.user
-#         isi = request.POST.get('body')
-#         tanggal = timezone.now()
+@csrf_exempt         
+def add_reply(request, id):
+    if request.method == 'POST':
+        # ambil dari form
+        penanggap = request.user
+        unggahan = Post.objects.get(pk=id)
+        komentar = request.POST.get('body')
+        tanggal = timezone.now()
         
-#         # making new instance and save
-#         new_comment = Comment(
-#             post = post,
-#             user = pengguna,
-#             body = isi,
-#             date = tanggal
-#         )
-#         new_comment.save()
+        # buat dan save reply
+        new_reply = Reply(
+            user = penanggap,
+            topic = unggahan,
+            body = komentar,
+            date = tanggal
+        )
+        new_reply.save()
         
-#         return JsonResponse({
-#             "pk" : new_comment.pk,
-#             "fields" : {
-#                 "post" : new_comment.post.id,
-#                 "user" : { 
-#                         "username" : new_comment.user.username,
-#                         "name"     : new_comment.user.name,
-#                         "role"     : new_comment.user.role
-#                         },
-#                 "body" : new_comment.body,
-#                 "date" : new_comment.date.strftime("%B %d, %Y at %H:%M %Z")
-#             }
-#         })
+        return JsonResponse({
+            "pk" : new_reply.pk,
+            "fields" : {
+                "user" : new_reply.user,
+                "topic" : new_reply.topic,
+                "body" : new_reply.body,
+                "date" : new_reply.date.strftime("%B %d, %Y at %H:%M %Z")
+            }
+        })
 
-# def delete_post(request, id):
-#     this_post = Post.objects.get(pk=id)
-#     this_post.delete()
-#     return redirect('questions:show_questions')
+def delete_post(request, id):
+    post = Post.objects.get(pk=id)
+    post.delete()
+    return redirect('forum:show_forum')
 
-# def delete_comment(request, id):
-#     this_comment = Comment.objects.get(pk=id)
-#     this_comment.delete()
-#     return redirect('questions:show_questions')
+def delete_reply(request, id):
+    reply = Reply.objects.get(pk=id)
+    reply.delete()
+    return redirect('forum:show_forum')

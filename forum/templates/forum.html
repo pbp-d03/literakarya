@@ -13,7 +13,7 @@
         padding-left: 50px;
     }
     form {
-        margin: 0 auto; /* This centers the div horizontally */
+        margin: 0 auto;
         max-width: 960px;
         padding-left: 50px;
         padding-right: 50px;
@@ -25,6 +25,19 @@
     .createFormButton {
       text-align: center;
     }
+    #not-login {
+      text-align: center;
+    }
+    .form-control {
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      background-image: url('static/img/caret-down-fill.svg');
+      background-size: 15px;
+      background-repeat: no-repeat;
+      background-position: right center;
+      padding-right: 25px;
+    }
 </style>
 
 <div class="jumbotron">
@@ -32,6 +45,9 @@
     <p class="lead" id="reminder">Ingat {{user}}, kalau penulis favoritmu itu tidak akan membantumu mengejakan TP SDA, maka tidak usah terlalu dibela &#128077;</p>
 </div>
 
+{% comment %} form hanya akan muncul jika user sudah login {% endcomment %}
+
+{% if request.user.is_authenticated %}
 <div class="createFormButton">
   <button type="button" class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#collapsibleForm">Buat Topik Diskusi Baru</button>
 </div>
@@ -40,11 +56,12 @@
   <form>
     <div class="form-group">
       <label for="exampleFormControlInput1">Subjek</label>
-      <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Mau ngobrolin apa?">
+      <input name="subject" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Mau ngobrolin apa?">
     </div>
     <div class="form-group">
       <label for="exampleFormControlSelect1">Topik</label>
-      <select class="form-control" id="exampleFormControlSelect1">
+
+      <select name="topik" class="form-control" id="exampleFormControlSelect1">
         <option>Literasi umum</option>
 
         {% for b in books %}
@@ -56,13 +73,24 @@
 
     <div class="form-group">
       <label for="exampleFormControlTextarea1">Tuliskan pesan anda</label>
-      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+      <textarea name="message"  class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
     </div>
 
     <p id="post">
         <a class="btn btn-primary btn-lg" href="#" role="button">Post</a>
     </p>
   </form>
+</div>
+{% else %}
+<div id="not-login">
+  <a href="{%url 'main:login'%}">
+  <button type="button" class="btn btn-info">Login untuk menambahkan topik diskusi</button>
+  </a>
+</div>
+{% endif %}
+
+<div id="posts">
+
 </div>
 
 {% endblock content %}
