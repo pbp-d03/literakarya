@@ -1,17 +1,17 @@
 from django.db import models
-# from main.models import User
+from django.contrib.auth.models import User
 
 # Create your models here.
 
-class Topic(models.Model):
-    # user = models.ForeignKey(User, models.SET_NULL, blank=True, null=True)
+class Post(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     subject = models.CharField(max_length=255)
     topic = models.CharField(max_length=255)
     message = models.TextField()
     date = models.DateTimeField()
     
 class Reply(models.Model):
-    topic = models.ForeignKey(Topic, on_delete = models.CASCADE, related_name="reply")
-    # user = models.ForeignKey(User, models.SET_NULL, blank=True, null=True)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    topic = models.ForeignKey(Post, on_delete = models.CASCADE, related_name="reply")
     body = models.TextField()
     date = models.DateTimeField()
