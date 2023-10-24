@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block meta %}
+    <title>Tambah Bacaan Digital</title>
+{% endblock meta %}
+
+{% block content %}
+<style>
+    body {
+        text-align: center;
+        margin: 10px;
+    }
+</style>
+
+<body>
+    <div class="modal fade" id="modalComponent" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5">Tambah Bacaan Digital</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+    
+                <div class="modal-body" style="text-align: left;">
+                    <form id="form" onsubmit="return false;">
+                        {% csrf_token %}
+                        <div class="mb-3">
+                            <label for="name" class="col-form-label">Judul:</label>
+                            <input type="text" class="form-control" name="judul"></input>
+                        </div>
+                        <div class="mb-3">
+                            <label for="name" class="col-form-label">Penulis:</label>
+                            <input type="text" class="form-control" name="penulis"></input>
+                        </div>
+                        <div class="mb-3">
+                            <label for="description" class="col-form-label">Deskripsi:</label>
+                            <textarea class="form-control" name="deskripsi"></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="link" class="col-form-label">Link:</label>
+                            <input type="url" class="form-control"name="link" placeholder="https://example.com"></input>
+                        </div>                        
+                    </form>
+                </div>
+    
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-warning" id="button_add" data-bs-dismiss="modal">Tambah Bacaan Digital</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h4>Tambahkan koleksi bacaan digital yang kamu punya ke katalog pribadimu di LiteraKarya!</h4>
+
+    <button type="button" class="btn btn-info mt-4" data-bs-toggle="modal" data-bs-target="#modalComponent">Tambah Bacaan Digital</button>
+</body>
+
+{% endblock content %}

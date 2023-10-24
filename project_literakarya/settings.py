@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'main',
     'book_page',
     'forum',
+    'ereading'
 ]
 
 MIDDLEWARE = [
