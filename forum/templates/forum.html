@@ -61,7 +61,7 @@
     <div class="form-group">
       <label for="exampleFormControlSelect1">Topik</label>
 
-      <select name="topic" class="form-control" id="topic-list">
+      <select name="topic" class="form-control" id="topic-list" required=True>
         <option>Literasi umum</option>
 
         {% for b in books %}
@@ -73,11 +73,11 @@
 
     <div class="form-group">
       <label for="exampleFormControlTextarea1">Tuliskan pesan anda</label>
-      <textarea name="message"  class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+      <textarea name="message"  class="form-control" id="message" rows="3"></textarea>
     </div>
 
     <p id="post">
-        <a type="submit" class="btn btn-primary btn-lg" href="#" role="button">Post</a>
+        <button type="submit" class="btn btn-primary btn-lg" role="button">Post</button>
     </p>
   </form>
 </div>
@@ -105,6 +105,7 @@
         )
       }
       else{
+        $('#nopost').remove();
         for(let i=0; i<item.length; i++) {
           putPost(item[i]);
           replyPost(item[i]);
@@ -116,20 +117,16 @@
   function putPost(post){
     // put post
     let user_username = JSON.parse(document.getElementById('user_username').textContent);
-    let deleteOption = (user_username === post.fields.user.username)
-                      ?`<h5 class="bi bi-three-dots-vertical" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false" style="float:right"></h5>
-                      <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                        <li>
-                          <a class="dropdown-item" id="delete-post-${post.pk}" href="delete-post/${post.pk}">
+    let deleteOption = (user_username === post.fields.user)
+                      ?`  <a id="delete-post-${post.pk}" href="delete-post/${post.pk}">
                             Delete Post
                           </a>
-                        </li>
-                      </ul>` 
+` 
                       : '';
     let replyOption = (!user_username) 
                       ? '' 
                       : `<a data-bs-toggle="collapse" href="#reply-${post.pk}" role="button" aria-expanded="false" aria-controls="collapseExample">
-                          <i class="icon bi bi-reply" style="color:#000"></i>
+                          Reply
                         </a>`;
   
     $("#posts").prepend(
@@ -138,7 +135,7 @@
           <div class="card-body px-4 pt-3 pb-3">
             <div>
               ${deleteOption}
-              <h6>${post.fields.user.username} <small class="text-muted"><i>  —  ${post.fields.topic}</i></small></h6>
+              <h6>${post.fields.user} <small class="text-muted"><i>  —  ${post.fields.topic}</i></small></h6>
             </div>
             <h3 class="card-title pt-2">
               ${post.fields.subject}<br>
@@ -151,12 +148,12 @@
             ${replyOption}
   
             <a data-bs-toggle="collapse" href="#reply-post-${post.pk}" role="button" aria-expanded="false" class="collapsed mx-5">
-              <i class="icon bi bi-eye if-collapsed" style="color:#000"></i>
-              <i class="icon bi bi-eye-slash if-not-collapsed" style="color:#000"></i>
+              Show reply
             </a>
           </div>
   
           <div class="collapse mt-2 mx-4" id="reply-${post.pk}">
+            {% csrf_token %}
             <form method="POST" id="add-reply-${post.pk}">
               <textarea type="text" name="reply-body-${post.pk}" id="reply-body-${post.pk}" class="form-control" required></textarea>
               <button class="btn btn-dark" type="submit" style="margin-top: 10px"> add reply </button>
@@ -190,21 +187,17 @@
   
     // put reply
     let user_username = JSON.parse(document.getElementById('user_username').textContent);
-    let deleteOption = (user_username === reply.fields.user.username)
-                      ?`<h5 class="bi bi-three-dots-vertical" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false" style="float:right"></h5>
-                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                          <li>
+    let deleteOption = (user_username === reply.fields.user)
+                      ?`
                             <a class="dropdown-item" id="delete-reply-${reply.pk}" href="delete-reply/${reply.pk}")">
                               Delete reply
-                            </a>
-                          </li>
-                        </ul>` 
+                            </a>` 
                       : '';
     $(`#reply-post-${reply.fields.post}`).append(
       `<div class="card-body mt-2 px-3 pt-3 border-top" id="reply-${reply.pk}">
         <div class="mx-4">
           ${deleteOption}
-          <h6>${reply.fields.user.username}</h6>
+          <h6>${reply.fields.user}</h6>
           <small class="date-info text-muted">${reply.fields.date}</small>
           <p class="pt-2">${reply.fields.body}</p>
           </div>
