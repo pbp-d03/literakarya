@@ -15,4 +15,3 @@ class Book(models.Model):
     genre_5 = models.TextField(null=True,blank=True)
     jumlah_halaman = models.IntegerField(null=True,blank=True)
     waktu_publikasi = models.TextField(null=True,blank=True)
-
