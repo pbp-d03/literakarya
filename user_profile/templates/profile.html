@@ -1,0 +1,21 @@
+<!-- user_profile.html -->
+<h1>User Profile</h1>
+<p>First Name: {{ user_profile.first_name }}</p>
+<p>Last Name: {{ user_profile.last_name }}</p>
+<p>Bio: {{ user_profile.bio }}</p>
+<p>Address: {{ user_profile.address }}</p>
+<p>Favorite genre 1: {{ user_profile.favorite_genre1 }}</p>
+<p>Favorite genre 2: {{ user_profile.favorite_genre2 }}</p>
+<p>Favorite genre 3: {{ user_profile.favorite_genre3 }}</p>
+
+<form id="profile-form" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Edit</button>
+</form>
+<div id="messages"></div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+
+</script>

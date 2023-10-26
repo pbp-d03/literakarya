@@ -23,6 +23,7 @@
     .nav-link{
       color: brown;
     }
+
     .nav-link:hover,
     .navbar-brand:hover{
       color: lightcoral;
@@ -53,10 +54,13 @@
           <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav ms-auto">
               <li class="nav-item">
-                <a class="nav-link" href="#">Homepage</a>
+                <a class="nav-link" href="/">Homepage</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">My Books</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/books/">List Books</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="{% url 'main:logout' %}">Logout</a>

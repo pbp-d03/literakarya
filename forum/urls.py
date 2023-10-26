@@ -1,7 +1,7 @@
 from django.urls import path, include
 from forum.views import show_forum, add_post, add_reply, delete_post, delete_reply, get_posts_json, get_replies_json
 
-app_name = "book_page"
+app_name = "forum"
 
 urlpatterns = [
     path('', show_forum,name="show_forum"),
