@@ -27,6 +27,6 @@ def show_list_books(request):
 def show_book(request,id):
     buku = Book.objects.get(pk=id)
     context = {
-        'buku':buku
+        'book':buku
     }
     return render(request,"info_buku.html",context)
