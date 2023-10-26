@@ -1,14 +1,11 @@
-from django.urls import path, include
-from forum.views import show_forum, add_post, add_reply, delete_post, delete_reply, get_posts_json, get_replies_json
+from django.urls import path
+from notes.views import (show_notes, add_note, delete_note, get_notes_json)
 
 app_name = "notes_page"
 
 urlpatterns = [
-    path('', show_notes,name="show_notes"),
-    path('add-post/', add_post, name='add_post'),
-    path('add-reply/<int:id>', add_reply, name='add_reply'),
-    path('delete-post/<int:id>', delete_post, name='delete_post'),
-    path('delete-reply/<int:id>', delete_reply, name='delete_reply'),
-    path('json/all-posts/', get_posts_json, name="get_posts"),
-    path('json/all-replies/<int:id>', get_replies_json, name="get_replies"),
+    path('', show_notes, name='show_notes'),
+    path('add-note/', add_note, name='add_note'),
+    path('delete-note/<int:id>', delete_note, name='delete_note'),
+    path('json/all-notes/', get_notes_json, name="get_notes"),
 ]

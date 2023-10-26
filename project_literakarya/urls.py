@@ -22,5 +22,6 @@ urlpatterns = [
     path('books/',include("book_page.urls")), # dapatin Buku
     path('forum/',include("forum.urls")),
     path('ereading/',include("ereading.urls")),
-    path('user_profile/',include("user_profile.urls"))
+    path('user_profile/',include("user_profile.urls")),
+    path('notes/',include("notes.urls"))
 ]
