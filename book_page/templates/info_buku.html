@@ -1,0 +1,124 @@
+{% extends 'base.html' %}
+
+
+{% block meta %}
+    <style>
+        .container{
+            font-family: Copernicus,"Libre Baskerville",Georgia,serif;
+        }
+        .sticky {
+            position: -webkit-sticky;
+            position: sticky;
+            top: 0;
+        }
+        .judul-buku{
+            font-weight: 600;
+            font-size: 2.2rem;
+            line-height: 3rem;
+        }
+        .author{
+            font-weight: 400;
+            font-size: 1.6rem;
+            line-height: 2.2rem;
+        }
+        #rating{
+            font-weight: 600;
+            font-size: 1.4rem;
+            line-height: 2rem;
+        }
+        #jumlah-rating{
+            font:400 0.8rem/1.35714 "Proxima Nova", Montserrat, Arial, sans-serif;
+        }
+        .description{
+            padding-top: 20px;
+            text-align: justify;
+        }
+        .genres{
+            padding-top: 10px;
+        }
+        #daftar-genre{
+            font-family: "Proxima Nova",Montserrat,Arial,sans-serif;
+            font-weight: 400;
+            font-size: 1rem;
+            line-height: 1.8rem;
+            color: grey;
+            margin-right: 5px;
+        }
+        #gen1,#gen2,#gen3,#gen4{
+            font: 600 1rem/1.4375 "Proxima Nova",Montserrat,Arial,sans-serif;
+            display: inline-block;
+            margin-right: 5px;
+            text-decoration: underline;
+        }
+        .judul-comment{
+            font-weight: 400;
+            font-size: 1.8rem;
+            line-height: 3rem;
+        }
+        textarea{
+            width: 100%;
+            -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+            -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+            box-sizing: border-box;  
+        }
+
+
+    </style>
+{% endblock meta %}
+
+
+{% block content %}
+<div class = "container py-4">
+    <div class="container py-2">
+        <div class="row row-cols-1 row-cols-md-2 g-4 py-3">
+            <div class="col-md-3">
+                <div class="sticky">
+                    <div class="card text-center">
+                        <img src={{book.gambar_buku}} class="card-img-top" alt="gambar_buku">
+                        <div class="card-body">
+                            <a href="#" class="btn btn-dark">Bookmark Read Later</a>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="col-md-8" style="margin-left: 50px;">
+                <div class="info-buku">
+                    <div class="judul-buku">
+                        {{book.nama_buku}}
+                    </div>
+                    <div class="author">
+                        {{book.author}}
+                    </div>
+                    <div class="penilaian">
+                        <div id='rating'>{{book.rating}} <span id="jumlah-rating">by {{book.jumlah_rating}} reviewer</span></div>
+                    </div>
+                    <div class="description">
+                        {{book.description}}
+                    </div>
+                    <div class="genres">
+                        <span id="daftar-genre">Genres</span>
+                        <span id="gen1">{{book.genre_1}}</span>
+                        <span id="gen2">{{book.genre_2}}</span>
+                        <span id="gen3">{{book.genre_3}}</span>
+                        <span id="gen4">{{book.genre_4}}</span>
+                    </div>
+                </div>
+                <div class="comment-section" style="margin-top: 30px;">
+                    <div class="judul-comment">
+                        Comment
+                    </div>
+                    <div class="isi-komen">
+                        <form method='POST' action="">
+                            <textarea name="komen" id="text-komen"></textarea>
+                        </form>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
+    
+    

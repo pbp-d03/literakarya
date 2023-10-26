@@ -1,5 +1,6 @@
-from django.http import JsonResponse
+from django.http import HttpResponseRedirect, JsonResponse
 from django.shortcuts import redirect, render
+from django.urls import reverse
 from book_page.models import Book
 from .models import Post, Reply
 from django.views.decorators.csrf import csrf_exempt
@@ -23,7 +24,7 @@ def get_posts_json(request):
         data.append({
             "pk" : post.pk,
             "fields" : {
-                "user" : post.user,
+                "user" : post.user.username,
                 "subject" : post.subject,
                 "topic" : post.topic,
                 "message" : post.message,
@@ -32,16 +33,16 @@ def get_posts_json(request):
         })
     return JsonResponse(data,safe=False)
 
-def get_replies_json(request):
+def get_replies_json(request, id):
     data = []
-    replies = Reply.objects.all()
+    replies = Reply.objects.filter(post=id)
     
     for reply in replies:
         data.append({
             "pk" : reply.pk,
             "fields" : {
-                "user" : reply.user,
-                "topic" : reply.topic,
+                "user" : reply.user.username,
+                "post" : reply.post.id,
                 "body" : reply.body,
                 "date" : reply.date.strftime("%B %d, %Y at %H:%M %Z")
             }
@@ -55,7 +56,7 @@ def add_post(request):
         # ambil dari form
         op = request.user # op = original poster
         judul = request.POST.get('subject')
-        kategori = request.POST.get('topik')
+        kategori = request.POST.get('topic')
         pesan = request.POST.get('message')
         tanggal = timezone.now()
         
@@ -72,7 +73,7 @@ def add_post(request):
         return JsonResponse({
             "pk" : new_post.pk,
             "fields" : {
-                "user" : new_post.user,
+                "user" : new_post.user.username,
                 "subject" : new_post.subject,
                 "topic" : new_post.topic,
                 "message" : new_post.message,
@@ -92,17 +93,16 @@ def add_reply(request, id):
         # buat dan save reply
         new_reply = Reply(
             user = penanggap,
-            topic = unggahan,
+            post = unggahan,
             body = komentar,
             date = tanggal
         )
         new_reply.save()
-        
         return JsonResponse({
             "pk" : new_reply.pk,
             "fields" : {
-                "user" : new_reply.user,
-                "topic" : new_reply.topic,
+                "user" : new_reply.user.username,
+                "post" : new_reply.post.id,
                 "body" : new_reply.body,
                 "date" : new_reply.date.strftime("%B %d, %Y at %H:%M %Z")
             }
@@ -111,9 +111,9 @@ def add_reply(request, id):
 def delete_post(request, id):
     post = Post.objects.get(pk=id)
     post.delete()
-    return redirect('forum:show_forum')
+    return HttpResponseRedirect(reverse('forum:show_forum'))
 
 def delete_reply(request, id):
     reply = Reply.objects.get(pk=id)
     reply.delete()
-    return redirect('forum:show_forum')
+    return HttpResponseRedirect(reverse('forum:show_forum'))

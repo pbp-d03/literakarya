@@ -6,12 +6,12 @@ from django.contrib.auth.models import User
 class Post(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     subject = models.CharField(max_length=255)
-    topic = models.CharField(max_length=255)
+    topic = models.CharField(max_length=255, null=False)
     message = models.TextField()
     date = models.DateTimeField()
     
 class Reply(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    topic = models.ForeignKey(Post, on_delete = models.CASCADE, related_name="reply")
+    post = models.ForeignKey(Post, on_delete = models.CASCADE, related_name="reply")
     body = models.TextField()
     date = models.DateTimeField()
