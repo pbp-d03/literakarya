@@ -22,7 +22,6 @@ class Book(models.Model):
 class Komen(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     buku = models.ForeignKey(Book, on_delete=models.CASCADE)
-    parent = models.ForeignKey('self', null=True, blank=True, on_delete=models.CASCADE, related_name="balasan") #buat nambah reply di comment
     isi_komen = models.TextField()
     date_added = models.DateField(auto_now_add=True)
     likes = models.IntegerField()
