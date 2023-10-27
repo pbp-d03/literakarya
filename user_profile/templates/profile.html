@@ -1,21 +1,93 @@
-<!-- user_profile.html -->
-<h1>User Profile</h1>
-<p>First Name: {{ user_profile.first_name }}</p>
-<p>Last Name: {{ user_profile.last_name }}</p>
-<p>Bio: {{ user_profile.bio }}</p>
-<p>Address: {{ user_profile.address }}</p>
-<p>Favorite genre 1: {{ user_profile.favorite_genre1 }}</p>
-<p>Favorite genre 2: {{ user_profile.favorite_genre2 }}</p>
-<p>Favorite genre 3: {{ user_profile.favorite_genre3 }}</p>
+{% extends 'base.html' %}
 
-<form id="profile-form" method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Edit</button>
-</form>
-<div id="messages"></div>
+{% block content %}
+  <h2>User Profile</h2>
+  <div id="profile-data">
+    <p>Full Name: {{ user.profile.first_name|default:"" }} {{ user.profile.last_name|default:"" }}</p>
+    <p>Bio: {{ user.profile.bio|default:"" }}</p>
+    <p>Address: {{ user.profile.address|default:"" }}</p>
+    <p>Favorite Genre: {{ user.profile.favorite_genre1|default:"1" }}, {{ user.profile.favorite_genre2|default:"2" }}, {{ user.profile.favorite_genre3|default:"3" }}</p>
+  </div>
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script>
+  {% if not user.profile %}
+    <button id="create-profile" class="btn btn-primary">Create Profile</button>
+  {% else %}
+    <button id="edit-profile" class="btn btn-primary">Edit Profile</button>
+  {% endif %}
 
-</script>
+  <div id="create-profile-modal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Profile Form</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+          <form method="post" id="profile-form">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="Save">
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="create-profile-message" style="display:none;"></div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $('#create-profile').click(function() {
+        $('#create-profile-modal').modal('show');
+      });
+
+      $('#edit-profile').click(function() {
+        // Kosongkan nilai input dalam form saat tombol "Edit Profile" ditekan
+        $('#profile-form input[type="text"]').val("");
+        // Kosongkan nilai input "Bio" saat tombol "Edit Profile" ditekan
+        $('#profile-form #id_bio').val("");
+        $('#create-profile-modal').modal('show');
+      });
+
+      $('#profile-form').submit(function(e) {
+        e.preventDefault();
+        var formIsValid = true;
+
+        
+        // Validasi semua bidang untuk memastikan semuanya telah diisi
+        $('#profile-form input[type="text"]').each(function() {
+          if (!$(this).val()) {
+            formIsValid = false;
+            // Display form validation errors
+          }
+        });
+
+        if (formIsValid) {
+            $.ajax({
+            url: "{% url 'profile' %}",
+            method: "POST",
+            data: $('#profile-form').serialize(),
+            dataType: "json",
+            success: function(response) {
+                if (response.success) {
+                $('#create-profile-modal').modal('hide');
+                location.reload();
+                } else {
+                // Display form validation errors
+                }
+            }
+            });
+        } else {
+            alert('Please fill in all required fields.');
+        }
+    });
+
+      // Close the modal when the close button is clicked
+      $('.modal .close').click(function() {
+        $(this).closest('.modal').modal('hide');
+      });
+    });
+  </script>
+{% endblock %}

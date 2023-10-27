@@ -1,16 +1,37 @@
-from django.shortcuts import render
-from django.http import HttpResponseRedirect, JsonResponse
-from django.http import HttpResponse, HttpResponseNotFound
-from django.shortcuts import redirect
-from django.urls import reverse
-from book_page.models import Book
+# from django.shortcuts import render
+# from django.http import HttpResponseRedirect, JsonResponse
+# from django.http import HttpResponse, HttpResponseNotFound
+# from django.shortcuts import redirect
+# from django.urls import reverse
+# from book_page.models import Book
+# from .models import Note
+# from django.views.decorators.csrf import csrf_exempt
+# from django.utils import timezone
+# from django.core import serializers
+# import json
+
+
 from .models import Note
+from book_page.models import Book
+from django.shortcuts import redirect
+from notes.forms import NoteForm
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib import messages  
+# from django.contrib.auth import authenticate, login, logout
+from django.http import HttpResponseRedirect
+from django.urls import reverse
+from django.shortcuts import render
+from django.http import HttpResponse
+from django.core import serializers
+from django.contrib.auth.decorators import login_required
 from django.views.decorators.csrf import csrf_exempt
 from django.utils import timezone
 
+
+# @login_required(login_url='/login')
 def show_notes(request):
     books = Book.objects.all()
-    notes = Note.objects.all()
+    notes = Note.objects.filter(user=request.user)
     context = {
         'books': books,
         'user': request.user.username,
@@ -18,46 +39,65 @@ def show_notes(request):
     }
     return render(request, "notes.html", context)
 
+def create_note(request):
+    form = NoteForm(request.POST or None)
+
+    if form.is_valid() and request.method == "POST":
+        note = form.save(commit=False)
+        note.user = request.user
+        form.save()
+        return HttpResponseRedirect(reverse('notes:show_main'))
+
+    context = {'form': form}
+    return render(request, "create_note.html", context)
+
+
 def get_notes_json(request):
-    data = []
-    notes = Note.objects.all()
-    
-    for note in notes:
-        data.append({
-            "pk": note.pk,
-            "fields": {
-                "user": note.user.username,
-                "message": note.message,
-                "date": note.date.strftime("%B %d, %Y at %H:%M %Z")
-            }
-        })
-    return JsonResponse(data, safe=False)
+    note_item = Note.objects.filter(user=request.user)
+    return HttpResponse(serializers.serialize('json', note_item))
+
+def edit_note(request, id):
+    note = Note.objects.get(pk = id)
+    form = NoteForm(request.POST or None, instance=note)
+
+    if form.is_valid() and request.method == "POST":
+        form.save()
+        return HttpResponseRedirect(reverse('notes\:show_notes'))
+
+    context = {'form': form}
+    return render(request, "edit_note.html", context)
 
 # AJAX related
+
 @csrf_exempt         
 def add_note(request):
     if request.method == 'POST':
-        note_title = request.POST.get('judul_catatan')
-        book_title = request.POST.get('judul_buku')
-        note_content = request.POST.get('catatan')
-        tag = request.POST.get('penanda')
-        date = timezone.now()
+        judul_catatan = request.POST.get('judul_catatan')
+        judul_buku = request.POST.get('judul_buku')
+        konten_catatan = request.POST.get('konten_catatan')
+        penanda = request.POST.get('penanda')
+        date_added = timezone.now()
         
         new_note = Note(
             user=request.user,
-            judul_catatan=note_title,
-            judul_buku=book_title,
-            catatan=note_content,
-            penanda=tag,
-            date=date,
+            judul_catatan=judul_catatan,
+            judul_buku=judul_buku,
+            konten_catatan=konten_catatan,
+            penanda=penanda,
+            date_added=date_added,
         )
         
         new_note.save()
         return HttpResponse(b"CREATED", status=201)
-
+    
     return HttpResponseNotFound()
 
+
+@csrf_exempt
 def delete_note(request, id):
-    note = Note.objects.get(pk=id)
-    note.delete()
-    return HttpResponseRedirect(reverse('show_notes'))
+    if request.method == "DELETE":
+        note = Note.objects.get(pk=id)
+        note.delete()
+        return HttpResponse(b"DELETED", status=201)
+    
+    return HttpResponseNotFound()

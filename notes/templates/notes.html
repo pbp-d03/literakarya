@@ -1,98 +1,120 @@
 {% extends 'base.html' %}
-const notes = {{ notes|safe }}; // Ensure notes is serialized to JSON in the view
-
-notes.forEach(note => {
-    const card = `
-    <div class="col-md-3">
-        <div class="card mb-4">
-            <div class="card-body">
-                <h5 class="card-title">${note.judul_catatan}</h5>
-                <h6>${note.judul_buku}</h6>
-                <p class="card-text">${note.catatan}</p>
-                <p><small class="text-muted">${note.penanda}</small></p>
-                <a href="#" class="btn btn-primary">Lihat Catatan</a>
-            </div>
-        </div>
-    </div>
-    `;
-    document.getElementById('notesContainer').innerHTML += card;
-});
-
 
 {% block content %}
+<h1>Notes Page</h1>
 
-<div class="container mt-5">
-    <h2 class="text-center">Catatan Saya</h2>
-    <button id="addNoteBtn" class="btn btn-primary mb-3">Add Notes +</button>
-    
-    <div id="notesContainer" class="row">
-        <!-- Notes will be appended here using JavaScript -->
-    </div>
+<table id="notes_table">
+    <tr>
+        <th>Tanggal</th>
+        <th>Judul Catatan</th>
+        <th>Judul Buku</th>
+        <th>Konten Catatan</th>
+        <th>Penanda</th>
+    </tr>
 
-    <!-- Hidden Bootstrap modal for adding a note -->
-    <div class="modal fade" id="addNoteModal" tabindex="-1">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Tambahkan Catatan</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                </div>
-                <div class="modal-body">
-                    <form id="addNoteForm">
-                        <div class="mb-3">
-                            <label for="judul_catatan" class="form-label">Judul Catatan</label>
-                            <input type="text" class="form-control" id="judul_catatan" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="judul_buku" class="form-label">Judul Buku</label>
-                            <input type="text" class="form-control" id="judul_buku" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="catatan" class="form-label">Catatan</label>
-                            <textarea class="form-control" id="catatan" rows="3" required></textarea>
-                        </div>
-                        <div class="mb-3">
-                            <label for="penanda" class="form-label">Penanda</label>
-                            <input type="text" class="form-control" id="penanda" required>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Submit</button>
-                    </form>
-                </div>
+    {% for note in notes %}
+        <tr>
+            <td>{{note.date_added}}</td>
+            <td>{{note.judul_catatan}}</td>
+            <td>{{note.judul_buku}}</td>
+            <td>{{note.konten_catatan}}</td>
+            <td>{{note.penanda}}</td>
+            <td>
+                <a href="{% url 'notes_page:edit_note' note.pk %}">
+                    <button>
+                        Edit
+                    </button>
+                </a>
+                <a href="{% url 'notes_page:delete_note' note.pk %}">
+                    <button>
+                        Delete
+                    </button>
+                </a>
+            </td>
+        </tr>
+    {% endfor %}
+</table>
+
+<br />
+
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Add Note by AJAX</button>
+
+
+<script>
+    async function getNotes() {
+        return fetch("{% url 'notes_page:get_notes_json' %}").then((res) => res.json())
+    }
+
+    async function refreshNotes() {
+        document.getElementById("note_table").innerHTML = ""
+        const notes = await getNotes()
+        let htmlString = `<tr>
+            <th>Tanggal</th>
+            <th>Judul Catatan</th>
+            <th>Judul Buku</th>
+            <th>Konten Catatan</th>
+            <th>Penanda</th>
+        </tr>`
+        notes.forEach((item) => {
+            htmlString += `\n<tr>
+            <td>${item.fields.date_added}</td>
+            <td>${item.fields.judul_catatan}</td>
+            <td>${item.fields.judul_buku}</td>
+            <td>${item.fields.konten_catatan}</td>
+            <td>${item.fields.penanda}</td>
+        </tr>` 
+        })
+        
+        document.getElementById("notes_table").innerHTML = htmlString
+        document.getElementById("button_add").onclick = addNote
+    }
+
+    function addNote() {
+        fetch("{% url 'notes_page:add_note' %}", {
+            method: "POST",
+            body: new FormData(document.querySelector('#form'))
+        }).then(refreshNotes)
+
+        document.getElementById("form").reset()
+        return false
+    }
+
+    refreshNotes()
+   
+</script>
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <form id="form" onsubmit="return false;">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <label for="judul_catatan" class="col-form-label">Judul Catatan::</label>
+                        <input type="text" class="form-control" id="judul_catatan" name="judul_catatan"></input>
+                    </div>
+                    <div class="mb-3">
+                        <label for="judul_buku" class="col-form-label">Judul Buku:</label>
+                        <input type="text" class="form-control" id="judul_buku" name="judul_buku"></input>
+                    </div>
+                    <div class="mb-3">
+                        <label for="konten_catatan" class="col-form-label">Konten Catatan:</label>
+                        <input type="text" class="form-control" id="konten_catatan" name="konten_catatan"></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="penanda" class="col-form-label">Penanda:</label>
+                        <input type="text" class="form-control" id="penanda" name="penanda"></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" id="button_add" data-bs-dismiss="modal">Add Note</button>
             </div>
         </div>
     </div>
 </div>
 
-<script>
-    document.getElementById("addNoteBtn").addEventListener("click", function() {
-        let modal = new bootstrap.Modal(document.getElementById('addNoteModal'));
-        modal.show();
-    });
 
-    document.getElementById("addNoteForm").addEventListener("submit", function(event) {
-        event.preventDefault();
-        const formData = {
-            'judul_catatan': document.getElementById("judul_catatan").value,
-            'judul_buku': document.getElementById("judul_buku").value,
-            'catatan': document.getElementById("catatan").value,
-            'penanda': document.getElementById("penanda").value
-        };
-
-        fetch('/notes/add-note/', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'X-CSRFToken': '{{ csrf_token }}' // Django CSRF Token
-            },
-            body: JSON.stringify(formData)
-        }).then(response => {
-            if(response.ok) {
-                location.reload(); // Reload the page to see the new note
-            } else {
-                alert("Error adding note.");
-            }
-            
-        });
-    });
-</script>
-{% endblock %}
+{% endblock content %}

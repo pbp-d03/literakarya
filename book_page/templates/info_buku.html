@@ -2,6 +2,7 @@
 
 
 {% block meta %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
         .container{
             font-family: Copernicus,"Libre Baskerville",Georgia,serif;
@@ -61,8 +62,9 @@
             -moz-box-sizing: border-box;    /* Firefox, other Gecko */
             box-sizing: border-box;  
         }
-
-
+        .tampil-komen{
+            margin-top: 30px;
+        }
     </style>
 {% endblock meta %}
 
@@ -109,16 +111,96 @@
                         Comment
                     </div>
                     <div class="isi-komen">
-                        <form method='POST' action="">
-                            <textarea name="komen" id="text-komen"></textarea>
+                        <input  type="hidden" id="id-buku" value="{{book.pk}}">
+                        <form id="form-komen" onsubmit="return false;">
+                            {% csrf_token %}
+                            <textarea name="isi_komen" id="text-komen"></textarea>
+                            <input class = "btn btn-dark" id="add-komen" type="submit" onclick="addKomen('{{book.pk}}')" value="Add Komen">
                         </form>
                     </div>
+                    <div class="tampil-komen">
+                        <div class="judul-comment">
+                            Recent Comments
+                        </div>
+                        <div class="row py-2">
+                            <div class="col" id="nampil-komen-here"></div>
+                        </div>
+                    </div>
                 </div>
-                
             </div>
         </div>
     </div>
 </div>
+<script>
+    async function getKomen(idBuku) {
+        return fetch(`../get-komen/${idBuku}`).then((res) => res.json())
+    }
+
+    async function refreshKomen(idBuku) {
+        document.getElementById("nampil-komen-here").innerHTML = ""
+    
+        const komen = await getKomen(idBuku)
+        console.log(komen)
+
+        let htmlString = `
+            <div class="card border-0">
+            <div class="card-body p-1">
+            <div class="row">`
+
+        komen.forEach((isi) => {
+            htmlString += `
+            <div class="d-flex flex-start mt-4">
+                <img class="rounded-circle shadow-1-strong me-3"
+                src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(10).webp" alt="avatar" width="65"
+                height="65" />
+                <div class="flex-grow-1 flex-shrink-1">
+                    <div>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <p class="mb-1">
+                                ${isi.fields.user} <span class="small">- ${isi.fields.date_added}</span>
+                            </p>
+                        </div>
+                        <p class="small mb-0">
+                            ${isi.fields.isi_komen}
+                        </p>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="d-flex align-items-center">
+                            <a href="#!" class="link-muted me-2"><i class="fa fa-thumbs-up me-1"></i>${isi.fields.likes}</a>
+                            <a href="#!" class="link-muted"><i class="fa fa-thumbs-down me-1"></i>${isi.fields.dislikes}</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            ` 
+        })
+
+        htmlString+=`
+            </div>
+            </div>
+            </div>`
+        
+        document.getElementById("nampil-komen-here").innerHTML = htmlString
+    }
+
+    const id_Buku = document.getElementById("id-buku").value
+    refreshKomen(id_Buku)
+
+    function addKomen(idBuku) {
+        fetch(`../add-komen/${idBuku}`, {
+            method: "POST",
+            body: new FormData(document.querySelector('#form-komen'))
+        }).then(function() {
+        // Refresh comments after adding a comment
+        refreshKomen(idBuku);
+    })
+    .catch(function(error) {
+        console.error("Error:", error);
+    });
+        document.getElementById("form-komen").reset()
+        return false
+    }
+</script>
 {% endblock content %}
     
     

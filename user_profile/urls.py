@@ -1,9 +1,7 @@
 from django.urls import path
-from user_profile.views import *
-
-app_name = 'user_profile'
+from user_profile.views import profile, create_profile
 
 urlpatterns = [
-    path('', show_profile, name='show_profile'),
-    path('edit-profile',edit_profile, name='edit_profile'),
+    path('', profile, name='profile'),
+    path('create_profile/', create_profile, name='create_profile'),
 ]
