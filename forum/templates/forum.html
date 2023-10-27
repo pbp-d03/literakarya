@@ -58,15 +58,27 @@
       <label for="exampleFormControlInput1">Subjek</label>
       <input name="subject" type="text" class="form-control" id="subject" placeholder="Mau ngobrolin apa?">
     </div>
+
+    <div class="form-group">
+      <label for="exampleFormControlSelect1">Genre</label>
+
+      <select name="genre" class="form-control" id="genre-list" required=True>
+        <option>Literasi umum</option>
+
+        {% for g in all_genres %}
+          <option>{{g}}</option>
+        {% endfor %}
+
+      </select>
+    </div>
+
     <div class="form-group">
       <label for="exampleFormControlSelect1">Topik</label>
 
       <select name="topic" class="form-control" id="topic-list" required=True>
-        <option>Literasi umum</option>
+        <option selected="selected">Pilih Judul Buku</option> <!-- Default option -->
 
-        {% for b in books %}
-          <option>{{b.nama_buku}}</option>
-        {% endfor %}
+
 
       </select>
     </div>
@@ -232,15 +244,15 @@
       topic : $("#topic-list").val(),
       message  : $("#message").val(),
       }).done(function(data){
-      // action on form
-      $("#add-post")[0].reset();
-      
-      // putting the post
-      putPost(data);
-      
-      // redirect to post
-      location.href = "#";
-      location.href = `#post-${data.pk}`;
+        // action on form
+        $("#add-post")[0].reset();
+        
+        // putting the post
+        putPost(data);
+        
+        // redirect to post
+        location.href = "#";
+        location.href = `#post-${data.pk}`;
     })
   }
   
@@ -272,7 +284,35 @@
   
   $(document).ready(function(){
     showPost();
-  
+    const genreSelect = $('#genre-list');
+    const topicSelect = $('#topic-list');
+
+    genreSelect.on('change', function() {
+        const selectedGenre = genreSelect.val();
+        updateTopicOptions(selectedGenre);
+    });
+
+    function updateTopicOptions(selectedGenre) {
+        $.ajax({
+            type: 'POST',
+            url: '/forum/',
+            data: {
+                selected_genre: selectedGenre,
+                csrfmiddlewaretoken: '{{ csrf_token }}',
+            },
+            
+            success: function(response) {
+                $('#topic-list').empty();
+                console.log(response)
+                response.topic_options.forEach(element => {
+                  $('#topic-list').append(`<option value="${element.value}">${element.value}</option>`);
+                });
+            },
+            error: function(xhr, status, error) {
+                console.error(error);
+            }
+        });
+    }
     $(`#add-post`).submit(function(event){
       event.preventDefault();
       addPost();
