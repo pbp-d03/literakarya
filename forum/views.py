@@ -7,13 +7,33 @@ from django.views.decorators.csrf import csrf_exempt
 from django.utils import timezone
 
 def show_forum(request):
+    print("masuk forum")
     books = Book.objects.all()
     post = Post.objects.all()
+    all_genres = Book.objects.values_list('genre_1', flat=True).distinct()
+
+    if request.headers.get('x-requested-with') == 'XMLHttpRequest' and request.method == "POST":
+        selected_genre = request.POST.get('selected_genre', None)
+        print(selected_genre)
+        if selected_genre == "Literasi umum":
+            topic_options = [{'value': "Literasi umum", 'text': "Literasi umum"}]
+            return JsonResponse({'topic_options': topic_options})
+        if selected_genre:
+            filtered_books = books.filter(genre_1=selected_genre)
+            print(filtered_books)
+        else:
+            filtered_books = books
+
+        topic_options = [{'value': book.nama_buku, 'text': book.nama_buku} for book in filtered_books]
+        return JsonResponse({'topic_options': topic_options})
+
     context = {
-        'books' : books,
-        'user' : request.user.username,
-        'post' : post,
+        'books': books,
+        'user': request.user.username,
+        'post': post,
+        'all_genres': all_genres,
     }
+
     return render(request, "forum.html", context)
 
 def get_posts_json(request):
@@ -28,7 +48,7 @@ def get_posts_json(request):
                 "subject" : post.subject,
                 "topic" : post.topic,
                 "message" : post.message,
-                "date" : post.date.strftime("%B %d, %Y at %H:%M %Z")
+                "date" : post.date.strftime("%H:%M %Z - %B %d, %Y")
             }
         })
     return JsonResponse(data,safe=False)
@@ -44,7 +64,7 @@ def get_replies_json(request, id):
                 "user" : reply.user.username,
                 "post" : reply.post.id,
                 "body" : reply.body,
-                "date" : reply.date.strftime("%B %d, %Y at %H:%M %Z")
+                "date" : reply.date.strftime("%H:%M %Z - %B %d, %Y")
             }
         })
     return JsonResponse(data,safe=False)
@@ -77,7 +97,7 @@ def add_post(request):
                 "subject" : new_post.subject,
                 "topic" : new_post.topic,
                 "message" : new_post.message,
-                "date" : new_post.date.strftime("%B %d, %Y at %H:%M %Z")
+                "date" : new_post.date.strftime("%H:%M %Z - %B %d, %Y")
             }
         })
    
@@ -104,7 +124,7 @@ def add_reply(request, id):
                 "user" : new_reply.user.username,
                 "post" : new_reply.post.id,
                 "body" : new_reply.body,
-                "date" : new_reply.date.strftime("%B %d, %Y at %H:%M %Z")
+                "date" : new_reply.date.strftime("%H:%M %Z - %B %d, %Y")
             }
         })
 

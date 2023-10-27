@@ -2,42 +2,46 @@
 {% load static %}
 {% block content %}
 
-<style>
-    h1 {
-        padding-left: 50px;
-        padding-right: 50px;
-        padding-top: 50px;
+<head>
+  <title>Forum</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+  <style>
+      h1 {
+          padding-left: 50px;
+          padding-right: 50px;
+          padding-top: 50px;
 
-    }
-    #reminder {
-        padding-left: 50px;
-    }
-    form {
-        margin: 0 auto;
-        max-width: 960px;
-        padding-left: 50px;
-        padding-right: 50px;
-    }
-    #post {
-        text-align: right;
-        padding-top: 25px;
-    }
-    .createFormButton {
-      text-align: center;
-    }
-    #not-login {
-      text-align: center;
-    }
-    #topic-list {
-      appearance: none;
-      -webkit-appearance: none;
-      -moz-appearance: none;
-      background-image: url('../static/img/caret-down-fill.svg');
-      background-size: 15px;
-      background-repeat: no-repeat;
-      background-position: right center;
-    }
-</style>
+      }
+      #reminder {
+          padding-left: 50px;
+      }
+      form {
+          margin: 0 auto;
+          max-width: 960px;
+          padding-left: 50px;
+          padding-right: 50px;
+      }
+      #post {
+          text-align: right;
+          padding-top: 25px;
+      }
+      .createFormButton {
+        text-align: center;
+      }
+      #not-login {
+        text-align: center;
+      }
+      #topic-list {
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        background-image: url('../static/img/caret-down-fill.svg');
+        background-size: 15px;
+        background-repeat: no-repeat;
+        background-position: right center;
+      }
+  </style>
+</head>
 
 <div class="jumbotron">
     <h1 class="display-4">Dibawa Santai Aja...</h1>
@@ -58,15 +62,27 @@
       <label for="exampleFormControlInput1">Subjek</label>
       <input name="subject" type="text" class="form-control" id="subject" placeholder="Mau ngobrolin apa?">
     </div>
+
+    <div class="form-group">
+      <label for="exampleFormControlSelect1">Genre</label>
+
+      <select name="genre" class="form-control" id="genre-list" required=True>
+        <option>Literasi umum</option>
+
+        {% for g in all_genres %}
+          <option>{{g}}</option>
+        {% endfor %}
+
+      </select>
+    </div>
+
     <div class="form-group">
       <label for="exampleFormControlSelect1">Topik</label>
 
       <select name="topic" class="form-control" id="topic-list" required=True>
-        <option>Literasi umum</option>
+        <option selected="selected">Pilih Judul Buku</option> <!-- Default option -->
 
-        {% for b in books %}
-          <option>{{b.nama_buku}}</option>
-        {% endfor %}
+
 
       </select>
     </div>
@@ -118,15 +134,15 @@
     // put post
     let user_username = JSON.parse(document.getElementById('user_username').textContent);
     let deleteOption = (user_username === post.fields.user)
-                      ?`  <a id="delete-post-${post.pk}" href="delete-post/${post.pk}">
-                            Delete Post
+                      ?`  <a id="delete-post-${post.pk}" href="delete-post/${post.pk}" style="text-decoration: none; text-align: right;">
+                            <i class="bi bi-trash-fill"></i> Hapus Post
                           </a>
 ` 
                       : '';
     let replyOption = (!user_username) 
                       ? '' 
-                      : `<a data-bs-toggle="collapse" href="#reply-${post.pk}" role="button" aria-expanded="false" aria-controls="collapseExample">
-                          Reply
+                      : `<a data-bs-toggle="collapse" href="#reply-${post.pk}" role="button" aria-expanded="false" aria-controls="collapseExample" style="text-decoration: none;">
+                        <i class="bi bi-reply-all-fill"></i> Reply Post
                         </a>`;
   
     $("#posts").prepend(
@@ -138,23 +154,23 @@
               <h6>${post.fields.user} <small class="text-muted"><i>  —  ${post.fields.topic}</i></small></h6>
             </div>
             <h3 class="card-title pt-2">
-              ${post.fields.subject}<br>
-              <small class="date-info text-muted">${post.fields.date}</small>
+              ${post.fields.subject}
             </h3>
             <p class="card-text pt-2">${post.fields.message}</p>
+            <small class="date-info text-muted">${post.fields.date}</small>
           </div>
         
           <div class="icon-group mb-2">
             ${replyOption}
   
             <a data-bs-toggle="collapse" href="#reply-post-${post.pk}" role="button" aria-expanded="false" class="collapsed mx-5">
-              Show reply
+              <i class="bi bi-chat-left-text-fill"></i> Show reply
             </a>
           </div>
   
           <div class="collapse mt-2 mx-4" id="reply-${post.pk}">
-            {% csrf_token %}
             <form method="POST" id="add-reply-${post.pk}">
+              {% csrf_token %}
               <textarea type="text" name="reply-body-${post.pk}" id="reply-body-${post.pk}" class="form-control" required></textarea>
               <button class="btn btn-dark" type="submit" style="margin-top: 10px"> add reply </button>
             </form>
@@ -190,7 +206,7 @@
     let deleteOption = (user_username === reply.fields.user)
                       ?`
                             <a class="dropdown-item" id="delete-reply-${reply.pk}" href="delete-reply/${reply.pk}")">
-                              Delete reply
+                              <i class="bi bi-trash-fill"></i> Hapus Reply
                             </a>` 
                       : '';
     $(`#reply-post-${reply.fields.post}`).append(
@@ -232,15 +248,15 @@
       topic : $("#topic-list").val(),
       message  : $("#message").val(),
       }).done(function(data){
-      // action on form
-      $("#add-post")[0].reset();
-      
-      // putting the post
-      putPost(data);
-      
-      // redirect to post
-      location.href = "#";
-      location.href = `#post-${data.pk}`;
+        // action on form
+        $("#add-post")[0].reset();
+        
+        // putting the post
+        putPost(data);
+        
+        // redirect to post
+        location.href = "#";
+        location.href = `#post-${data.pk}`;
     })
   }
   
@@ -272,7 +288,35 @@
   
   $(document).ready(function(){
     showPost();
-  
+    const genreSelect = $('#genre-list');
+    const topicSelect = $('#topic-list');
+
+    genreSelect.on('change', function() {
+        const selectedGenre = genreSelect.val();
+        updateTopicOptions(selectedGenre);
+    });
+
+    function updateTopicOptions(selectedGenre) {
+        $.ajax({
+            type: 'POST',
+            url: '/forum/',
+            data: {
+                selected_genre: selectedGenre,
+                csrfmiddlewaretoken: '{{ csrf_token }}',
+            },
+            
+            success: function(response) {
+                $('#topic-list').empty();
+                console.log(response)
+                response.topic_options.forEach(element => {
+                  $('#topic-list').append(`<option value="${element.value}">${element.value}</option>`);
+                });
+            },
+            error: function(xhr, status, error) {
+                console.error(error);
+            }
+        });
+    }
     $(`#add-post`).submit(function(event){
       event.preventDefault();
       addPost();
