@@ -25,7 +25,6 @@ def show_forum(request):
             filtered_books = books
 
         topic_options = [{'value': book.nama_buku, 'text': book.nama_buku} for book in filtered_books]
-
         return JsonResponse({'topic_options': topic_options})
 
     context = {

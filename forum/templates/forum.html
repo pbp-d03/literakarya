@@ -300,6 +300,7 @@
                 selected_genre: selectedGenre,
                 csrfmiddlewaretoken: '{{ csrf_token }}',
             },
+            
             success: function(response) {
                 $('#topic-list').empty();
                 console.log(response)
