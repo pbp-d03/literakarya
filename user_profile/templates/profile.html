@@ -1,108 +1,93 @@
 {% extends 'base.html' %}
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
 {% block content %}
-<h1>User Profile</h1>
+  <h2>User Profile</h2>
+  <div id="profile-data">
+    <p>Full Name: {{ user.profile.first_name|default:"" }} {{ user.profile.last_name|default:"" }}</p>
+    <p>Bio: {{ user.profile.bio|default:"" }}</p>
+    <p>Address: {{ user.profile.address|default:"" }}</p>
+    <p>Favorite Genre: {{ user.profile.favorite_genre1|default:"1" }}, {{ user.profile.favorite_genre2|default:"2" }}, {{ user.profile.favorite_genre3|default:"3" }}</p>
+  </div>
 
-<div>
-    <div class="row" id="user_profile"></div>
-    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">Add Profile</button>
-</div>   
-    
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  {% if not user.profile %}
+    <button id="create-profile" class="btn btn-primary">Create Profile</button>
+  {% else %}
+    <button id="edit-profile" class="btn btn-primary">Edit Profile</button>
+  {% endif %}
+
+  <div id="create-profile-modal" class="modal fade" role="dialog">
     <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Add Profile</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="resetForm()"></button>
-            </div>
-            <div class="modal-body">
-                <form id="form" onsubmit="return false;">
-                    {% csrf_token %}
-                    <div class="mb-3">
-                    <label for="first_name" class="col-form-label">First Name:</label>
-                    <input type="text" name="first_name" id="first_name"></input>
-                    </div>
-                    <div class="mb-3">
-                    <label for="last_name" class="col-form-label">Last Name:</label>
-                    <input type="text" name="last_name" id="last_name"></input>
-                    </div>
-                    <div class="mb-3">
-                    <label for="bio" class="col-form-label">Bio:</label>
-                    <textarea type="text" name="bio" id="bio"></textarea>
-                    </div>
-                    <div class="mb-3">
-                    <label for="address" class="col-form-label">Address:</label>
-                    <input type="text" name="address" id="address"></input>
-                    </div>
-                    <div class="mb-3">
-                    <label for="favorite_genre1" class="col-form-label">Favorite Genre 1:</label>
-                    <input type="text" name="favorite_genre1" id="favorite_genre1"></input>
-                    </div>
-                    <div class="mb-3">
-                    <label for="favorite_genre2" class="col-form-label">Favorite Genre 2:</label>
-                    <input type="text" name="favorite_genre2" id="favorite_genre2"></input>
-                    </div>
-                    <div class="mb-3">
-                    <label for="favorite_genre3" class="col-form-label">Favorite Genre 3:</label>
-                    <input type="text" name="favorite_genre3" id="favorite_genre3"></input>
-                    </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="resetForm()">Close</button>
-                <button type="button" class="btn btn-success" id="button_add" data-bs-dismiss="modal">Add Profile</button>
-            </div>   
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Profile Form</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
         </div>
-    </div>         
-</div> 
+        <div class="modal-body">
+          <form method="post" id="profile-form">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="Save">
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
 
+  <div id="create-profile-message" style="display:none;"></div>
 
-<script>
-    async function getProfile() {
-        return fetch("{% url 'user_profile:get_profile_json' %}").then((res) => res.json())
-    }
-    async function refreshProfile() {
-        document.getElementById("user_profile").innerHTML = ""
-        const profile = await getProfile()
-        const items = profile.profile;
-        htmlString = `
-            <div class="col-md-4">
-                <div class="card mb-3 custom-card">
-                    <div class="card-body">
-                        <p>First Name: ${profile.first_name}</p>
-                        <p>Last Name: ${profile.last_name }}</p>
-                        <p>Bio: ${profile.bio }</p>
-                        <p>Address: ${profile.address }}</p>
-                        <p>Favorite genre 1: ${profile.favorite_genre1 }</p>
-                        <p>Favorite genre 2: ${profile.favorite_genre2 }</p>
-                        <p>Favorite genre 3: ${profile.favorite_genre3 }</p>
-                    </div>
-                </div>
-            </div>
-            `
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $('#create-profile').click(function() {
+        $('#create-profile-modal').modal('show');
+      });
 
-            document.getElementById("user_profile").innerHTML = htmlString
-              
-    }
+      $('#edit-profile').click(function() {
+        // Kosongkan nilai input dalam form saat tombol "Edit Profile" ditekan
+        $('#profile-form input[type="text"]').val("");
+        // Kosongkan nilai input "Bio" saat tombol "Edit Profile" ditekan
+        $('#profile-form #id_bio').val("");
+        $('#create-profile-modal').modal('show');
+      });
 
-    refreshProfile()
+      $('#profile-form').submit(function(e) {
+        e.preventDefault();
+        var formIsValid = true;
 
-    function createProfile() {
-        fetch("{% url 'user_profile:create_profile' %}", {
+        
+        // Validasi semua bidang untuk memastikan semuanya telah diisi
+        $('#profile-form input[type="text"]').each(function() {
+          if (!$(this).val()) {
+            formIsValid = false;
+            // Display form validation errors
+          }
+        });
+
+        if (formIsValid) {
+            $.ajax({
+            url: "{% url 'profile' %}",
             method: "POST",
-            body: new FormData(document.querySelector('#form'))
-        }).then(refreshProfile)
+            data: $('#profile-form').serialize(),
+            dataType: "json",
+            success: function(response) {
+                if (response.success) {
+                $('#create-profile-modal').modal('hide');
+                location.reload();
+                } else {
+                // Display form validation errors
+                }
+            }
+            });
+        } else {
+            alert('Please fill in all required fields.');
+        }
+    });
 
-        document.getElementById("form").reset()
-        return false
-    }
-    document.getElementById("button_add").onclick = createProfile
-
-    function resetForm() {
-        document.getElementById("form").reset();
-    }
-
-</script>
-
-{% endblock content %}
+      // Close the modal when the close button is clicked
+      $('.modal .close').click(function() {
+        $(this).closest('.modal').modal('hide');
+      });
+    });
+  </script>
+{% endblock %}
