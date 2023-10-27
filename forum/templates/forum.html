@@ -244,15 +244,15 @@
       topic : $("#topic-list").val(),
       message  : $("#message").val(),
       }).done(function(data){
-      // action on form
-      $("#add-post")[0].reset();
-      
-      // putting the post
-      putPost(data);
-      
-      // redirect to post
-      location.href = "#";
-      location.href = `#post-${data.pk}`;
+        // action on form
+        $("#add-post")[0].reset();
+        
+        // putting the post
+        putPost(data);
+        
+        // redirect to post
+        location.href = "#";
+        location.href = `#post-${data.pk}`;
     })
   }
   
@@ -300,23 +300,13 @@
                 selected_genre: selectedGenre,
                 csrfmiddlewaretoken: '{{ csrf_token }}',
             },
+            
             success: function(response) {
-                // topicSelect.html(response);\
                 $('#topic-list').empty();
                 console.log(response)
-                res=""
-                // $.each(response, function (index, item) {
-                //   console.log(item);
-                //     $('#topic-list').append(`<option value="${item.value}">${item.value}</option>`);
-                // });
                 response.topic_options.forEach(element => {
                   $('#topic-list').append(`<option value="${element.value}">${element.value}</option>`);
                 });
-                // response.arrays.forEach(element => {
-                //   res+=`<option>${element.text}</option>`
-                //   console.log(res)
-                // });
-                // topicSelect.innerHTML=res;
             },
             error: function(xhr, status, error) {
                 console.error(error);
