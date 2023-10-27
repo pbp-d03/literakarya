@@ -17,7 +17,7 @@ from django.shortcuts import redirect
 from notes.forms import NoteForm
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages  
-# from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth import authenticate, login, logout
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 from django.shortcuts import render
@@ -28,7 +28,7 @@ from django.views.decorators.csrf import csrf_exempt
 from django.utils import timezone
 
 
-# @login_required(login_url='/login')
+@login_required(login_url='/login')
 def show_notes(request):
     books = Book.objects.all()
     notes = Note.objects.filter(user=request.user)
@@ -46,14 +46,14 @@ def create_note(request):
         note = form.save(commit=False)
         note.user = request.user
         form.save()
-        return HttpResponseRedirect(reverse('notes:show_main'))
+        return HttpResponseRedirect(reverse('notes:show_notes'))
 
     context = {'form': form}
     return render(request, "create_note.html", context)
 
 
 def get_notes_json(request):
-    note_item = Note.objects.filter(user=request.user)
+    note_item = Note.objects.all()
     return HttpResponse(serializers.serialize('json', note_item))
 
 def edit_note(request, id):
@@ -72,14 +72,15 @@ def edit_note(request, id):
 @csrf_exempt         
 def add_note(request):
     if request.method == 'POST':
-        judul_catatan = request.POST.get('judul_catatan')
-        judul_buku = request.POST.get('judul_buku')
-        konten_catatan = request.POST.get('konten_catatan')
-        penanda = request.POST.get('penanda')
+        judul_catatan = request.POST.get("judul_catatan")
+        judul_buku = request.POST.get("judul_buku")
+        konten_catatan = request.POST.get("konten_catatan")
+        penanda = request.POST.get("penanda")
         date_added = timezone.now()
+        user=request.user
         
         new_note = Note(
-            user=request.user,
+            user=user,
             judul_catatan=judul_catatan,
             judul_buku=judul_buku,
             konten_catatan=konten_catatan,
