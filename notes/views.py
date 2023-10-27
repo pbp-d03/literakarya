@@ -1,16 +1,3 @@
-# from django.shortcuts import render
-# from django.http import HttpResponseRedirect, JsonResponse
-# from django.http import HttpResponse, HttpResponseNotFound
-# from django.shortcuts import redirect
-# from django.urls import reverse
-# from book_page.models import Book
-# from .models import Note
-# from django.views.decorators.csrf import csrf_exempt
-# from django.utils import timezone
-# from django.core import serializers
-# import json
-
-
 from .models import Note
 from book_page.models import Book
 from notes.forms import NoteForm
@@ -57,7 +44,7 @@ def add_note(request):
     
     return HttpResponseNotFound()
 
-def get_notes_json(request):
+def get_note_json(request):
     note_item = Note.objects.all()
     return HttpResponse(serializers.serialize('json', note_item))
 
@@ -67,12 +54,11 @@ def edit_note(request, id):
 
     if form.is_valid() and request.method == "POST":
         form.save()
-        return HttpResponseRedirect(reverse('notes:show_notes'))
+        return HttpResponseRedirect(reverse('notes/:show_notes'))
 
     context = {'form': form}
     return render(request, "edit_note.html", context)
 
-@csrf_exempt
 def delete_note(request, id):
     if request.method == "DELETE":
         note = Note.objects.get(pk=id)
