@@ -58,15 +58,27 @@
       <label for="exampleFormControlInput1">Subjek</label>
       <input name="subject" type="text" class="form-control" id="subject" placeholder="Mau ngobrolin apa?">
     </div>
+
+    <div class="form-group">
+      <label for="exampleFormControlSelect1">Genre</label>
+
+      <select name="genre" class="form-control" id="genre-list" required=True>
+        <option>Literasi umum</option>
+
+        {% for g in all_genres %}
+          <option>{{g}}</option>
+        {% endfor %}
+
+      </select>
+    </div>
+
     <div class="form-group">
       <label for="exampleFormControlSelect1">Topik</label>
 
       <select name="topic" class="form-control" id="topic-list" required=True>
-        <option>Literasi umum</option>
+        <option selected="selected">Pilih Judul Buku</option> <!-- Default option -->
 
-        {% for b in books %}
-          <option>{{b.nama_buku}}</option>
-        {% endfor %}
+
 
       </select>
     </div>
@@ -272,7 +284,45 @@
   
   $(document).ready(function(){
     showPost();
-  
+    const genreSelect = $('#genre-list');
+    const topicSelect = $('#topic-list');
+
+    genreSelect.on('change', function() {
+        const selectedGenre = genreSelect.val();
+        updateTopicOptions(selectedGenre);
+    });
+
+    function updateTopicOptions(selectedGenre) {
+        $.ajax({
+            type: 'POST',
+            url: '/forum/',
+            data: {
+                selected_genre: selectedGenre,
+                csrfmiddlewaretoken: '{{ csrf_token }}',
+            },
+            success: function(response) {
+                // topicSelect.html(response);\
+                $('#topic-list').empty();
+                console.log(response)
+                res=""
+                // $.each(response, function (index, item) {
+                //   console.log(item);
+                //     $('#topic-list').append(`<option value="${item.value}">${item.value}</option>`);
+                // });
+                response.topic_options.forEach(element => {
+                  $('#topic-list').append(`<option value="${element.value}">${element.value}</option>`);
+                });
+                // response.arrays.forEach(element => {
+                //   res+=`<option>${element.text}</option>`
+                //   console.log(res)
+                // });
+                // topicSelect.innerHTML=res;
+            },
+            error: function(xhr, status, error) {
+                console.error(error);
+            }
+        });
+    }
     $(`#add-post`).submit(function(event){
       event.preventDefault();
       addPost();
