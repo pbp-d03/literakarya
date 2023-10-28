@@ -1,11 +1,13 @@
 {% extends 'base.html' %}
 
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
 {% block content %}
 <h1>Notes Page</h1>
 
 <div class="container">
     <div class="row" id="note_cards">
-        <!-- Cards will be populated here -->
     </div>
 </div>
 
@@ -28,7 +30,7 @@
                     </div>
                     <div class="card-body">
                         <h6 class="card-subtitle mb-2 text-muted">${item.fields.date_added}</h6>
-                        <p class="card-text"><strong>Judul Buku: </strong>${item.fields.judul_buku}</p>
+                        <p class="card-text"><strong>Judul Buku: </strong><a href="book/${item.fields.book_pk}">${item.fields.judul_buku}</a>
                         <p class="card-text"><strong>Konten Catatan: </strong>${item.fields.konten_catatan}</p>
                         <p class="card-text"><strong>Penanda: </strong>${item.fields.penanda}</p>
                     </div>
@@ -44,6 +46,14 @@
         document.getElementById("button_add").onclick = addNote;
     }
 
+    $(document).ready(function() {
+        $('#judul_buku').select2({
+            placeholder: "Pilih atau cari judul buku",
+            allowClear: true
+        });
+    });
+
+
     function addNote() {
         fetch("{% url 'notes_page:add_note' %}", {
             method: "POST",
@@ -57,7 +67,7 @@
     function deleteNote(itemId) {
     fetch(`delete-note/${itemId}/`, {
           method: "DELETE",
-      }).then(refreshNote)
+      }).then(refreshNotes)
 
       return false
   }
@@ -80,13 +90,18 @@
                 <form id="form" onsubmit="return false;">
                     {% csrf_token %}
                     <div class="mb-3">
-                        <label for="judul_catatan" class="col-form-label">Judul Catatan::</label>
+                        <label for="judul_catatan" class="col-form-label">Judul Catatan:</label>
                         <input type="text" class="form-control" id="judul_catatan" name="judul_catatan"></input>
                     </div>
                     <div class="mb-3">
                         <label for="judul_buku" class="col-form-label">Judul Buku:</label>
-                        <input type="text" class="form-control" id="judul_buku" name="judul_buku"></input>
-                    </div>
+                        <select class="form-control" id="judul_buku" name="judul_buku">
+                            {% for book in books %}
+                            <option value="{{ book.nama_buku }}">{{ book.nama_buku }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>                    
+                    
                     <div class="mb-3">
                         <label for="konten_catatan" class="col-form-label">Konten Catatan:</label>
                         <textarea class="form-control" id="konten_catatan" name="konten_catatan"></textarea>

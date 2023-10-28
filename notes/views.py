@@ -13,7 +13,7 @@ from django.utils import timezone
 
 @login_required(login_url='/login')
 def show_notes(request):
-    books = Book.objects.all()
+    books = Book.objects.all().order_by('nama_buku')
     notes = Note.objects.filter(user=request.user)
     context = {
         'books': books,
@@ -24,6 +24,7 @@ def show_notes(request):
 
 @csrf_exempt         
 def add_note(request):
+    books = Book.objects.all().order_by('nama_buku')
     if request.method == 'POST':
         judul_catatan = request.POST.get("judul_catatan")
         judul_buku = request.POST.get("judul_buku")
@@ -41,6 +42,9 @@ def add_note(request):
         
         new_note.save()
         return HttpResponse(b"CREATED", status=201)
+    
+    context = {'books': books}
+    return render(request, "notes.html", context)
     
     return HttpResponseNotFound()
 

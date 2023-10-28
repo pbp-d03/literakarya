@@ -1,8 +1,10 @@
-from django.forms import ModelForm
+from django import forms
 from notes.models import Note
+from book_page.models import Book
 
-class NoteForm(ModelForm):
+class NoteForm(forms.ModelForm):
+    judul_buku = forms.ModelChoiceField(queryset=Book.objects.all(), empty_label="(Choose a book)")
+
     class Meta:
         model = Note
-        fields = ["judul_catatan", "judul_buku", "konten_catatan", "penanda"]
-        
+        fields = ['judul_catatan', 'judul_buku', 'konten_catatan', 'penanda']
