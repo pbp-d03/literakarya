@@ -16,7 +16,7 @@ def show_forum(request):
         selected_genre = request.POST.get('selected_genre', None)
         print(selected_genre)
         if selected_genre == "Literasi umum":
-            topic_options = [{'value': "Pilih Judul Buku", 'text': "Pilih Judul Buku"}]
+            topic_options = [{'value': "Literasi umum", 'text': "Literasi umum"}]
             return JsonResponse({'topic_options': topic_options})
         if selected_genre:
             filtered_books = books.filter(genre_1=selected_genre)
@@ -48,7 +48,7 @@ def get_posts_json(request):
                 "subject" : post.subject,
                 "topic" : post.topic,
                 "message" : post.message,
-                "date" : post.date.strftime("%B %d, %Y at %H:%M %Z")
+                "date" : post.date.strftime("%H:%M %Z - %B %d, %Y")
             }
         })
     return JsonResponse(data,safe=False)
@@ -64,7 +64,7 @@ def get_replies_json(request, id):
                 "user" : reply.user.username,
                 "post" : reply.post.id,
                 "body" : reply.body,
-                "date" : reply.date.strftime("%B %d, %Y at %H:%M %Z")
+                "date" : reply.date.strftime("%H:%M %Z - %B %d, %Y")
             }
         })
     return JsonResponse(data,safe=False)
@@ -97,7 +97,7 @@ def add_post(request):
                 "subject" : new_post.subject,
                 "topic" : new_post.topic,
                 "message" : new_post.message,
-                "date" : new_post.date.strftime("%B %d, %Y at %H:%M %Z")
+                "date" : new_post.date.strftime("%H:%M %Z - %B %d, %Y")
             }
         })
    
@@ -124,7 +124,7 @@ def add_reply(request, id):
                 "user" : new_reply.user.username,
                 "post" : new_reply.post.id,
                 "body" : new_reply.body,
-                "date" : new_reply.date.strftime("%B %d, %Y at %H:%M %Z")
+                "date" : new_reply.date.strftime("%H:%M %Z - %B %d, %Y")
             }
         })
 
