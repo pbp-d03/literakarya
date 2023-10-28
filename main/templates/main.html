@@ -1,12 +1,23 @@
 {% extends 'base.html' %}
-    
+
 {% block content %}
-<div class="container py-5">
-    <h1>
-        LiteraKarya
-    </h1>
-    <h3>Halo {{name}}</h3>
-</div>
+{% if user.profile.first_name and user.profile.last_name %}
+    <!-- Tampilkan konten ketika profil telah diisi -->
+    <div class="container py-5">
+        <h1>
+            LiteraKarya
+        </h1>
+        <h3>Halo {{user.profile.first_name}}</h3>
+    </div>
+{% else %}
+    <!-- Tampilkan pesan jika profil belum diisi -->
+    <div class="container py-5">
+        <script type="text/javascript">
+            window.location.href = "/user_profile/";
+        </script>
+    </div>
+{% endif %}
+
 
 {% endblock content %}
     
