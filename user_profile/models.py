@@ -23,3 +23,15 @@ def create_profile(sender, instance, created, **kwargs):
         user_profile.save()
 
 post_save.connect(create_profile, sender=User)
+
+def is_complete(self):
+    # Periksa apakah semua bidang yang diperlukan telah diisi
+    return all([
+        self.first_name,
+        self.last_name,
+        self.bio,
+        self.address,
+        self.favorite_genre1,
+        self.favorite_genre2,
+        self.favorite_genre3
+    ])

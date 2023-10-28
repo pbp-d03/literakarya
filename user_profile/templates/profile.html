@@ -1,93 +1,129 @@
 {% extends 'base.html' %}
+{% block meta %}
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+{% endblock meta %}
 
 {% block content %}
-  <h2>User Profile</h2>
-  <div id="profile-data">
-    <p>Full Name: {{ user.profile.first_name|default:"" }} {{ user.profile.last_name|default:"" }}</p>
-    <p>Bio: {{ user.profile.bio|default:"" }}</p>
-    <p>Address: {{ user.profile.address|default:"" }}</p>
-    <p>Favorite Genre: {{ user.profile.favorite_genre1|default:"1" }}, {{ user.profile.favorite_genre2|default:"2" }}, {{ user.profile.favorite_genre3|default:"3" }}</p>
-  </div>
-
-  {% if not user.profile %}
-    <button id="create-profile" class="btn btn-primary">Create Profile</button>
-  {% else %}
-    <button id="edit-profile" class="btn btn-primary">Edit Profile</button>
-  {% endif %}
-
-  <div id="create-profile-modal" class="modal fade" role="dialog">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h4 class="modal-title">Profile Form</h4>
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-9 px-6 text-center"> <!-- Tambahkan class "px-4" untuk padding horizontal -->
+            <i class='bx bxs-user-circle' style="font-size: 150px;"></i>
         </div>
-        <div class="modal-body">
-          <form method="post" id="profile-form">
-            {% csrf_token %}
-            {{ form.as_p }}
-            <input type="submit" value="Save">
-          </form>
+        <div class="col-lg-9 px-6"> <!-- Tambahkan class "px-4" untuk padding horizontal -->
+            <h2 class="text-center">{{ user }} Profile</h2>
+            <div id="profile-data">
+                <table class="table table-bordered">
+                    <tr>
+                        <th>Full Name:</th>
+                        <td>{{ user.profile.first_name|default:"Your name" }} {{ user.profile.last_name|default:"" }}</td>
+                    </tr>
+                    <tr>
+                        <th>Bio:</th>
+                        <td>{{ user.profile.bio|default:"Your bio" }}</td>
+                    </tr>
+                    <tr>
+                        <th>Address:</th>
+                        <td>{{ user.profile.address|default:"Your address" }}</td>
+                    </tr>
+                    <tr>
+                        <th>Favorite Genre:</th>
+                        <td>{{ user.profile.favorite_genre1|default:"Genre 1" }}, {{ user.profile.favorite_genre2|default:"Genre 2" }}, {{ user.profile.favorite_genre3|default:"Genre 3" }}</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="text-center">
+            {% if not user.profile %}
+                <button id="create-profile" class="btn btn-primary">Create Profile</button>
+            {% else %}
+                <button id="edit-profile" class="btn btn-primary">Edit Profile</button>
+            {% endif %}
+            </div>
         </div>
-      </div>
     </div>
-  </div>
+</div>
 
-  <div id="create-profile-message" style="display:none;"></div>
+<div class="modal fade" id="create-profile-modal" tabindex="-1" role="dialog" aria-labelledby="profileFormModal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Profile Form</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form method="post" id="profile-form">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button type="submit" class="btn btn-primary">Save</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  <script>
-    $(document).ready(function() {
-      $('#create-profile').click(function() {
+<div id="create-profile-message" style="display:none;"></div>
+
+    <script>
+    // Fungsi untuk menampilkan modal "create-profile"
+    function showCreateProfileModal() {
         $('#create-profile-modal').modal('show');
-      });
+    }
 
-      $('#edit-profile').click(function() {
-        // Kosongkan nilai input dalam form saat tombol "Edit Profile" ditekan
+    // Fungsi untuk menampilkan modal "create-profile" dan mengosongkan input
+    function showEditProfileModal() {
         $('#profile-form input[type="text"]').val("");
-        // Kosongkan nilai input "Bio" saat tombol "Edit Profile" ditekan
         $('#profile-form #id_bio').val("");
-        $('#create-profile-modal').modal('show');
-      });
+        showCreateProfileModal();
+    }
 
-      $('#profile-form').submit(function(e) {
-        e.preventDefault();
+    // Fungsi untuk menangani submit form
+    function submitProfileForm() {
         var formIsValid = true;
-
         
         // Validasi semua bidang untuk memastikan semuanya telah diisi
         $('#profile-form input[type="text"]').each(function() {
-          if (!$(this).val()) {
+        if (!$(this).val()) {
             formIsValid = false;
             // Display form validation errors
-          }
+        }
         });
 
         if (formIsValid) {
-            $.ajax({
-            url: "{% url 'profile' %}",
+        fetch("{% url 'profile' %}", {
             method: "POST",
-            data: $('#profile-form').serialize(),
-            dataType: "json",
-            success: function(response) {
-                if (response.success) {
-                $('#create-profile-modal').modal('hide');
-                location.reload();
-                } else {
-                // Display form validation errors
-                }
+            body: new FormData(document.getElementById('profile-form'))
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+            $('#create-profile-modal').modal('hide');
+            location.reload();
+            } else {
+            // Display form validation errors
             }
-            });
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
         } else {
-            alert('Please fill in all required fields.');
+        alert('Please fill in all required fields.');
         }
-    });
+    }
 
-      // Close the modal when the close button is clicked
-      $('.modal .close').click(function() {
+    // Fungsi untuk menutup modal saat tombol close diklik
+    function closeModal() {
         $(this).closest('.modal').modal('hide');
-      });
+    }
+
+    $(document).ready(function() {
+        $('#create-profile').click(showCreateProfileModal);
+        $('#edit-profile').click(showEditProfileModal);
+        $('#profile-form').submit(function(e) {
+        e.preventDefault();
+        submitProfileForm();
+        });
+        $('.modal .close').click(closeModal);
     });
-  </script>
+    </script>
 {% endblock %}
