@@ -46,6 +46,7 @@
     <nav class="navbar fixed-top navbar-expand-md">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">LiteraKarya</a>
+        
         {% block auth_navbar %}
           <button class="navbar-toggler ml-auto custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -67,6 +68,9 @@
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="/forum/">Forum</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/ereading/">Ereading</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="{% url 'main:logout' %}">Logout</a>
