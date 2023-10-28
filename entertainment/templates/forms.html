@@ -15,7 +15,7 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <form method="post" action="{% url 'entertainment' %}">
+                <form method="post" action="{% url 'entertainment:entertainment' %}">
                     {% csrf_token %}
                     <div class="modal-body">
                         <div class="form-group">
@@ -52,7 +52,7 @@
         $('form').on('submit', function(event) {
             event.preventDefault();
             $.ajax({
-                url: "{% url 'entertainment' %}",
+                url: "{% url 'entertainment:entertainment' %}",
                 type: "POST",
                 data: {
                     book_title: $('#book_title').val(),

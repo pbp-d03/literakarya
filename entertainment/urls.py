@@ -1,18 +1,20 @@
 from django.urls import path
-from entertainment.views import entertainment, edit_recommendation, delete_recommendation, like_recommendation
+from entertainment.views import (
+    entertainment, add_recommendation_ajax, edit_recommendation, 
+    delete_recommendation_ajax, like_recommendation
+)
 
 app_name = 'entertainment'
 
 urlpatterns = [
-    # URL untuk halaman utama entertainment
+    # URL for the main entertainment page
     path('', entertainment, name='entertainment'),
 
-    # URL untuk mengedit rekomendasi buku
-    path('edit/<int:recommendation_id>/', edit_recommendation, name='edit_recommendation'),
+    # URLs for CRUD operations on recommendations
+    path('add_recommendation_ajax/', add_recommendation_ajax, name='add_recommendation_ajax'),
+    path('edit_recommendation/<int:recommendation_id>/', edit_recommendation, name='edit_recommendation'),
+    path('delete_recommendation_ajax/<int:recommendation_id>/', delete_recommendation_ajax, name='delete_recommendation_ajax'),
 
-    # URL untuk menghapus rekomendasi buku
-    path('delete/<int:recommendation_id>/', delete_recommendation, name='delete_recommendation'),
-
-    # URL untuk "like" pada rekomendasi buku
-    path('like/<int:recommendation_id>/', like_recommendation, name='like_recommendation'),
+    # URL for "like" functionality on recommendations
+    path('like_recommendation/', like_recommendation, name='like_recommendation'),
 ]

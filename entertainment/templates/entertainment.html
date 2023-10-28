@@ -6,20 +6,68 @@
 <body>
   <div class="container">
     <!-- Bagian Collapse Bootstrap -->
-    <div class="accordion" id="collapseAccordion">
-        <div class="card">
-            <div class="card-header" id="collapseHeader">
-                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseContent" aria-expanded="true" aria-controls="collapseContent">
-                    Adakah bacaan menarik?
-                </button>
-            </div>
-            <div id="collapseContent" class="collapse" aria-labelledby="collapseHeader" data-parent="#collapseAccordion">
-                <div class="card-body">
-                    Bagaimana kabarmu, {{ user }}?
-                    Ayo rekomendasikan buku!
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#recommendationModal">
-                        Bacaan Menarik
+    <p>
+        <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+            Adakah bacaan menarik?
+        </a>
+    </p>
+    <div class="collapse" id="collapseExample">
+        <div class="card card-body">
+            Bagaimana kabarmu, {{ user }}?
+            <br>
+            Ayo rekomendasikan buku!
+            <br>
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#recommendationModal">
+                Bacaan Menarik
+            </button>    
+        </div>
+    </div>
+
+    <div class="modal fade" id="recommendationModal" tabindex="-1" aria-labelledby="recommendationModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title fs-5" id="recommendationModalLabel">Bacaan Menarik</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
                     </button>
+                </div>
+                <div class="modal-body">
+                    <form method="post" action="{% url 'entertainment:entertainment' %}">
+                        {% csrf_token %}
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <!-- Genre Dropdown -->
+                                <label for="book_genre" class="col-form-label">Genre Buku:</label>
+                                <select class="form-control" id="book_genre" name="book_genre">
+                                    <option>Pilih Genre Buku</option> 
+                                    {% for genre in all_genres %}
+                                        <option value="{{ genre }}">{{ genre }}</option>
+                                    {% endfor %}
+                                </select>
+
+                                <label for="book_title" class="col-form-label">Judul Buku:</label>
+                                <select class="form-control" id="book_title" name="book_title">
+                                    <!-- Tampilkan pilihan judul buku yang sesuai -->
+                                        <option>Pilih Judul Buku</option> 
+                                    {% for book in book_choices %}
+                                        <option value="{{ book.pk }}">{{ book.nama_buku }}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="rating" class="col-form-label">Rating (1-5):</label>
+                                <input type="number" class="form-control" id="rating" name="rating" min="1" max="5" step="0.1">
+                            </div>
+                            <div class="form-group">
+                                <label for="recommend" class="col-form-label">Rekomendasi:</label>
+                                <textarea class="form-control" id="recommend" name="recommend" rows="4"></textarea>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                    <button type="button" class="btn btn-primary" id="button_add" data-bs-dismiss="modal">Kirim Rekomendasi</button>
                 </div>
             </div>
         </div>
@@ -59,26 +107,28 @@
 
   <!-- Tambahkan file JavaScript yang diperlukan jika ada -->
   <script>
-    $(document).ready(function() {
-      $('.like-button').click(function() {
-        let recommendationId = $(this).data('id');
-        $.ajax({
-          url: "{% url 'entertainment:like_recommendation' %}",
-          method: 'POST',
-          data: {
-            'recommendation_id': recommendationId,
-            'csrfmiddlewaretoken': '{{ csrf_token }}'
+    document.addEventListener("DOMContentLoaded", function() {
+      const genreDropdown = document.getElementById("book_genre");
+      const bookDropdown = document.getElementById("book_title");
+  
+      genreDropdown.addEventListener("change", function() {
+        const selectedGenre = this.value;
+  
+        fetch("/entertainment/", { // Ganti dengan URL yang sesuai
+          method: "POST",
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+            "X-Requested-With": "XMLHttpRequest"
           },
-          success: function(response) {
-            if (response.liked) {
-              alert('Berhasil memberi like!');
-            } else {
-              alert('Anda sudah memberikan like sebelumnya.');
-            }
-          },
-          error: function(response) {
-            alert('Terjadi kesalahan, silakan coba lagi.');
-          }
+          body: `selected_genre=${selectedGenre}`
+        })
+        .then(response => response.json())
+        .then(data => {
+          let bookOptions = data.topic_options;
+          bookDropdown.innerHTML = '<option>Pilih Judul Buku</option>';
+          bookOptions.forEach(option => {
+            bookDropdown.innerHTML += `<option value="${option.value}">${option.text}</option>`;
+          });
         });
       });
     });
