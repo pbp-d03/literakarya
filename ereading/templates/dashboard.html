@@ -1,0 +1,183 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block meta %}
+    <title>Tambah Bacaan Digital</title>
+{% endblock meta %}
+
+{% block content %}
+<style>
+    body {
+        text-align: center;
+        margin: 10px;
+    } .custom-select {
+        height: auto;
+        padding: 0.375rem 0.75rem;
+        font-size: 0.875rem;
+    } #selectedBook {
+        display: none;
+    }
+</style>
+
+<body>
+    <h4 class="mt-2 mb-3">Hai {{ name }}, yuk tambahkan koleksi buku kamu ke katalog pribadimu di LiteraKarya!</h4>
+    <br>
+
+    <button type="button" class="btn btn-info mt-2" data-bs-toggle="modal" data-bs-target="#addModalComponent">Add Buku</button>
+
+    <div class="container mt-4">
+        <div class="row row-cols-1 row-cols-md-3" id="ereadings-display">
+            <!-- Data setiap ereading akan ditunjukkan di bagian ini. -->
+        </div>
+    </div>
+    
+    <div class="modal fade" id="addModalComponent" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5">Add Buku</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+    
+                <div class="modal-body" style="text-align: left;">
+                    <form id="EreadingForm">
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                    </form>
+                    
+                    <form id="form" onsubmit="return false;">
+                        {% csrf_token %}
+                        <div class="mb-3">
+                            <label for="title" class="col-form-label">Title:</label>
+                            <input type="text" class="form-control" id="title" name="title"></input>
+                        </div>
+                        <div class="mb-3">
+                            <label for="author" class="col-form-label">Author:</label>
+                            <input type="text" class="form-control" id="author" name="author"></input>
+                        </div>
+                        <div class="mb-3">
+                            <label for="description" class="col-form-label">Description:</label>
+                            <textarea class="form-control" id="description" name="description"></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="link" class="col-form-label">Link:</label>
+                            <input type="url" class="form-control" id="link" name="link" placeholder="https://example.com"></input>
+                        </div>                        
+                    </form>
+                </div>
+    
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-warning" id="button_add" data-bs-dismiss="modal">Add Buku</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+    async function getEreadings() {
+        return fetch("{% url 'ereading:get_json' %}").then((res) => res.json());
+    }
+
+    async function refreshEreadings() {
+        let ereadings = await getEreadings();
+        let htmlString = ``;
+
+        ereadings.forEach((ereading) => {
+            let dateObject = new Date(ereading.fields.last_updated);
+            let formattedDate = dateObject.toLocaleDateString(); 
+            let formattedTime = dateObject.toLocaleTimeString();
+
+            if (ereading.fields.state == 0) {
+                htmlString += `
+                    <div class="col mb-4">
+                        <div class="card">
+                            <div class="card-header d-flex justify-content-between align-items-center" style="background-color: thistle}">
+                                <span><strong>${ereading.fields.title}</strong></span>
+                            </div>
+        
+                            <div class="card-body text-center" style="background-color: lavenderblush}">   
+                                <p class="card-text"><strong>Status:</strong> Bukumu sedang dicek oleh admin.</p>
+                            </div>
+
+                            <div class="card-footer text-center">
+                                <small class="text-muted">Last Updated: </strong>${formattedDate} | ${formattedTime}</small>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            
+            } else if (ereading.fields.state == 1) {
+                htmlString += `
+                    <div class="col mb-4">
+                        <div class="card">
+                            <div class="card-header d-flex justify-content-between align-items-center" style="background-color: thistle}">
+                                <span><strong>${ereading.fields.title}</strong></span>
+
+                                <div aria-label="Ereading Actions">       
+                                    <button class="btn btn-danger btn-sm" onclick="deleteEreading(${ereading.pk})">Delete</button>
+                                </div>
+                            </div>
+        
+                            <div class="card-body text-center" style="background-color: lavenderblush}">    
+                                <p class="card-text"><strong>Author: </strong>${ereading.fields.author}</p>
+                                <p class="card-text"><strong>Desc: </strong>${ereading.fields.description}</p>
+                                <p class="card-text"><strong>Link: </strong><a href="${ereading.fields.link}" target="_blank">${ereading.fields.link}</a></p>
+                            </div>
+
+                            <div class="card-footer text-center">
+                                <small class="text-muted">Last Updated: </strong>${formattedDate} | ${formattedTime}</small>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            } else if (ereading.fields.state == 2) {
+                htmlString += `
+                    <div class="col mb-4">
+                        <div class="card">
+                            <div class="card-header d-flex justify-content-between align-items-center" style="background-color: thistle}">
+                                <span><strong>${ereading.fields.title}</strong></span>
+
+                                <div aria-label="Ereading Actions">       
+                                    <button class="btn btn-danger btn-sm" onclick="deleteEreading(${ereading.pk})">Delete</button>
+                                </div>
+                            </div>
+        
+                            <div class="card-body text-center" style="background-color: lavenderblush}">    
+                                <p class="card-text"><strong>Status:</strong> Bukumu ditolak karena tidak memenuhi ketentuan yang berlaku.</p>
+                            </div>
+
+                            <div class="card-footer text-center">
+                                <small class="text-muted">Last Updated: </strong>${formattedDate} | ${formattedTime}</small>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }
+        });
+        document.getElementById("ereadings-display").innerHTML = htmlString;
+    }
+    refreshEreadings();
+
+    function addEreading() {
+        fetch("{% url 'ereading:add_ereading' %}", {
+            method: "POST",
+            body: new FormData(document.querySelector('#form'))
+        }).then(refreshEreadings)
+
+        document.getElementById("form").reset()
+        return false
+    }
+    document.getElementById("button_add").onclick = addEreading
+
+    async function deleteEreading(id) {
+        let form = new FormData();
+        form.append("id", id);
+
+        await fetch("{% url 'ereading:delete_ereading' %}", {
+            method: "POST",
+            body: form,
+        }).then(refreshEreadings);
+    }
+</script>
+{% endblock content %}
