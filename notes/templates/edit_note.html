@@ -1,0 +1,22 @@
+{% extends 'base.html' %} 
+
+{% block meta %}
+    <title>Edit Note</title>
+{% endblock meta %}
+
+{% block content %}
+<div class="container">
+    <h1 class="title">Edit Note</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <table class="form-table">
+            {{ form.as_table }}
+                <td></td>
+                <td>
+                    <input type="submit" value="Edit Item"/>
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+{% endblock %}

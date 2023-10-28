@@ -16,6 +16,9 @@ class Book(models.Model):
     genre_5 = models.TextField(null=True,blank=True)
     jumlah_halaman = models.IntegerField(null=True,blank=True)
     waktu_publikasi = models.TextField(null=True,blank=True)
+    
+    def __str__(self):
+        return self.nama_buku
 
 class Komen(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)

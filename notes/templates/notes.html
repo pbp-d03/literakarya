@@ -3,6 +3,7 @@
 <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 
+
 {% block content %}
 <h1>Notes Page</h1>
 
@@ -14,8 +15,26 @@
 <br />
 
 <script>
+    async function getBooks(order_by) {
+        const response = await fetch(`/your-backend-url-for-books?order_by=${order_by}`);
+        return response.json();
+    }
+
+    async function refreshBooks() {
+        const order_by = document.getElementById("sort_option").value;
+        const books = await getBooks(order_by);
+
+        let optionsString = '';
+        books.forEach((book) => {
+            optionsString += `<option value="${book.nama_buku}">${book.nama_buku}</option>`;
+        });
+        document.getElementById("judul_buku").innerHTML = optionsString;
+        $('#judul_buku').select2();  
+    }
+
+
     async function getNotes() {
-        return fetch("{% url 'notes_page:get_note_json' %}").then((res) => res.json());
+        return fetch("{% url 'notes:get_note_json' %}").then((res) => res.json());
     }
 
     async function refreshNotes() {
@@ -30,15 +49,17 @@
                     </div>
                     <div class="card-body">
                         <h6 class="card-subtitle mb-2 text-muted">${item.fields.date_added}</h6>
-                        <p class="card-text"><strong>Judul Buku: </strong><a href="book/${item.fields.book_pk}">${item.fields.judul_buku}</a>
-                        <p class="card-text"><strong>Konten Catatan: </strong>${item.fields.konten_catatan}</p>
+                        <p class="card-text"><strong>Judul Buku: </strong><a href="{url book_page:show_book}">${item.fields.judul_buku}</a>
+                        <p class="card-text"><strong>Isi Catatan: </strong>${item.fields.isi_catatan}</p>
                         <p class="card-text"><strong>Penanda: </strong>${item.fields.penanda}</p>
                     </div>
                     <div class="card-footer">
-                        <a href="#" class="btn btn-primary">Edit</a>
+                        <a href="edit-note/${item.pk}">
+                            <button class="btn-edit">✏️</button>
+                        </a>
                         <a href="#" class="btn btn-danger" onclick="deleteNote(${item.pk})">Delete</a>
                     </div>
-                    </div>
+                </div>
             </div>`;
         });
         
@@ -51,11 +72,26 @@
             placeholder: "Pilih atau cari judul buku",
             allowClear: true
         });
+        
     });
 
+    function getCookie(name) {
+    let cookieValue = null;
+    if (document.cookie && document.cookie !== '') {
+        const cookies = document.cookie.split(';');
+        for (let i = 0; i < cookies.length; i++) {
+            const cookie = cookies[i].trim();
+            if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                break;
+            }
+        }
+    }
+    return cookieValue;
+}
 
     function addNote() {
-        fetch("{% url 'notes_page:add_note' %}", {
+        fetch("{% url 'notes:add_note' %}", {
             method: "POST",
             body: new FormData(document.querySelector('#form'))
         }).then(refreshNotes);
@@ -65,16 +101,17 @@
     }
 
     function deleteNote(itemId) {
-    fetch(`delete-note/${itemId}/`, {
-          method: "DELETE",
-      }).then(refreshNotes)
+        fetch(`delete-note/${itemId}/`, {
+            method: "DELETE",
+        }).then(refreshNotes)
 
-      return false
-  }
+        return false
+    }
   
     refreshNotes()
   
     document.getElementById("button_add").onclick = addNote
+    document.getElementById("button_edit").onclick = editNote
 
     
 </script>
@@ -97,14 +134,19 @@
                         <label for="judul_buku" class="col-form-label">Judul Buku:</label>
                         <select class="form-control" id="judul_buku" name="judul_buku">
                             {% for book in books %}
-                            <option value="{{ book.nama_buku }}">{{ book.nama_buku }}</option>
+                            <option value="{{ book.nama_buku }}">{{ book.nama_buku }} (Rating: {{ book.rating }})</option>
                             {% endfor %}
                         </select>
-                    </div>                    
+                        <label for="sort_option" class="col-form-label">Sort by:</label>
+                        <select class="form-control" id="sort_option">
+                            <option value="nama_buku">Sort by Name</option>
+                            <option value="rating">Sort by Rating</option>
+                        </select>
+                    </div>              
                     
                     <div class="mb-3">
-                        <label for="konten_catatan" class="col-form-label">Konten Catatan:</label>
-                        <textarea class="form-control" id="konten_catatan" name="konten_catatan"></textarea>
+                        <label for="isi_catatan" class="col-form-label">Isi Catatan:</label>
+                        <textarea class="form-control" id="isi_catatan" name="isi_catatan"></textarea>
                     </div>
                     <div class="mb-3">
                         <label for="penanda" class="col-form-label">Penanda:</label>
@@ -119,6 +161,48 @@
         </div>
     </div>
 </div>
+
+<div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="editModalLabel">Edit Note</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="edit_form" onsubmit="return false;">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <label for="judul_catatan" class="col-form-label">Judul Catatan:</label>
+                        <input type="text" class="form-control" id="judul_catatan" name="judul_catatan"></input>
+                    </div>
+                    <div class="mb-3">
+                        <label for="judul_buku" class="col-form-label">Judul Buku:</label>
+                        <select class="form-control" id="judul_buku" name="judul_buku">
+                            {% for book in books %}
+                            <option value="{{ book.nama_buku }}">{{ book.nama_buku }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>                    
+                    
+                    <div class="mb-3">
+                        <label for="isi_catatan" class="col-form-label">Isi Catatan:</label>
+                        <textarea class="form-control" id="isi_catatan" name="isi_catatan"></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="penanda" class="col-form-label">Penanda:</label>
+                        <textarea class="form-control" id="penanda" name="penanda"></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" id="button_edit" data-bs-dismiss="modal">Edit Note</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 
 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Add Note</button>
 

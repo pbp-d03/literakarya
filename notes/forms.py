@@ -7,4 +7,4 @@ class NoteForm(forms.ModelForm):
 
     class Meta:
         model = Note
-        fields = ['judul_catatan', 'judul_buku', 'konten_catatan', 'penanda']
+        fields = ['judul_catatan', 'judul_buku', 'isi_catatan', 'penanda']
