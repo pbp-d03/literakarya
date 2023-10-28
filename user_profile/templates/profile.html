@@ -2,6 +2,52 @@
 {% block meta %}
 <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 {% endblock meta %}
+{% block auth_navbar %}
+{% if user.profile.first_name and user.profile.last_name %}
+    <button class="navbar-toggler ml-auto custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+    
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+        <a class="nav-link" href="/">Homepage</a>
+        </li>
+        <li class="nav-item">
+        <a class="nav-link" href="#">My Books</a>
+        </li>
+        <li class="nav-item">
+        <a class="nav-link" href="/books/">List Books</a>
+        </li>
+        <li class="nav-item">
+        <a class="nav-link" href="/user_profile/">My Profile</a>
+        </li>
+        <li class="nav-item">
+        <a class="nav-link" href="/forum/">Forum</a>
+        </li>
+        <li class="nav-item">
+        <a class="nav-link" href="/ereading/">Ereading</a>
+        </li>
+        <li class="nav-item">
+        <a class="nav-link" href="{% url 'main:logout' %}">Logout</a>
+        </li>
+    </ul>
+    </div>
+
+{% else %}
+    <button class="navbar-toggler ml-auto custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+    
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+        <a class="nav-link" href="{% url 'main:logout' %}">Logout</a>
+        </li>
+    </ul>
+    </div>
+{% endif %}
+{% endblock auth_navbar %}
 
 {% block content %}
 <div class="container mt-5">
