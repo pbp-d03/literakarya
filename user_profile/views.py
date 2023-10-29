@@ -22,6 +22,8 @@ def profile(request):
 
     return render(request, 'profile.html', {'form': form})
 
+
+
 @login_required
 def create_profile(request):
     if not hasattr(request.user, 'profile'):
