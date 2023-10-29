@@ -11,7 +11,7 @@ urlpatterns = [
 
     path('bookmark', show_bookmark, name = "show_bookmark"),
 
-    path('add-komen/<int:id1>', add_comment_ajax, name = "add_komen_ajax"),
+    path('add-komen/<int:id1>', add_comment_ajax, name = "add_comment_ajax"),
     path('get-komen/<int:id1>', get_komen_json, name='get_komen_json'),
 
     path('add-bookmark/<int:id>', add_bookmark_ajax, name = "add_bookmark_ajax"),
