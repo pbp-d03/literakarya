@@ -94,4 +94,4 @@ def like_view(request, pk):
     else:
         post.likes.add(request.user)
     post.save()
-    return HttpResponseRedirect(reverse('recommendation:show_recommendation'))  # Update the reverse call
+    return HttpResponseRedirect(reverse('recommendation:show_recommendation'))  
