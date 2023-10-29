@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponseRedirect
 from recommendation.forms import FormRekomendasi
 from recommendation.models import Rekomendasi
@@ -8,14 +8,23 @@ from django.core import serializers
 from django.http import JsonResponse 
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
+from django.views.decorators.csrf import csrf_exempt
 
 # Create your views here.
 @login_required(login_url='/login')
 def show_recommendation(request):
     recommended = Rekomendasi.objects.all().select_related('user')
+    pk = request.GET.get('pk', None)
+    if pk is not None:
+        total = get_object_or_404(Rekomendasi, id=pk)
+        total_likes = total.total_likes()
+    else:
+        total_likes = 0  # or any other default value
+
     context = {
         'user': request.user.username,
         'recommended' : recommended,
+        'total_likes' : total_likes,
     }
 
     return render(request, "recommendation.html", context)
@@ -56,7 +65,7 @@ def get_books_by_genre(request, genre):
 
 def edit_rekom(request, id):
     recommended = Rekomendasi.objects.get(pk = id)
-    form = FormRekomendasi(request.POST or None, instance=product)
+    form = FormRekomendasi(request.POST or None, instance=recommended)
 
     if form.is_valid() and request.method == "POST":
         form.save()
@@ -69,3 +78,13 @@ def hapus_rekom(request, id):
     recommended = Rekomendasi.objects.get(pk = id)
     recommended.delete()
     return HttpResponseRedirect(reverse('recommendation:show_recommendation'))
+
+@login_required(login_url='/login/')
+def like_view(request, pk):
+    post = get_object_or_404(Rekomendasi, id=pk)
+    if request.user in post.likes.all():
+        post.likes.remove(request.user)
+    else:
+        post.likes.add(request.user)
+    post.save()
+    return HttpResponseRedirect(reverse('recommendation:show_recommendation'))  # Update the reverse call
