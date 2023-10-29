@@ -1,7 +1,87 @@
 {% extends 'base.html' %}
 
+
 {% block meta %}
     <title>Login</title>
+    <style>
+        body, html {
+            background-color: #1C63FB;
+            background-size: cover; 
+            height: 100%;
+        }
+        .container-center {
+            display: flex;
+            justify-content: flex-end;
+            margin-right: 10%;
+            align-items: center;
+            height: 90%;
+        }
+        .login {
+            background-color: #d6e6f8;
+            color: #1C63FB;
+            padding: 20px;
+            border-radius: 10px;
+            width: 400px;
+            height: 300px;
+        }
+        .login h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .login_btn {
+            background-color: #1C63FB;
+            color: white;
+            margin-top: 10%;
+        }
+        .nav-link {
+            color: white;
+        }
+        table {
+            width: 90%;
+            margin: auto;
+        }
+        tr {
+            text-align: left;
+        }
+        td {
+            vertical-align: middle;
+        }
+
+        td.label {
+            margin: 20px;
+            padding: 20px;
+        }
+        input.form-control {
+            margin: 10px 0;
+        }
+
+        .litera-karya {
+            position: absolute;
+            left: 10%;
+            top: 35%;
+            font-size: 72px;
+            color: white;
+            font-weight: bold;
+        }
+
+        @media only screen and (max-width: 768px) {
+        .container-center {
+            margin-right: 0;
+            justify-content: center;
+        }
+        .login {
+            width: 50%;
+            height: auto;
+        }
+        .litera-karya {
+            font-size: 24px;
+            left: 40%;
+            top: 20%;
+        }
+        }
+
+
+    </style>
 {% endblock meta %}
 
 {% block auth_navbar %}
@@ -18,43 +98,40 @@
     </div>
 {% endblock auth_navbar %}
 
-
 {% block content %}
+<div class="litera-karya">LiteraKarya</div>
+<div class="container-center">
+    <div class="login">
+        <h1>Login</h1>
+        <form method="POST" action="">
+            {% csrf_token %}
+            <table>
+                <tr>
+                    <td>Username: </td>
+                    <td><input type="text" name="username" placeholder="Username" class="form-control"></td>
+                </tr>
+                        
+                <tr>
+                    <td>Password: </td>
+                    <td><input type="password" name="password" placeholder="Password" class="form-control"></td>
+                </tr>
 
-<div class = "login">
+                <tr>
+                    <td></td>
+                    <td><input class="btn login_btn" type="submit" value="Login"></td>
+                </tr>
+            </table>
+        </form>
 
-    <h1>Login</h1>
-
-    <form method="POST" action="">
-        {% csrf_token %}
-        <table>
-            <tr>
-                <td>Username: </td>
-                <td><input type="text" name="username" placeholder="Username" class="form-control"></td>
-            </tr>
-                    
-            <tr>
-                <td>Password: </td>
-                <td><input type="password" name="password" placeholder="Password" class="form-control"></td>
-            </tr>
-
-            <tr>
-                <td></td>
-                <td><input class="btn login_btn" type="submit" value="Login"></td>
-            </tr>
-        </table>
-    </form>
-
-    {% if messages %}
-        <ul>
-            {% for message in messages %}
-                <li>{{ message }}</li>
-            {% endfor %}
-        </ul>
-    {% endif %}     
-        
-    {% comment %} Don't have an account yet? <a href="{% url 'main:register' %}">Register Now</a> {% endcomment %}
-
+        {% if messages %}
+            <ul>
+                {% for message in messages %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}     
+            
+        {% comment %} Don't have an account yet? <a href="{% url 'main:register' %}">Register Now</a> {% endcomment %}
+    </div>
 </div>
-
 {% endblock content %}
