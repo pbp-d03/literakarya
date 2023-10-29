@@ -1,10 +1,10 @@
 from django.utils import timezone
 from django.shortcuts import render
-from django.http import HttpResponseRedirect, HttpResponse, HttpResponseNotFound, JsonResponse
+from django.http import HttpResponse, HttpResponseNotFound
 from django.core import serializers
+from ereading.forms import EreadingForm
 from ereading.models import Ereading
 from book_page.models import Book
-from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.csrf import csrf_exempt
 import json
@@ -14,6 +14,7 @@ def show_dashboard(request):
     books = Book.objects.all()
     genres = list_genres(books)
     dict_books = json.dumps(book_genres_dict(books))
+    form = EreadingForm(request.POST or None)
 
     if request.user.username == "adminliterakarya":
         context = {
@@ -21,6 +22,7 @@ def show_dashboard(request):
             'genres' : genres,
             'dict_books' : dict_books,
             'ereadings' : Ereading.objects.all(),
+            'form' : form
         }
         return render(request, "admin_dashboard.html", context)
     
@@ -29,10 +31,12 @@ def show_dashboard(request):
             'name' : request.user.username,
             'genres' : genres,
             'dict_books' : dict_books,
-            'ereadings' : Ereading.objects.filter(user=request.user)
+            'ereadings' : Ereading.objects.filter(user=request.user),
+            'form' : form
         }
         return render(request, "dashboard.html", context)
 
+# Membuat list berisi daftar genre.
 def list_genres(books):
     unique_genres = set()
 
@@ -45,6 +49,7 @@ def list_genres(books):
 
     return sorted(unique_genres)
 
+# Membuat dictionary dengan key buku dan value semua genrenya.
 def book_genres_dict(books):
     book_genres_dict = {}
 
@@ -63,29 +68,22 @@ def book_genres_dict(books):
 
 def get_json(request):
     if request.user.username == "adminliterakarya":
-        ereadings = Ereading.objects.all()
+        ereadings = Ereading.objects.all() # Jika user adalah admin.
     
     else:
-        ereadings = Ereading.objects.filter(user=request.user)
+        ereadings = Ereading.objects.filter(user=request.user) # Jika user bukan admin.
 
-    return HttpResponse(serializers.serialize('json', ereadings))
-
-def show_json(request):
-    data = Ereading.objects.all()
-    return HttpResponse(serializers.serialize("json", data), content_type="application/json")
+    return HttpResponse(serializers.serialize('json', ereadings), content_type="application/json")
 
 @csrf_exempt
 def add_ereading(request):
-    if request.method == "POST":
-        title = request.POST.get("title")
-        author = request.POST.get("author")
-        description = request.POST.get("description")
-        link = request.POST.get("link")
-        user = request.user
+    formdata = json.loads(request.body)
+    form = EreadingForm(formdata or None)
 
-        ereading = Ereading(title=title, author=author, description=description, link=link, user=user)
+    if form.is_valid() and request.method == "POST":
+        ereading = form.save(commit=False)
+        ereading.user = request.user
         ereading.save()
-
         return HttpResponse(b"CREATED", status=201)
 
     return HttpResponseNotFound()
@@ -96,7 +94,7 @@ def delete_ereading(request):
         id = request.POST.get("id")
         ereading = Ereading.objects.get(pk=id)
         ereading.delete()
-        return HttpResponse(b"DELETED", status=201)
+        return HttpResponse(status=201)
     
     return HttpResponseNotFound()
 
@@ -120,6 +118,6 @@ def reject_ereading(request):
         ereading.state = 2
         ereading.last_updated = timezone.now()
         ereading.save(update_fields=["state", "last_updated"])
-        return HttpResponse(b"DELETED", status=201)
+        return HttpResponse(status=201)
     
     return HttpResponseNotFound()
