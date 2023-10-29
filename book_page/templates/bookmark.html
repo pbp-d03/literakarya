@@ -1,55 +1,12 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block meta %}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
-    <style>
-        #main{
-            font-family: Copernicus,"Libre Baskerville",Georgia,serif;
-        }
-        #judul-page{
-            font-family: 'Poppins';font-size: 30px;
-            font-weight: 800;
-        }
-        .card-img-top {
-            width: 100%;
-            height: 20vw;
-            object-fit: cover;
-        }
-        a{
-            text-decoration: none;
-        }
-        .card-title{
-            font-weight: 600;
-            font-size: 1.2rem;
-        }
-        #author{
-            font-weight: 600;
-            font-size: 0.9rem;
-        }
-        #rating{
-            font-weight: 600;
-            font-size: 0.9rem;
-        }
-        .card-title:hover,
-        .card-text:hover,
-        #itemsatu:hover,#itemdua:hover{
-            text-decoration: underline;
-        }
-        .card-body{
-            color: black;
-        }
-        #add-bukumark{
-            color: brown;
-            text-decoration:underline ;
-        }
-        form {
-            margin: 0 auto;
-            max-width: 960px;
-            padding-left: 50px;
-            padding-right: 50px;
-        }
-    </style>
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>    
+    <link rel="stylesheet" href="{% static 'css/bookmark.css' %}"/>
+    <script src="{% static 'js/bookmark.js' %}"></script>
+    
 {% endblock meta %}
     
 {% block content %}
@@ -105,18 +62,4 @@
         </div>
     </div>
 </div>
-<script>
-    //delete bookmark
-    function deleteBookmark(idBuku) {
-        fetch(`delete-bookmark/${idBuku}`, {
-            method: "DELETE",
-        })
-        return false
-    }
-
-    //RefreshPage
-    function refreshpage(){
-        window.location.href = "{% url 'book_page:show_bookmark' %}";
-    }
-</script>
 {% endblock content %}

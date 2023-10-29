@@ -1,51 +1,10 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block meta %}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
-    <style>
-        #main{
-            font-family: Copernicus,"Libre Baskerville",Georgia,serif;
-        }
-        #judul-page{
-            font-family: 'Poppins';font-size: 30px;
-            font-weight: 800;
-        }
-        .card-img-top {
-            width: 100%;
-            height: 20vw;
-            object-fit: cover;
-        }
-        a{
-            text-decoration: none;
-        }
-        .card-title{
-            font-weight: 600;
-            font-size: 1.2rem;
-        }
-        #author{
-            font-weight: 600;
-            font-size: 0.9rem;
-        }
-        #rating{
-            font-weight: 600;
-            font-size: 0.9rem;
-        }
-        .card-title:hover,
-        .card-text:hover,
-        #itemsatu:hover,#itemdua:hover,.card-bottom:hover{
-            text-decoration: underline;
-        }
-        .card-body,.card-bottom{
-            color: black;
-        }
-        form {
-            margin: 0 auto;
-            max-width: 960px;
-            padding-left: 50px;
-            padding-right: 50px;
-        }
-    </style>
+    <link rel="stylesheet" href="{% static 'css/tampilan_buku.css' %}"/>
 {% endblock meta %}
     
 {% block content %}
@@ -67,8 +26,6 @@
         </div>
     </div>
     
-    
-
     <div class="container py-2">
         <div class="row row-cols-1 row-cols-md-3 g-4 py-3">
             
@@ -102,8 +59,5 @@
         </div>
     </div>
 </div>
-<script>
-
-</script>
 {% endblock content %}
     

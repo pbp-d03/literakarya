@@ -1,0 +1,74 @@
+.container{
+    font-family: Copernicus,"Libre Baskerville",Georgia,serif;
+}
+.sticky {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+}
+.judul-buku{
+    font-weight: 600;
+    font-size: 2.2rem;
+    line-height: 3rem;
+}
+.author{
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: 2.2rem;
+}
+#rating{
+    font-weight: 600;
+    font-size: 1.4rem;
+    line-height: 2rem;
+}
+#jumlah-rating{
+    font:400 0.8rem/1.35714 "Proxima Nova", Montserrat, Arial, sans-serif;
+}
+.description{
+    padding-top: 20px;
+    text-align: justify;
+}
+.genres{
+    padding-top: 10px;
+}
+#daftar-genre{
+    font-family: "Proxima Nova",Montserrat,Arial,sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.8rem;
+    color: grey;
+    margin-right: 5px;
+}
+#gen1,#gen2,#gen3,#gen4{
+    font: 600 1rem/1.4375 "Proxima Nova",Montserrat,Arial,sans-serif;
+    display: inline-block;
+    margin-right: 5px;
+    text-decoration: underline;
+}
+.judul-comment{
+    font-weight: 400;
+    font-size: 1.8rem;
+    line-height: 3rem;
+}
+#jumlah-komen{
+    font:400 1 rem/1.35714 "Proxima Nova", Montserrat, Arial, sans-serif;
+}
+textarea{
+    width: 100%;
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;  
+}
+.tampil-komen{
+    margin-top: 30px;
+}
+.link-muted,.link-muted:hover{
+    color: black;
+    text-decoration: none;
+}
+.link-muted:active{
+    color: red;
+}
+#halaman, #publish{
+    font: 400 1rem/1.4375 "Proxima Nova",Montserrat,Arial,sans-serif;
+}
