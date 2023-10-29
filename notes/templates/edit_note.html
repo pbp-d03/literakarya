@@ -1,22 +1,79 @@
-{% extends 'base.html' %} 
+{% extends 'base.html' %}
 
 {% block meta %}
-    <title>Edit Note</title>
+    <title>Ubah Catatan</title>
 {% endblock meta %}
 
+<style>
+    .col-form-label {
+        text-align: left;
+        padding-right: 10px;
+    }
+    .card {
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+    }
+    
+    .form-group {
+        margin-bottom: 10px;
+    }
+    
+    .btn-primary {
+        background-color: #007bff;
+        border-color: #007bff;
+    }
+    
+    .btn-primary:hover {
+        background-color: #0056b3;
+        border-color: #0056b3;
+    }
+
+</style>
+
 {% block content %}
-<div class="container">
-    <h1 class="title">Edit Note</h1>
-    <form method="POST">
-        {% csrf_token %}
-        <table class="form-table">
-            {{ form.as_table }}
-                <td></td>
-                <td>
-                    <input type="submit" value="Edit Item"/>
-                </td>
-            </tr>
-        </table>
-    </form>
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">
+                    <h1 class="title">Ubah Catatan</h1>
+                </div>
+                <div class="card-body">
+                    <form method="POST">
+                        {% csrf_token %}
+                        <div class="form-group row">
+                            <label for="{{ form.judul_catatan.id_for_label }}" class="col-sm-3 col-form-label text-sm-end">Judul Catatan:</label>
+                            <div class="col-sm-9">
+                                {{ form.judul_catatan }}
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="{{ form.judul_buku.id_for_label }}" class="col-sm-3 col-form-label text-sm-end">Judul Buku:</label>
+                            <div class="col-sm-9">
+                                {{ form.judul_buku }}
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="{{ form.isi_catatan.id_for_label }}" class="col-sm-3 col-form-label text-sm-end">Isi Catatan:</label>
+                            <div class="col-sm-9">
+                                {{ form.isi_catatan }}
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="{{ form.penanda.id_for_label }}" class="col-sm-3 col-form-label text-sm-end">Penanda:</label>
+                            <div class="col-sm-9">
+                                {{ form.penanda }}
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-sm-9 offset-sm-3">
+                                <button type="submit" class="btn btn-primary">Edit Note</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 {% endblock %}

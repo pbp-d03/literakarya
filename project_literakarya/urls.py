@@ -23,5 +23,5 @@ urlpatterns = [
     path('forum/',include("forum.urls")),
     path('ereading/',include("ereading.urls")),
     path('user_profile/',include("user_profile.urls")),
-    path('notes/',include("notes.urls"))
+    path('notes/',include("notes.urls")),
 ]

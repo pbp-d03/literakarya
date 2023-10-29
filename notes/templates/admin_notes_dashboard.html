@@ -1,0 +1,100 @@
+{% extends 'base.html' %}
+
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+
+
+
+{% block content %}
+<h1>Notes Page</h1>
+
+<div class="container">
+    <div class="row" id="note_cards">
+    </div>
+</div>
+
+<br />
+
+
+<script>
+    async function getBooks(order_by) {
+        const response = await fetch(`/your-backend-url-for-books?order_by=${order_by}`);
+        return response.json();
+    }
+
+    async function refreshBooks() {
+        const order_by = document.getElementById("sort_option").value;
+        const books = await getBooks(order_by);
+
+        let optionsString = '';
+        books.forEach((book) => {
+            optionsString += `<option value="${book.nama_buku}">${book.nama_buku}</option>`;
+        });
+        document.getElementById("judul_buku").innerHTML = optionsString;
+        $('#judul_buku').select2();  
+    }
+
+
+    async function getNotes() {
+        return fetch("{% url 'notes:get_note_json' %}").then((res) => res.json());
+    }
+
+    async function getIdBuku(judul_buku) {
+        return fetch(`get-id/${judul_buku}`).then((res) => res.json());
+        
+    }
+
+    async function refreshNotes() {
+        const notes = await getNotes();
+        const id_buku = await getIdBuku("5 cm");
+        let htmlString = '';
+        notes.forEach((item) => {
+            htmlString += `
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="card-title">${item.fields.judul_catatan}</h5>
+                    </div>
+                    <div class="card-body">
+                        <h6 class="card-subtitle mb-2 text-muted">${item.fields.date_added}</h6>
+                        <p class="card-text"><strong>Judul Buku: </strong><a href="/books/book/${id_buku}">${item.fields.judul_buku}</a></p>
+                        <p class="card-text"><strong>Isi Catatan: </strong>${item.fields.isi_catatan}</p>
+                        <p class="card-text"><strong>Penanda: </strong>${item.fields.penanda}</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#" class="btn btn-danger" onclick="deleteNote(${item.pk})">Delete</a>
+                    </div>
+                </div>
+            </div>`;
+        });
+        
+        document.getElementById("note_cards").innerHTML = htmlString;
+    }
+
+    function addNote() {
+        fetch("{% url 'notes:add_note' %}", {
+            method: "POST",
+            body: new FormData(document.querySelector('#form'))
+        }).then(refreshNotes);
+
+        document.getElementById("form").reset();
+        return false;
+    }
+
+    function deleteNote(itemId) {
+        fetch(`delete-note/${itemId}/`, {
+            method: "DELETE",
+        }).then(refreshNotes)
+
+        return false
+    }
+  
+    refreshNotes()
+  
+    document.getElementById("button_add").onclick = addNote
+    // document.getElementById("button_edit").onclick = editNote
+
+</script>
+
+{% endblock content %}

@@ -2,46 +2,92 @@
 
 {% block meta %}
     <title>Register</title>
+    <style>
+         body, html {
+            background-image: url(https://i.ibb.co/PthFzV4/Blue-Gradient-Modern-Graphic-Designer-Online-Portfolio.png);
+            background-size: cover; 
+            height: 100%;
+        }
+        .container-center {
+            justify-content: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 80vh; /* Set tinggi ke tinggi viewport */
+        }
+        .register {
+            background-color: #1e85f2;
+            color: white;
+            padding: 10px;
+            border-radius: 10px;
+            width: 800px;
+            height: auto;
+        }
+        .register h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .register_btn {
+            background-color: #02284e;
+            color: white;
+            margin-top: 10px;
+        }
+        table {
+            width: 100%;
+            margin: auto;
+        }
+        tr {
+            text-align: left;
+        }
+        td {
+            vertical-align: middle;
+        }
+        td.label {
+            margin: 50px;
+            padding: 50px;
+        }
+        input.form-control {
+            margin: 10px 0;
+        }
+    </style>
 {% endblock meta %}
+
 {% block auth_navbar %}
     <button class="navbar-toggler ml-auto custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
     </button>
     
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
-    <ul class="navbar-nav ms-auto">
-        <li class="nav-item">
-        <a class="nav-link" href="{% url 'main:login' %}">Login</a>
-        </li>
-    </ul>
+        <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'main:login' %}">Login</a>
+            </li>
+        </ul>
     </div>
 {% endblock auth_navbar %}
 
-{% block content %}  
-
-<div class = "login">
-    
-    <h1>Register</h1>  
-
-        <form method="POST" >  
-            {% csrf_token %}  
-            <table>  
-                {{ form.as_table }}  
-                <tr>  
+{% block content %}
+<div class="container-center">
+    <div class="register">
+        <h1>Register</h1>
+        <form method="POST">
+            {% csrf_token %}
+            <table>
+                {{ form.as_table }}
+                <tr>
                     <td></td>
-                    <td><input type="submit" name="submit" value="Daftar"/></td>  
-                </tr>  
-            </table>  
+                    <td><input class="btn register_btn" type="submit" value="Daftar"></td>
+                </tr>
+            </table>
         </form>
 
-    {% if messages %}  
-        <ul>   
-            {% for message in messages %}  
-                <li>{{ message }}</li>  
-                {% endfor %}  
-        </ul>   
-    {% endif %}
-
-</div>  
-
+        {% if messages %}
+            <ul>
+                {% for message in messages %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </div>
+</div>
 {% endblock content %}

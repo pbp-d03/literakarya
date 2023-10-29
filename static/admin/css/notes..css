@@ -1,0 +1,15 @@
+
+/* Add your internal CSS styles here */
+body {
+  background-color: #f4a460; /* Orange background color */
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  text-align: center;
+  color: #fff; /* White text color */
+  background-color: #ff4500; /* Dark orange header background color */
+  padding: 20px;
+}
