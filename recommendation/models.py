@@ -18,3 +18,8 @@ class Rekomendasi(models.Model):
 
     def total_likes(self):
         return self.likes.count()
+    
+    def save(self, *args, **kwargs):
+        if self.nilai_buku < 1.0 or self.nilai_buku > 5.0:
+            raise ValidationError('Rating buku harus antara 1 dan 5')
+        super().save(*args, **kwargs)
