@@ -53,7 +53,8 @@ INSTALLED_APPS = [
     'forum',
     'ereading',
     'recommendation',
-    'user_profile'
+    'user_profile',
+    'notes',
 ]
 
 MIDDLEWARE = [
