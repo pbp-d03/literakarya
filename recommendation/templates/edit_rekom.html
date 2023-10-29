@@ -3,8 +3,43 @@
 {% load static %}
 
 {% block content %}
+<style>
+    body {
+        background: linear-gradient(to right, rgb(28, 157, 199), rgb(12, 12, 106));
+        font-family: Arial, sans-serif;
+    }
+    
+    h1 {
+        color: white;
+        text-align: center;
+        padding: 20px;
+    }
+    
+    table {
+        margin: auto;
+        color: white;
+    }
+    
+    input[type=submit] {
+        background-color: deepskyblue;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+    
+    input[type=submit]:hover {
+        background-color: dodgerblue;
+    }
+    </style>
+
 
 <h1>Edit Rekomendasi</h1>
+
+{% if error_message %}
+  <p><strong>{{ error_message }}</strong></p>
+{% endif %}
 
 <form method="POST">
     {% csrf_token %}
@@ -18,5 +53,30 @@
         </tr>
     </table>
 </form>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+        const genreDropdown = document.querySelector("select[name=genre_buku]");
+        const bookDropdown = document.querySelector("select[name=judul_buku]");
+    
+        genreDropdown.addEventListener("change", function() {
+            const selectedGenre = this.value;
+    
+            // Mengambil data buku berdasarkan genre yang dipilih
+            fetch(`../get_books_by_genre/${selectedGenre}/`)
+                .then(response => response.json())
+                .then(data => {
+                    // Membersihkan pilihan sebelumnya
+                    bookDropdown.innerHTML = "";
+                    // Menambahkan pilihan baru
+                    data.forEach(book => {
+                        const option = new Option(book.nama_buku, book.id);
+                        console.log(book)
+                        bookDropdown.appendChild(option);
+                    });
+                });
+        });
+    });
+    </script> 
 
 {% endblock %}
