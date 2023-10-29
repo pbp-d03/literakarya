@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+
+{% block extra_css %}
+<style>
+  .card {
+    height: 100%;
+  }
+  .card:hover {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1) !important;
+    transition: box-shadow 0.3s ease-in-out;
+  }
+  #recommendationRow {
+    display: flex;
+    overflow-x: auto;
+    width: 100%;
+  }
+  .col-md-2 {
+    flex: 0 0 auto;
+    width: 16%;
+    white-space: normal;
+    vertical-align: top;
+  }
+  button#prevButton, button#nextButton {
+    background-color: #FF0000;
+    color: white;
+    padding: 12px 20px;
+    margin: 12px;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+  }
+  button#prevButton {
+    left: 0;
+  }
+  button#nextButton {
+    right: 0;
+  }
+</style>
+{% endblock %}
+
+{% block content %}
+<h1>Rekomendasi untuk mu</h1>
+<h5>Name:</h5>
+<p>{{ user }}</p>
+
+<div class="position-relative">
+  <button id="prevButton" onclick="scrollContent(-1)"><</button>
+  <div class="row" id="recommendationRow">
+    {% for recommend in recommended %}
+    <div class="col-md-2">
+      <div class="card h-100">
+        <div class="card-body">
+          <h5 class="card-title">{{ recommend.judul_buku }}</h5>
+          <p class="card-text">Genre: {{ recommend.genre_buku }}</p>
+          <p class="card-text">Rating: {{ recommend.nilai_buku }}</p>
+          <p class="card-text">Rekomendasi: {{ recommend.isi_rekomendasi }}</p>
+
+          {% if user == recommend.user.username %}
+          <a href="{% url 'recommendation:edit_rekom' recommend.id %}">
+            <button class="btn btn-primary">Edit</button>
+          </a>
+          <a href="{% url 'recommendation:hapus_rekom' recommend.id %}">
+            <button class="btn btn-danger">Hapus</button>
+          </a>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  <button id="nextButton" onclick="scrollContent(1)">></button>
+</div>
+{% endblock content %}
