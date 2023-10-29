@@ -43,7 +43,14 @@ def membuat_rekomendasi(request):
 
     if form.is_valid() and request.method == "POST":
         instance = form.save(commit=False)
-        instance.user = request.user  # Set the user from the request
+        if instance.nilai_buku < 0 or instance.nilai_buku > 5:
+            context = {
+                'form': form, 
+                'error_message': "Rating harus antara 0 dan 5", 
+                'books_by_genre': books_by_genre
+            }
+            return render(request, "bikin.html", context)
+        instance.user = request.user
         instance.save()
         return HttpResponseRedirect(reverse('recommendation:show_recommendation'))
 

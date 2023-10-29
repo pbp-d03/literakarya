@@ -116,7 +116,7 @@
       <div class="col-md-4">
         <div class="card mb-4"> <!-- Gaya card diterapkan di sini -->
           <div class="card-body">
-            <h5 class="card-title">{{ recommend.judul_buku }}</h5>
+            <h5 class="card-title">{{ recommend.judul_buku.nama_buku }}</h5>
             <p class="card-text">Genre: {{ recommend.genre_buku }}</p>
             <p class="card-text">Rating: {{ recommend.nilai_buku }}</p>
             <p class="card-text">Rekomendasi: {{ recommend.isi_rekomendasi }}</p>
@@ -190,7 +190,7 @@
     genreSelect.addEventListener("change", function() {
         let selectedGenre = genreSelect.value;
 
-        fetch(`/get_books_by_genre/${selectedGenre}`)
+        fetch(`../get_books_by_genre/${selectedGenre}`)
         .then(response => response.json())
         .then(data => {
         // Hapus pilihan sebelumnya
@@ -202,6 +202,7 @@
             option.value = book.id;
             option.text = book.nama_buku;
             bookSelect.appendChild(option);
+            console.log(book);
         }
         });
     });
