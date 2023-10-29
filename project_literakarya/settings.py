@@ -52,8 +52,13 @@ INSTALLED_APPS = [
     'book_page',
     'forum',
     'ereading',
+<<<<<<< HEAD
     'user_profile',
     'notes',
+=======
+    'recommendation',
+    'user_profile'
+>>>>>>> f8ae8bbe37828c6db2068aeabd6d9668502e1e3e
 ]
 
 MIDDLEWARE = [

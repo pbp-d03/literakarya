@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Tambahkan Rekomenadasi Bacaan!</h1>
+
+<form method="POST" id="recommendation-form">
+    {% csrf_token %}
+    <table>
+        {{ form.as_table }}
+        <tr>
+            <td></td>
+            <td>
+                <input type="submit" value="Tambah Rekomendasi"/>
+            </td>
+        </tr>
+    </table>
+</form>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+        const genreDropdown = document.querySelector("select[name=genre_buku]");
+        const bookDropdown = document.querySelector("select[name=judul_buku]");
+    
+        genreDropdown.addEventListener("change", function() {
+            const selectedGenre = this.value;
+    
+            // Mengambil data buku berdasarkan genre yang dipilih
+            fetch(`/get_books_by_genre/${selectedGenre}/`)
+                .then(response => response.json())
+                .then(data => {
+                    // Membersihkan pilihan sebelumnya
+                    bookDropdown.innerHTML = "";
+                    // Menambahkan pilihan baru
+                    data.forEach(book => {
+                        const option = new Option(book.nama_buku, book.id);
+                        bookDropdown.appendChild(option);
+                    });
+                });
+        });
+    });
+    </script>    
+
+
+{% endblock %}

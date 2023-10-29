@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% block meta %}
+    <style>
+        .card-img-top {
+            width: 100%;
+            height: 20vw;
+            object-fit: cover;
+        }
+        a{
+            text-decoration: none;
+        }
+        .card-title:hover,
+        .card-text:hover,
+        #itemsatu:hover,#itemdua:hover{
+            text-decoration: underline;
+        }
+        .card-body{
+            color: black;
+        }
+    </style>
+{% endblock meta %}
+
+{% block content %}
+<div class = "container py-4">
+    <div class="container text-center py-2">
+        <h5>Rekomendasi buku untuk anda:</h5>
+    </div>
+    <div class="container py-2">
+        <div class="row row-cols-1 row-cols-md-3 g-4 py-3">
+            {% for book,desc in books %}
+                <div class="col">
+                    <div class="card text-center">
+                        <a href="/books/book/{{book.pk}}">
+                            <img src={{book.gambar_buku}} class="card-img-top" alt="gambar_buku">
+                            <div class="card-body">
+                                <h5 class="card-title">{{book.nama_buku}}</h5>
+                                <p class="card-text" id = "desc">{{desc}}...</p>
+                            </div>
+                            <ul class="list-group list-group-flush">
+                                <li id = "itemsatu" class="list-group-item">By {{book.author}}</li>
+                                <li id = "itemdua" class="list-group-item">Rating: {{book.rating}}</li>
+                            </ul>
+                            <div class="card-body">
+                                <a href="#" class="btn btn-dark">Bookmark Read Later</a>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            {% empty %}
+                <p>Tidak ada buku yang sesuai dengan pencarian Anda.</p>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}
