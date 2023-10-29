@@ -136,7 +136,7 @@
         });
 
         if (formIsValid) {
-        fetch("{% url 'profile' %}", {
+        fetch("/user_profile/", {
             method: "POST",
             body: new FormData(document.getElementById('profile-form'))
         })
