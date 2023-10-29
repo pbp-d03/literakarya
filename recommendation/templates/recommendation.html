@@ -40,6 +40,17 @@
   }
 
   /* Gaya tombol */
+  .btn-black {
+    background-color: black;
+    color: white;
+    border: none;
+}
+
+  .btn-black:hover {
+      background-color: #444;
+      color: white;
+  }
+
   .btn {
     border-radius: 5px;
     transition: background-color 0.2s ease-in-out;
@@ -89,7 +100,7 @@
 <h1 class="mt-4">Rekomendasi Harian untuk Anda</h1>
 
 <div class="mb-4">
-  <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+  <a class="btn btn-black" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
     <i class="fas fa-plus-circle icon"></i> Adakah Rekomendasi Buku {{ user }} ?
   </a>
 </div>
