@@ -7,7 +7,6 @@ from django.views.decorators.csrf import csrf_exempt
 from django.utils import timezone
 
 def show_forum(request):
-    print("masuk forum")
     books = Book.objects.all()
     post = Post.objects.all()
     all_genres = Book.objects.values_list('genre_1', flat=True).distinct()
