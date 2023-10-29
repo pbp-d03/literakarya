@@ -1,11 +1,10 @@
-from django.urls import path
-from user_profile.views import *
+from django.urls import path, include
+from user_profile.views import profile, create_profile, cari_buku, rekomen
 
-app_name = 'user_profile'
-
+app_name = "user_profile"
 urlpatterns = [
-    path('', show_profile, name='show_profile'),
-    path('get-profile/', get_profile_json, name='get_profile_json'),    
-    path('create-profile',create_profile, name='create_profile'),
-    path('edit-profile',edit_profile, name='edit_profile'),
+    path('', profile, name='profile'),
+    path('create_profile/', create_profile, name='create_profile'),
+    path('cari-buku/', cari_buku, name='cari_buku'),
+    path('rekomen/', rekomen, name='rekomen'),
 ]

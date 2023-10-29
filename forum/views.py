@@ -7,14 +7,12 @@ from django.views.decorators.csrf import csrf_exempt
 from django.utils import timezone
 
 def show_forum(request):
-    print("masuk forum")
     books = Book.objects.all()
     post = Post.objects.all()
     all_genres = Book.objects.values_list('genre_1', flat=True).distinct()
 
     if request.headers.get('x-requested-with') == 'XMLHttpRequest' and request.method == "POST":
         selected_genre = request.POST.get('selected_genre', None)
-        print(selected_genre)
         if selected_genre == "Literasi umum":
             topic_options = [{'value': "Literasi umum", 'text': "Literasi umum"}]
             return JsonResponse({'topic_options': topic_options})

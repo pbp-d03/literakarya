@@ -1,52 +1,77 @@
-from django.http import HttpResponse, JsonResponse
-from django.shortcuts import render
-from user_profile.models import Profile
-from user_profile.forms import ProfileForm
+from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth.models import User 
-from django.core import serializers
-from django.views.decorators.csrf import csrf_exempt
-# Create your views here.
+from django.http import JsonResponse
+from user_profile.forms import ProfileForm
+from user_profile.models import Profile
+from book_page.models import Book
+from django.db.models import Q
 
-def show_profile(request):
-    profiles = Profile.objects.filter(user=request.user)
-    context = {
-        'profiles': profiles,
-    }
-    return render(request, "profile.html", context)
+@login_required
+def profile(request):
+    profile = request.user.profile
 
-def get_profile_json(request):
-    items = Profile.objects.filter(user=request.user)
-    return HttpResponse(serializers.serialize('json', items))
-
-@csrf_exempt
-def create_profile(request):
-    if request.method == "POST":
-        user = request.user  # Mengambil pengguna yang masuk
-        first_name = request.POST.get("first_name")
-        last_name = request.POST.get("last_name")
-        bio = request.POST.get("bio")
-        address = request.POST.get("address")
-        favorite_genre1 = request.POST.get("favorite_genre1")
-        favorite_genre2 = request.POST.get("favorite_genre2")
-        favorite_genre3 = request.POST.get("favorite_genre3")
-        
-        # Membuat objek Profil Pengguna
-        profile = Profile(user=user, first_name=first_name, last_name=last_name, bio=bio, address=address, favorite_genre1=favorite_genre1, favorite_genre2=favorite_genre2, favorite_genre3=favorite_genre3)
-        profile.save()
-        
-        return JsonResponse({"message": "Profil Pengguna berhasil dibuat."})
-    
-    return JsonResponse({"message": "Permintaan tidak valid."})
-
-@csrf_exempt
-def edit_profile(request):
     if request.method == 'POST':
-        form = ProfileForm(request.POST, instance=request.user.profile)
+        form = ProfileForm(request.POST, instance=profile)
         if form.is_valid():
             form.save()
-            return HttpResponse('Profile updated successfully.')
+            return JsonResponse({'success': True})
         else:
-            return HttpResponse('Invalid form data.', status=400)
+            return JsonResponse({'success': False, 'errors': form.errors})
+    else:
+        form = ProfileForm(instance=profile)
 
-    return render(request, 'profile.html', {'form': ProfileForm(instance=request.user.profile)})
+    return render(request, 'profile.html', {'form': form})
+
+@login_required
+def create_profile(request):
+    if not hasattr(request.user, 'profile'):
+        user_profile = Profile(user=request.user)
+        user_profile.save()
+        return JsonResponse({'success': True})
+    else:
+        return JsonResponse({'success': False, 'error': 'Profile already exists'})
+
+def cari_buku(request):
+    # Ambil kata kunci pencarian dari request GET
+    keyword = request.GET.get('search', '')
+
+    # Cari buku yang sesuai dengan kata kunci
+    matching_books = Book.objects.filter(nama_buku__icontains=keyword)
+    list_desc = []
+    for i in matching_books:
+        str = i.description
+        str = str[0:100]
+        list_desc.append(str)
+    books_info = zip(matching_books,list_desc)
+
+    context = {
+        'keyword': keyword,
+        'books':books_info,
+    }
+
+    return render(request, 'cari_buku.html', context)
+
+def rekomen(request):
+    user_profile = Profile.objects.get(user=request.user)  # Gantilah dengan cara Anda mengambil profil pengguna yang sesuai
+    genre1 = user_profile.favorite_genre1
+    genre2 = user_profile.favorite_genre2
+    genre3 = user_profile.favorite_genre3
+
+    # Gunakan operasi Q untuk menggabungkan beberapa kondisi OR
+    matching_books = Book.objects.filter(
+        Q(genre_1=genre1) | Q(genre_2=genre1) | Q(genre_3=genre1) | Q(genre_4=genre1) | Q(genre_5=genre1) |
+        Q(genre_1=genre2) | Q(genre_2=genre2) | Q(genre_3=genre2) | Q(genre_4=genre2) | Q(genre_5=genre2) |
+        Q(genre_1=genre3) | Q(genre_2=genre3) | Q(genre_3=genre3) | Q(genre_4=genre3) | Q(genre_5=genre3)
+    )
+    list_desc = []
+    for i in matching_books:
+        str = i.description
+        str = str[0:100]
+        list_desc.append(str)
+    books_info = zip(matching_books,list_desc)
+
+    context = {
+        'books':books_info,
+    }
+
+    return render(request, 'rekomen.html', context)

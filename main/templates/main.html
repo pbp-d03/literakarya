@@ -1,12 +1,127 @@
 {% extends 'base.html' %}
-    
-{% block content %}
-<div class="container py-5">
-    <h1>
-        LiteraKarya
-    </h1>
-    <h3>Halo {{name}}</h3>
-</div>
+{% load static %}
 
-{% endblock content %}
+{% block content %}
+{% if user.profile.first_name and user.profile.last_name %}
+    <!-- Tampilkan konten ketika profil telah diisi -->
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <title>LiteraKarya</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link href="https://fonts.googleapis.com/css?family=Oswald:400,700|Roboto&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="/static/fonts/icomoon/style.css">
+        <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/static/css/animate.css">
+        <link rel="stylesheet" href="/static/css/owl.carousel.min.css">
+        <link rel="stylesheet" href="/static/css/owl.theme.default.min.css">
+        <link rel="stylesheet" href="/static/css/bootstrap-datepicker.css">
+        <link rel="stylesheet" href="/static/fonts/flaticon/font/flaticon.css">
+        <link rel="stylesheet" href="/static/css/aos.css">
+        <link rel="stylesheet" href="/static/css/jquery.fancybox.min.css">
+        <link rel="stylesheet" href="/static/css/style.css">
+
+        <div class="site-section" id="home-section">
+        <div class="container">
+            <div class="row">
+            <div class="col-md-8 mb-5">
+                <h1 class="text-white serif text-uppercase mb-4"> Halo {{user.profile.first_name}}, Selamat datang di LiteraKarya!</h1>
+                <p class="text-white mb-5">LiteraKarya adalah platform baca buku online yang memadukan kemudahan akses ke berbagai buku digital dengan elemen-elemen gamifikasi untuk meningkatkan semangat membaca. Dalam upaya memperluas wawasan literasi, LiteraKarya menawarkan berbagai informasi tentang buku, termasuk karya-karya dari penulis Indonesia dan luar negeri. </p>
+            </div>
+            </div>
+        </div>
+        </div>
+
+        <div class="site-section bg-light" id="features-section">
+        <div class="container mb-5">
+            <div class="row mb-5">
+            <div class="col-md-7">
+                <h2 class="heading">Fitur LiteraKarya</h2>
+            </div>
+            </div>
+
+            <div class="row">
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="service h-100">
+                <span class="wrap-icon">
+                    <span class="icon-book"></span>
+                </span>
+                <h3>Books</h3>
+                <p>Menampilkan buku-buku pilihan serta info-info lengkap dari buku yang ada. Selain itu, fitur ini juga dilengkapi Bookmark untuk menandai buku-buku yang akan dibaca nanti.</p>
+                </div>   
+            </div>
+
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="service h-100">
+                <span class="wrap-icon">
+                    <span class="icon-bookmark"></span>
+                </span>
+                <h3>Forum</h3>
+                <p>Berinteraksi dengan pengguna lainnya di dalam Forum. Komunitas kami penuh semangat untuk berdiskusi tentang berbagai judul buku maupun topik literasi umum.</p>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="service h-100">
+                <span class="wrap-icon">
+                    <span class="icon-files-o"></span>
+                </span>
+                <h3>Ereading</h3>
+                <p>Perluas perpustakaan digital pribadi Anda dengan Ereading, fitur unggulan kami untuk mengelola koleksi buku secara efisien.</p>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="service h-100">
+                <span class="wrap-icon">
+                    <span class="icon-font"></span>
+                </span>
+                <h3>Profile</h3>
+                <p>Optimalkan pengalaman kalian dengan fitur Profile kami untuk interaksi yang lebih personal dan relevan dalam membaca.</p>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="service h-100">
+                <span class="wrap-icon">
+                    <span class="icon-photo"></span>
+                </span>
+                <h3>Notes</h3>
+                <p>Menemukan poin menarik pada buku yang Anda baca? Pastikan Anda dapat mengingatnya dengan menggunakan fitur Notes milik kami.</p>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="service h-100">
+                <span class="wrap-icon">
+                    <span class="icon-text-height"></span>
+                </span>
+                <h3>Reccomendation</h3>
+                <p>Buka hari lebih berwarna dengan rekomendasi-rekomendasi buku pilihan yang ada untuk dapat Anda baca dan nikmati segera.</p>
+                </div>
+            </div>
+
+        </div>
+        </div>
     
+        <footer class="site-footer">
+        <div class="container">
+            <div class="row">
+                <div class="row mb-5 text-center">
+                    <h3 class="footer-heading mb-4">About Us</h3>
+                    <p>Sejalan dengan tema Kongres Bahasa Indonesia XII, kami berkomitmen untuk meningkatkan kesadaran akan pentingnya literasi dalam kemajuan bangsa dan merayakan kekayaan bahasa serta sastra Indonesia. LiteraKarya, solusi cerdas untuk memberdayakan pengguna dalam menjelajahi dunia literasi dengan semangat tinggi.</p>
+                </div>
+            </div>
+        </div>
+        </footer>
+    </body>
+{% else %}
+    <!-- Tampilkan pesan jika profil belum diisi -->
+    <div class="container py-5">
+        <script type="text/javascript">
+            window.location.href = "/user_profile/";
+        </script>
+    </div>
+{% endif %}
+{% endblock content %}

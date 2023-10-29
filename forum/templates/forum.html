@@ -163,7 +163,7 @@
           <div class="icon-group mb-2">
             ${replyOption}
   
-            <a data-bs-toggle="collapse" href="#reply-post-${post.pk}" role="button" aria-expanded="false" class="collapsed mx-5">
+            <a data-bs-toggle="collapse" href="#reply-post-${post.pk}" role="button" aria-expanded="false" class="collapsed mx-5" style="text-decoration: none;">
               <i class="bi bi-chat-left-text-fill"></i> Show reply
             </a>
           </div>
@@ -227,14 +227,12 @@
       $.post(`add-reply/${post.pk}`, {
         body : $(`#reply-body-${post.pk}`).val()
       }).done(function(data){
-        // action on form
+
         $(`#add-reply-${post.pk}`)[0].reset();
         $(`#add-reply-${post.pk}`).collapse('hide');
         
-        // putting the reply
         putReply(data);
         
-        // redirect to reply
         $(`#reply-post-${post.pk}`).collapse('show');
         location.href = "#";
         location.href = `#reply-${data.pk}`;
@@ -248,19 +246,17 @@
       topic : $("#topic-list").val(),
       message  : $("#message").val(),
       }).done(function(data){
-        // action on form
+
         $("#add-post")[0].reset();
         
-        // putting the post
         putPost(data);
         
-        // redirect to post
         location.href = "#";
         location.href = `#post-${data.pk}`;
     })
   }
   
-  // <!-- ajax setup below is for csrf -->
+  // CSRF related
   function getCookie(name) {
     var cookieValue = null;
     if (document.cookie && document.cookie != '') {

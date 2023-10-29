@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'book_page',
     'forum',
     'ereading',
+    'recommendation',
     'user_profile'
 ]
 
