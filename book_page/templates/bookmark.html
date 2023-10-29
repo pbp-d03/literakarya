@@ -33,11 +33,15 @@
         }
         .card-title:hover,
         .card-text:hover,
-        #itemsatu:hover,#itemdua:hover,.card-bottom:hover{
+        #itemsatu:hover,#itemdua:hover{
             text-decoration: underline;
         }
-        .card-body,.card-bottom{
+        .card-body{
             color: black;
+        }
+        #add-bukumark{
+            color: brown;
+            text-decoration:underline ;
         }
         form {
             margin: 0 auto;
@@ -51,13 +55,13 @@
 {% block content %}
 <div id = "main" class = "container py-4">
     <div id="judul-page">
-        <div class="text-center" id = judul>Welcome <span style="color:chocolate;">{{request.user}}</span></div>
+        <div class="text-center" id = judul>Happy Reading <span style="color:chocolate;">{{request.user}}</span></div>
     
         <div class="container text-center py-2">
             <div>
-                <div>Find Your Fav Genres!</div>
+                <div>Find Your Happyness Here!</div>
             </div>
-            <form class="d-flex" action="{% url 'book_page:show_list_books' %}" method=POST>
+            <form class="d-flex" action="/books/bookmark" method=POST>
                 {% csrf_token %}
                 <input class="form-control me-2" type="search" placeholder="Search Genres Book" name="searched">
                 <button class="btn btn-dark ml-3" type="submit">
@@ -67,14 +71,13 @@
         </div>
     </div>
     
-    
 
     <div class="container py-2">
         <div class="row row-cols-1 row-cols-md-3 g-4 py-3">
             
             {% if banyak_buku == 0 %}
             <div class="container text-center py-2">
-                <h5>Sayang Sekali Buku Kamu Belum Ada Disini!!</h5>
+                <h4>Yuk <span><a id = "add-bukumark" href="{% url 'book_page:show_list_books' %}">Add Buku</a></span> Baru Untuk Kamu Baca!!!</h4>
             </div>
             {% endif %}
             
@@ -85,14 +88,14 @@
                             <img src={{book.gambar_buku}} class="card-img-top" alt="gambar_buku">
                             <div class="card-body">
                                 <div class="card-title">{{book.nama_buku}}</div> 
-                                <p class="card-text" id = "desc">{{desc}}.....</p>
+                                <p class="card-text" id = "desc">{{desc}}...</p>
                             </div>
                             <ul class="list-group list-group-flush">
                                 <li id = "author" class="list-group-item">By {{book.author}}</li>
                                 <li id = "rating" class="list-group-item">Rating: {{book.rating}}</li>
                             </ul>
-                            <div class="card-bottom">
-                                <p>{{book.genre_1}}, {{book.genre_2}}, {{book.genre_3}}, {{book.genre_4}}, {{book.genre_5}}</p>
+                            <div class="card-body">
+                                <a onclick="deleteBookmark('{{book.pk}}');refreshpage()" id="bookmark-btn" class="btn btn-success">Happy Reading!</a>
                             </div>
                         </a>
                     </div>
@@ -103,7 +106,17 @@
     </div>
 </div>
 <script>
+    //delete bookmark
+    function deleteBookmark(idBuku) {
+        fetch(`delete-bookmark/${idBuku}`, {
+            method: "DELETE",
+        })
+        return false
+    }
 
+    //RefreshPage
+    function refreshpage(){
+        window.location.href = "{% url 'book_page:show_bookmark' %}";
+    }
 </script>
 {% endblock content %}
-    

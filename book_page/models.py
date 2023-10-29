@@ -1,8 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
 
-
-
 # Create your models here.
 class Book(models.Model):
     nama_buku = models.TextField(null=True,blank=True)
@@ -19,11 +17,14 @@ class Book(models.Model):
     jumlah_halaman = models.IntegerField(null=True,blank=True)
     waktu_publikasi = models.TextField(null=True,blank=True)
 
-class Komen(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+class Comment(models.Model):
+    user = models.TextField()
     buku = models.ForeignKey(Book, on_delete=models.CASCADE)
     isi_komen = models.TextField()
     date_added = models.DateField(auto_now_add=True)
     likes = models.IntegerField()
     dislikes = models.IntegerField()
 
+class Bookmark(models.Model):
+    user = models.ForeignKey(User,on_delete=models.CASCADE)
+    buku = models.OneToOneField(Book, null=True, on_delete=models.CASCADE)

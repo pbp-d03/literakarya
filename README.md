@@ -1,3 +1,5 @@
+[![Deploy](https://github.com/pbp-d03/literakarya/actions/workflows/dpl.yml/badge.svg)](https://github.com/pbp-d03/literakarya/actions/workflows/dpl.yml)
+
 # Proyek Tengah Semester
 
 ## Membuat Situs Web menggunakan Framework Django (Berkelompok)
