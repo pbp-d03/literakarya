@@ -1,10 +1,11 @@
 {% extends 'base.html' %}
 
-{% block extra_css %}
+{% block content %}
 <style>
   /* Warna latar belakang */
   body {
     background-color: #f4f4f4;
+    font-family: 'Poppins', sans-serif; /* Mengganti font menjadi Poppins */
   }
 
   /* Gaya card */
@@ -13,6 +14,8 @@
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    color: #fff; /* Warna teks putih pada card */
   }
 
   .card:hover {
@@ -22,6 +25,7 @@
 
   .card-body {
     padding: 20px;
+    position: relative;
   }
 
   /* Gaya tombol */
@@ -62,25 +66,29 @@
   .action-btn button {
     margin-right: 10px;
   }
+
+  /* Gaya tombol Edit dan Hapus */
+  .edit-delete-buttons {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+  }
 </style>
-{% endblock %}
 
-
-{% block content %}
 <h1 class="mt-4">Berbagi itu Indah</h1>
 
 <div class="mb-4">
   <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-    <i class="bi bi-plus-circle icon"></i> Adakah Rekomendasi Buku {{ user }} ?
+    <i class="fas fa-plus-circle icon"></i> Adakah Rekomendasi Buku {{ user }} ?
   </a>
 </div>
 <div class="collapse" id="collapseExample">
-  <div class="card">
+  <div class="card"> <!-- Gaya card diterapkan di sini -->
     <div class="card-body">
       Halo {{ user }}!<br>
       Apakah kamu punya rekomendasi buku yang ingin kamu bagikan?<br>
       <a href="{% url 'recommendation:bikin' %}" class="btn btn-primary">
-        <i class="bi bi-plus-circle icon"></i> Tambahkan Rekomendasi
+        <i class="fas fa-plus-circle icon"></i> Tambahkan Rekomendasi
       </a>
     </div>
   </div>
@@ -89,12 +97,12 @@
 <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
   <li class="nav-item" role="presentation">
     <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">
-      <i class="bi bi-book icon"></i> Rekomendasi Buku
+      <i class="fas fa-book icon"></i> Rekomendasi Buku
     </button>
   </li>
   <li class="nav-item" role="presentation">
     <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">
-      <i class="bi bi-music-note icon"></i> Rekomendasi Playlist
+      <i class="fas fa-music icon"></i> Rekomendasi Playlist
     </button>
   </li>
 </ul>
@@ -106,7 +114,7 @@
     <div class="row" id="recommendationRow">
       {% for recommend in recommended %}
       <div class="col-md-4">
-        <div class="card mb-4">
+        <div class="card mb-4"> <!-- Gaya card diterapkan di sini -->
           <div class="card-body">
             <h5 class="card-title">{{ recommend.judul_buku }}</h5>
             <p class="card-text">Genre: {{ recommend.genre_buku }}</p>
@@ -115,21 +123,24 @@
             <form action="{% url 'recommendation:like_view' recommend.id %}" method="POST">
               {% csrf_token %}
               <button type="submit" name="post_id" value="{{ post.id }}" class="btn btn-primary btn-sm">
-                <i class="bi bi-hand-thumbs-up icon"></i>
+                <i class="fas fa-thumbs-up icon"></i> <!-- Ganti ikon -->
                 {% if user in recommend.likes.all %}
                   Unlike
                 {% else %}
                   Like
                 {% endif %}
-              </button>  <span class="likes-count">{{ recommend.likes.count }}</span>
+              </button>
+              <span class="likes-count">{{ recommend.likes.count }}</span>
             </form>
             {% if user == recommend.user.username %}
-            <a href="{% url 'recommendation:edit_rekom' recommend.id %}" class="btn btn-primary btn-sm">
-              <i class="bi bi-pencil icon"></i> Edit
-            </a>
-            <a href="{% url 'recommendation:hapus_rekom' recommend.id %}" class="btn btn-danger btn-sm">
-              <i class="bi bi-trash icon"></i> Hapus
-            </a>
+            <div class="edit-delete-buttons">
+              <a href="{% url 'recommendation:edit_rekom' recommend.id %}" class="btn btn-primary btn-sm">
+                <i class="fas fa-pencil-alt icon"></i> Edit <!-- Ganti ikon -->
+              </a>
+              <a href="{% url 'recommendation:hapus_rekom' recommend.id %}" class="btn btn-danger btn-sm">
+                <i class="fas fa-trash icon"></i> Hapus <!-- Ganti ikon -->
+              </a>
+            </div>
             {% endif %}
           </div>
         </div>
@@ -148,7 +159,7 @@
 </div>
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script> <!-- Menambahkan library Font Awesome -->
 
 <script>
     // Fungsi untuk mendapatkan CSRF Token
