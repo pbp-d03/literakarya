@@ -8,6 +8,8 @@
             LiteraKarya
         </h1>
         <h3>Halo {{user.profile.first_name}}</h3>
+        <a href="{% url 'user_profile:cari_buku' %}">Cari Buku</a>
+        <a href="{% url 'user_profile:rekomen' %}">Rekomen Buku</a>
     </div>
 {% else %}
     <!-- Tampilkan pesan jika profil belum diisi -->
