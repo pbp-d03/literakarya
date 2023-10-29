@@ -13,7 +13,6 @@ def show_forum(request):
 
     if request.headers.get('x-requested-with') == 'XMLHttpRequest' and request.method == "POST":
         selected_genre = request.POST.get('selected_genre', None)
-        print(selected_genre)
         if selected_genre == "Literasi umum":
             topic_options = [{'value': "Literasi umum", 'text': "Literasi umum"}]
             return JsonResponse({'topic_options': topic_options})
