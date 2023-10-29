@@ -8,7 +8,6 @@ urlpatterns = [
     path('get-json/', get_json, name='get_json'),
     path('add-ereading/', add_ereading, name='add_ereading'),
     path('delete-ereading/', delete_ereading, name='delete_ereading'),
-    path('json/', show_json, name='show_json'),
     path('accept-ereading/', accept_ereading, name='accept_ereading'),
     path('reject-ereading/', reject_ereading, name='reject_ereading'),
 ]
