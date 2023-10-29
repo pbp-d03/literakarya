@@ -24,15 +24,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Cari Buku</title>
+    <div class="container text-center py-2">
+        <title>Cari Buku</title>
+    </div>
 </head>
 <body>
-    <h1>Cari Buku</h1>
-    
-    <form method="get">
-        <input type="text" name="search" placeholder="Cari buku...">
-        <button type="submit">Cari</button>
-    </form>
+    <div class="container">
+        <form method="get" class="mt-3">
+            <div class="input-group">
+                <input type="text" class="form-control" name="search" placeholder="Cari buku...">
+                <div class="input-group-append">
+                    <button class="btn btn-primary" type="submit">Cari</button>
+                </div>
+            </div>
+        </form>
+    </div>
     {% if keyword %}
         <div class = "container py-4">
             <div class="container text-center py-2">
@@ -53,9 +59,6 @@
                                         <li id = "itemsatu" class="list-group-item">By {{book.author}}</li>
                                         <li id = "itemdua" class="list-group-item">Rating: {{book.rating}}</li>
                                     </ul>
-                                    <div class="card-body">
-                                        <a href="#" class="btn btn-dark">Bookmark Read Later</a>
-                                    </div>
                                 </a>
                             </div>
                         </div>
