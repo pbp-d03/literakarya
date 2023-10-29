@@ -144,7 +144,7 @@ h1, h2, h3, h4, h5, h6 {
     position: absolute;
     width: 40px;
     height: 2px;
-    background: #1C63FB; }
+    background: #AED8B6; }
   .site-section-heading.text-center:before {
     content: "";
     left: 50%;
@@ -155,14 +155,14 @@ h1, h2, h3, h4, h5, h6 {
     position: absolute;
     width: 40px;
     height: 2px;
-    background: #1C63FB; }
+    background: #AED8B6; }
 
 .border-top {
   border-top: 1px solid #ced4da !important; }
 
 .site-footer {
-  padding-top: 17rem;
-  padding-bottom: 4rem;
+  padding-top: 4rem;
+  padding-bottom: 2rem;
   background: #333333; }
   .site-footer p {
     color: #8c8c8c; }
