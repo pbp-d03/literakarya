@@ -250,13 +250,13 @@ filterBooksByRating();
     //     return false;
     // }
 
-    // function deleteNote(itemId) {
-    //     fetch(`delete-note/${itemId}/`, {
-    //         method: "DELETE",
-    //     }).then(refreshNotes)
+     function deleteNote(itemId) {
+         fetch(`delete-note/${itemId}/`, {
+             method: "DELETE",
+         }).then(refreshNotes)
 
-    //     return false
-    // }
+         return false
+     }
   
     refreshNotes()
   
