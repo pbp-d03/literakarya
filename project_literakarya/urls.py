@@ -24,5 +24,6 @@ urlpatterns = [
     path('ereading/',include("ereading.urls")),
     path('recommendation/',include("recommendation.urls")),
     path('user_profile/',include("user_profile.urls")),
-    path('notes/',include("notes.urls"))
+    path('notes/',include("notes.urls")),
+    path('auth/', include('authentication.urls')),
 ]
