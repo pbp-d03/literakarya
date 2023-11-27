@@ -163,9 +163,10 @@ def add_likes(request,id):
 @login_required(login_url='/login')
 @csrf_exempt
 def delete_komen(request,id):
-    if request.user != "adminliterakarya":
+    if request.user.username != "adminliterakarya":
         return HttpResponseNotFound()
     
+    print("MASUK")
     komen = Comment.objects.get(pk=id)
     komen.delete()
     return HttpResponse(b"DELETE", status=201)
