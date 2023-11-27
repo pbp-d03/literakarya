@@ -30,4 +30,4 @@ class Comment(models.Model):
 
 class Bookmark(models.Model):
     user = models.ForeignKey(User,on_delete=models.CASCADE)
-    buku = models.OneToOneField(Book, null=True, on_delete=models.CASCADE)
+    buku = models.ForeignKey(Book, null=True, on_delete=models.CASCADE)
