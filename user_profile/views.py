@@ -5,7 +5,9 @@ from user_profile.forms import ProfileForm
 from user_profile.models import Profile
 from book_page.models import Book
 from django.db.models import Q
+from django.views.decorators.csrf import csrf_exempt
 
+@csrf_exempt
 @login_required
 def profile(request):
     profile = request.user.profile
@@ -23,7 +25,7 @@ def profile(request):
     return render(request, 'profile.html', {'form': form})
 
 
-
+@csrf_exempt
 @login_required
 def create_profile(request):
     if not hasattr(request.user, 'profile'):
@@ -32,6 +34,7 @@ def create_profile(request):
         return JsonResponse({'success': True})
     else:
         return JsonResponse({'success': False, 'error': 'Profile already exists'})
+
 
 def cari_buku(request):
     # Ambil kata kunci pencarian dari request GET

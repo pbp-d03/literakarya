@@ -10,7 +10,7 @@ from book_page.forms import KomenForm
 from django.contrib.auth.decorators import login_required
 
 # Create your views here.
-@login_required(login_url='/login')
+# @login_required(login_url='/login')
 def get_books(request):
     data = Book.objects.all()
     return HttpResponse(serializers.serialize("json",data), content_type="application/json")
