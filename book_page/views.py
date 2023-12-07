@@ -117,7 +117,7 @@ def show_book(request,id):
     }
     return render(request,"info_buku.html",context)
 
-@login_required(login_url='/login')
+# @login_required(login_url='/login')
 def get_komen_json(request,id1):
     buku = get_object_or_404(Book, pk = id1)
     komen_all = Comment.objects.filter(buku = buku)
