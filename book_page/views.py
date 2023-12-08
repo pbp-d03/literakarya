@@ -15,7 +15,7 @@ def get_books(request):
     data = Book.objects.all()
     return HttpResponse(serializers.serialize("json",data), content_type="application/json")
 
-@login_required(login_url='/login')
+# @login_required(login_url='/login')
 def show_list_books(request):
     buku = Book.objects.all()
     list_desc = []
@@ -36,9 +36,13 @@ def show_list_books(request):
         'books':books_info,
         'banyak_buku':banyak_buku
     }
-    return render(request,"tampilan_buku.html",context)    
+    return render(request,"tampilan_buku.html",context)
 
-@login_required(login_url='/login')
+def show_filtered_flutter(request,hasil_cari):
+    data = Book.objects.filter(genre_1__contains = hasil_cari) | Book.objects.filter(genre_2__contains = hasil_cari) | Book.objects.filter(genre_3__contains = hasil_cari) | Book.objects.filter(genre_4__contains = hasil_cari) | Book.objects.filter(genre_5__contains = hasil_cari)
+    return HttpResponse(serializers.serialize("json",data), content_type="application/json")
+
+# @login_required(login_url='/login')
 def show_bookmark(request):
     bookmark = Bookmark.objects.filter(user=request.user)
     list_desc = []
@@ -74,7 +78,7 @@ def show_bookmark(request):
     
     return render(request,'bookmark.html',context)
 
-@login_required(login_url='/login')
+# @login_required(login_url='/login')
 @csrf_exempt
 def add_bookmark_ajax(request,id):
     if request.method == 'POST':
@@ -87,7 +91,7 @@ def add_bookmark_ajax(request,id):
     
     return HttpResponseNotFound()
 
-@login_required(login_url='/login')
+# @login_required(login_url='/login')
 def show_book(request,id):
     buku_pilihan = Book.objects.get(pk=id)
     bookmark = Bookmark.objects.filter(user=request.user)
@@ -123,7 +127,7 @@ def get_komen_json(request,id1):
     komen_all = Comment.objects.filter(buku = buku)
     return HttpResponse(serializers.serialize('json', komen_all))
 
-@login_required(login_url='/login')
+# @login_required(login_url='/login')
 @csrf_exempt
 def add_comment_ajax(request,id1):
     form = KomenForm(request.POST or None)
@@ -140,7 +144,7 @@ def add_comment_ajax(request,id1):
 
     return HttpResponseNotFound()
 
-@login_required(login_url='/login')
+# @login_required(login_url='/login')
 @csrf_exempt
 def delete_bookmark(request,id):
     if request.method == 'DELETE':
@@ -150,7 +154,7 @@ def delete_bookmark(request,id):
     
     return HttpResponseNotFound()
 
-@login_required(login_url='/login')
+# @login_required(login_url='/login')
 @csrf_exempt
 def add_likes(request,id):
     komen = Comment.objects.get(pk=id)
@@ -160,7 +164,7 @@ def add_likes(request,id):
     return HttpResponse(b"CREATED", status=201)
 
 
-@login_required(login_url='/login')
+# @login_required(login_url='/login')
 @csrf_exempt
 def delete_komen(request,id):
     if request.user.username != "adminliterakarya":

@@ -1,6 +1,6 @@
 from django.urls import path, include
 from book_page.views import get_books,show_list_books,show_book,get_komen_json,add_comment_ajax,\
-                            show_bookmark,add_bookmark_ajax,delete_bookmark,add_likes,delete_komen
+                            show_bookmark,add_bookmark_ajax,delete_bookmark,add_likes,delete_komen,show_filtered_flutter
 
 app_name = "book_page"
 
@@ -19,4 +19,6 @@ urlpatterns = [
 
     path('add-likes/<int:id>/', add_likes, name = "add_likes"),
     path('delete-komen/<int:id>/', delete_komen, name = "delete_komen"),
+
+    path('book-filter/<str:hasil_cari>/', show_filtered_flutter, name = "show_filtered_flutter"),
 ]
