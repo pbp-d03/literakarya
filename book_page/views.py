@@ -1,5 +1,6 @@
+import json
 from django.shortcuts import get_object_or_404, render
-from django.http import HttpResponse, HttpResponseNotFound
+from django.http import HttpResponse, HttpResponseNotFound, JsonResponse
 from django.core import serializers
 from django.views.decorators.csrf import csrf_exempt
 from django.db.models import Q
@@ -143,6 +144,33 @@ def add_comment_ajax(request,id1):
             return HttpResponse(b"CREATED", status=201)
 
     return HttpResponseNotFound()
+
+@csrf_exempt
+def create_komen_flutter(request,id):
+    if request.method == 'POST':
+        # print("TEST 1")
+        data = json.loads(request.body)
+
+        buku = get_object_or_404(Book, pk = id)
+        user = request.user.username
+        isi_komen = data["isi_komen"]
+
+        new_komen = Comment(user=user,buku=buku,isi_komen=isi_komen,likes=0,dislikes=0)
+        new_komen.save()
+        
+        # new_item = Item.objects.create(
+        #     user = request.user,
+        #     name = data["name"],
+        #     amount = int(data["amount"]),
+        #     description = data["description"],
+        # )
+        # # print(request.user, "ASAS")
+        # # print("TEST 2")
+        # new_item.save()
+
+        return JsonResponse({"status": "success"}, status=200)
+    else:
+        return JsonResponse({"status": "error"}, status=401)
 
 # @login_required(login_url='/login')
 @csrf_exempt
