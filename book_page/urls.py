@@ -21,5 +21,5 @@ urlpatterns = [
     path('delete-komen/<int:id>/', delete_komen, name = "delete_komen"),
 
     path('book-filter/<str:hasil_cari>/', show_filtered_flutter, name = "show_filtered_flutter"),
-    path('add-komen-flutter/<int:id1>/', create_komen_flutter, name = "create_komen_flutter"),
+    path('add-komen-flutter/<int:id>/', create_komen_flutter, name = "create_komen_flutter"),
 ]
