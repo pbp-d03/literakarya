@@ -150,7 +150,7 @@ def create_komen_flutter(request,id):
     if request.method == 'POST':
         # print("TEST 1")
         data = json.loads(request.body)
-        print(data)
+        # print(data)
         buku = get_object_or_404(Book, pk = id)
         user = request.user.username
         isi_komen = data["isi_komen"]
