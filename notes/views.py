@@ -1,8 +1,9 @@
+import json
 from django.urls import reverse
 from .models import Notes
 from book_page.models import Book
 from notes.forms import NoteForm
-from django.http import HttpResponse, HttpResponseRedirect, HttpResponseNotFound
+from django.http import HttpResponse, HttpResponseRedirect, HttpResponseNotFound, JsonResponse
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.core import serializers
@@ -95,6 +96,28 @@ def get_id(request, judul):
     buku = Book.objects.get(nama_buku=judul)
     buku_id = buku.pk
     return HttpResponse(buku_id)
+
+@csrf_exempt
+def create_product_flutter(request):
+    if request.method == 'POST':
+        
+        data = json.loads(request.body)
+
+        new_note = Book.objects.create(
+            judul_catatan = data["judul_catatan"],
+            judul_buku = data["judul_buku"],
+            isi_catatan = data["isi_catatan"],
+            penanda = data["penanda"],
+        )
     
+        new_note.save()
+
+        return JsonResponse({"status": "success"}, status=200)
+    else:
+        return JsonResponse({"status": "error"}, status=401)
+    
+def show_json_by_user(request):
+    data = Notes.objects.filter(user = request.user)
+    return HttpResponse(serializers.serialize("json", data), content_type="application/json")    
     
     
