@@ -59,7 +59,10 @@ def show_bookmark_flutter(request,uname):
     if(adaBookmark):
         for j in buku_bookmark:
             list_buku.append(j.buku)
-    
+
+    list_set_buku = set(list_buku)
+    list_buku = (list(list_set_buku))
+
     return HttpResponse(serializers.serialize("json", list_buku), content_type="application/json")
 
 
@@ -117,8 +120,8 @@ def add_bookmark_flutter(request,uname):
     if request.method == 'POST':
         data = json.loads(request.body)
         user = User.objects.get(username=uname)
-        print(user)
-        print(data)
+        # print(user)
+        # print(data)
         id = data["idBuku"]
         buku = Book.objects.get(pk=id)
 
@@ -133,9 +136,10 @@ def delete_bookmark_flutter(request,uname):
     if request.method == 'POST':
         data = json.loads(request.body)
         id = data["idBuku"]
+        user = User.objects.get(username=uname)
 
         buku_hapus_bookmark = Book.objects.get(pk = id)
-        bookmark_hapus = Bookmark.objects.filter(buku = buku_hapus_bookmark).delete()
+        bookmark_hapus = Bookmark.objects.filter(buku = buku_hapus_bookmark,user=user).delete()
         return JsonResponse({"status": "success"}, status=200)
     else:
         return JsonResponse({"status": "error"}, status=401)
@@ -205,16 +209,6 @@ def create_komen_flutter(request,id):
         # print(request.user)
         new_komen = Comment(user=user,buku=buku,isi_komen=isi_komen,likes=0,dislikes=0)
         new_komen.save()
-        
-        # new_item = Item.objects.create(
-        #     user = request.user,
-        #     name = data["name"],
-        #     amount = int(data["amount"]),
-        #     description = data["description"],
-        # )
-        # # print(request.user, "ASAS")
-        # # print("TEST 2")
-        # new_item.save()
 
         return JsonResponse({"status": "success"}, status=200)
     else:
@@ -246,7 +240,7 @@ def delete_komen(request,id):
     if request.user.username != "adminliterakarya":
         return HttpResponseNotFound()
     
-    print("MASUK")
+    # print("MASUK")
     komen = Comment.objects.get(pk=id)
     komen.delete()
     return HttpResponse(b"DELETE", status=201)
