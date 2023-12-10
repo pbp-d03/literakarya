@@ -251,4 +251,19 @@ def delete_komen(request,id):
     komen.delete()
     return HttpResponse(b"DELETE", status=201)
 
+@csrf_exempt
+def delete_komen_flutter(request):
+    # if request.user.username != "adminliterakarya":
+    #     return HttpResponseNotFound()
+    # print("MASUK")
+    if request.method == 'POST':
+        data = json.loads(request.body)
+        id = data["idKomen"]
+        komen = Comment.objects.get(pk=id)
+        komen.delete()
+        return JsonResponse({"status": "success"}, status=200)
+    else:
+        return JsonResponse({"status": "error"}, status=401)
+    
+
 
