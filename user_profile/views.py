@@ -1,28 +1,45 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import get_object_or_404, render, redirect
 from django.contrib.auth.decorators import login_required
-from django.http import JsonResponse
+from django.http import HttpResponseRedirect, JsonResponse
+from django.urls import reverse
 from user_profile.forms import ProfileForm
 from user_profile.models import Profile
 from book_page.models import Book
 from django.db.models import Q
 from django.views.decorators.csrf import csrf_exempt
+from django.contrib.auth.models import User
 
 @csrf_exempt
 @login_required
 def profile(request):
     profile = request.user.profile
+    if request.user.username == 'adminliterakarya':
+        profile.first_name = 'admin'
+        profile.last_name = 'literakarya'
+        profile.bio = 'penguasa web'
+        profile.address = 'balgebun'
+        profile.favorite_genre1 = 'Fiction'
+        profile.favorite_genre2 = 'Novels'
+        profile.favorite_genre3 = 'Classics'
+        profile.save()
 
-    if request.method == 'POST':
-        form = ProfileForm(request.POST, instance=profile)
-        if form.is_valid():
-            form.save()
-            return JsonResponse({'success': True})
-        else:
-            return JsonResponse({'success': False, 'errors': form.errors})
+        # Ambil seluruh username dari model User
+        all_accounts = User.objects.all()
+        
+        # Redirect ke halaman allprofile.html dengan menyertakan data seluruh username
+        return render(request, 'allprofile.html', {'all_accounts': all_accounts})
+    
     else:
-        form = ProfileForm(instance=profile)
-
-    return render(request, 'profile.html', {'form': form})
+        if request.method == 'POST':
+            form = ProfileForm(request.POST, instance=profile)
+            if form.is_valid():
+                form.save()
+                return JsonResponse({'success': True})
+            else:
+                return JsonResponse({'success': False, 'errors': form.errors})
+        else:
+            form = ProfileForm(instance=profile)
+        return render(request, 'profile.html', {'form': form})
 
 
 @csrf_exempt
@@ -80,3 +97,10 @@ def rekomen(request):
     }
 
     return render(request, 'rekomen.html', context)
+
+@login_required
+def delete_profile(request, id):
+    if request.method == "POST":
+        item = User.objects.get(pk=id)
+        item.delete()
+    return HttpResponseRedirect(reverse('user_profile:profile'))
