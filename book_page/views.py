@@ -41,7 +41,7 @@ def show_list_books(request):
     return render(request,"tampilan_buku.html",context)
 
 def show_filtered_flutter(request,hasil_cari):
-    data = Book.objects.filter(genre_1__contains = hasil_cari) | Book.objects.filter(genre_2__contains = hasil_cari) | Book.objects.filter(genre_3__contains = hasil_cari) | Book.objects.filter(genre_4__contains = hasil_cari) | Book.objects.filter(genre_5__contains = hasil_cari)
+    data = Book.objects.filter(genre_1__icontains = hasil_cari) | Book.objects.filter(genre_2__icontains = hasil_cari) | Book.objects.filter(genre_3__icontains = hasil_cari) | Book.objects.filter(genre_4__icontains = hasil_cari) | Book.objects.filter(genre_5__icontains = hasil_cari)
     return HttpResponse(serializers.serialize("json",data), content_type="application/json")
 
 @csrf_exempt
@@ -176,6 +176,12 @@ def show_book(request,id):
 
 # @login_required(login_url='/login')
 def get_komen_json(request,id1):
+    buku = get_object_or_404(Book, pk = id1)
+    komen_all = Comment.objects.filter(buku = buku)
+    return HttpResponse(serializers.serialize('json', komen_all))
+
+@csrf_exempt
+def cek_bookmark(request,id):
     buku = get_object_or_404(Book, pk = id1)
     komen_all = Comment.objects.filter(buku = buku)
     return HttpResponse(serializers.serialize('json', komen_all))
