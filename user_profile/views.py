@@ -1,6 +1,6 @@
 from django.shortcuts import get_object_or_404, render, redirect
 from django.contrib.auth.decorators import login_required
-from django.http import HttpResponseRedirect, JsonResponse
+from django.http import HttpResponse, HttpResponseRedirect, JsonResponse
 from django.urls import reverse
 from user_profile.forms import ProfileForm
 from user_profile.models import Profile
@@ -8,6 +8,7 @@ from book_page.models import Book
 from django.db.models import Q
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth.models import User
+from django.core import serializers
 
 @csrf_exempt
 @login_required
@@ -104,3 +105,11 @@ def delete_profile(request, id):
         item = User.objects.get(pk=id)
         item.delete()
     return HttpResponseRedirect(reverse('user_profile:profile'))
+
+def get_json(request):
+    if request.user.username == "adminliterakarya":
+        profiles = Profile.objects.all() # Jika user adalah admin.
+    else:
+        profiles = Profile.objects.filter(user=request.user) # Jika user bukan admin.
+
+    return HttpResponse(serializers.serialize('json', profiles), content_type="application/json")

@@ -1,5 +1,5 @@
 from django.urls import path, include
-from user_profile.views import profile, create_profile, cari_buku, rekomen, delete_profile
+from user_profile.views import profile, create_profile, cari_buku, rekomen, delete_profile, get_json
 
 app_name = "user_profile"
 urlpatterns = [
@@ -8,4 +8,5 @@ urlpatterns = [
     path('cari-buku/', cari_buku, name='cari_buku'),
     path('rekomen/', rekomen, name='rekomen'),
     path('delete_profile/<int:id>/', delete_profile, name='delete_profile'),
+    path('json/', get_json, name='get_json'),
 ]
