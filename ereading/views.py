@@ -121,3 +121,22 @@ def reject_ereading(request):
         return HttpResponse(status=201)
     
     return HttpResponseNotFound()
+
+# Proyek Akhir Semester
+@csrf_exempt
+def get_json_user(request, uname):
+    if uname == "adminliterakarya":
+        print(uname)
+        ereading = Ereading.objects.all() # Jika user adalah admin.
+
+    else:
+        ereadings = Ereading.objects.all()
+        for ereading in ereadings:
+            if ereading.user.username == uname:
+                user_id = ereading.user
+                ereading = Ereading.objects.filter(user = user_id)
+                break
+            else:
+                ereading = []
+
+    return HttpResponse(serializers.serialize("json", ereading), content_type="application/json")
