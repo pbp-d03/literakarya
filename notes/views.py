@@ -104,7 +104,6 @@ def create_note_flutter(request):
         data = json.loads(request.body)
 
         new_note = Notes.objects.create(
-            # date_added = data["date_added"],
             user = request.user,
             judul_catatan = data["judul_catatan"],
             judul_buku = data["judul_buku"],
@@ -123,43 +122,16 @@ def show_json_by_user(request):
     return HttpResponse(serializers.serialize("json", data), content_type="application/json")    
     
 @csrf_exempt
-#@login_required(login_url='/login')
 def delete_note_flutter(request, id):
-    if request.method == 'POST':
-        print(id)
-        note = get_object_or_404(Notes, pk=id, user=request.user)
+    if request.method == 'DELETE':  # Use DELETE instead of POST
+        note = get_object_or_404(Notes, pk=id)
         note.delete()
-        return JsonResponse({"status": "success"}, status=200)
+        return JsonResponse({"status": "success"}, status=204)  # Status code changed to 204 for successful deletion
     else:
-        return JsonResponse({"status": "error"}, status=401)
-    
-#     if request.method == "POST":
-#         print("test")
-#         try:
-#             note = get_object_or_404(Notes, pk=id, user=request.user)
-#             note.delete()
-#             return HttpResponse(b"DELETED", status=204)
-#         except Notes.DoesNotExist:
-#             return HttpResponseNotFound()
-#     return HttpResponseNotAllowed(['DELETE'])
-
-# from django.views.decorators.http import require_http_methods
+        return JsonResponse({"status": "error"}, status=405)  # 405 Method Not Allowed for other HTTP methods
 
 @csrf_exempt
-#@require_http_methods(["PATCH"])
 def edit_note_flutter(request, id):
-    # try:
-    #     note = get_object_or_404(Notes, pk=id, user=request.user)
-    #     data = json.loads(request.body)
-    #     note.judul_catatan = data.get('judul_catatan', note.judul_catatan)
-    #     note.judul_buku = data.get('judul_buku', note.judul_buku)
-    #     note.isi_catatan = data.get('isi_catatan', note.isi_catatan)
-    #     note.penanda = data.get('penanda', note.penanda)
-    #     note.save()
-    #     return JsonResponse({"status": "success"}, status=200)
-    # except Notes.DoesNotExist:
-    #     return HttpResponseNotFound()
-    
     if request.method == 'POST':
         print(id)
         note = get_object_or_404(Notes, pk=id, user=request.user)
