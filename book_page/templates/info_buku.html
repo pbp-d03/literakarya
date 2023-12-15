@@ -98,7 +98,7 @@
 </div>
 <script>
     async function getKomen(idBuku) {
-        return fetch(`../get-komen/${idBuku}`).then((res) => res.json())
+        return fetch(`../../get-komen/${idBuku}/`).then((res) => res.json())
     }
 
     async function refreshKomen(idBuku) {
@@ -162,7 +162,7 @@
     refreshKomen(id_Buku)
 
     function addKomen(idBuku) {
-        fetch(`../add-komen/${idBuku}`, {
+        fetch(`../../add-komen/${idBuku}/`, {
             method: "POST",
             body: new FormData(document.querySelector('#form-komen'))
         }).then(function() {
@@ -181,7 +181,7 @@
     var linkListener = document.querySelectorAll("#bookmark-btn");
 
     function addBookmark(idBuku) {
-        fetch(`../add-bookmark/${idBuku}`, {
+        fetch(`../../add-bookmark/${idBuku}/`, {
             method: "POST",
         }).then(function(){ 
             $("#bookmark-btn").toggleClass('btn-dark btn-success');
@@ -196,7 +196,7 @@
 
     // Delete Bookmark
     function deleteBookmark(idBuku) {
-        fetch(`../delete-bookmark/${idBuku}`, {
+        fetch(`../../delete-bookmark/${idBuku}/`, {
             method: "DELETE",
         }).then(function(){ 
             $("#bookmark-btn").toggleClass('btn-dark btn-success');
@@ -210,12 +210,12 @@
     }
     //RefreshPage
     function refreshpage(idBuku){
-        window.location.href = "../book/"+idBuku;
+        window.location.href = "../../book/"+idBuku+"/";
     }
 
     // Likes n dislikes
     function likes(idKomen){
-        fetch(`../add-likes/${idKomen}`).then( function(){
+        fetch(`../../add-likes/${idKomen}/`).then( function(){
             console.log("{{request.user}}"=="muhkemallgp")
             refreshKomen({{book.pk}})
         })
@@ -223,7 +223,7 @@
 
     // deleteKomen by Admin
     function deleteKomen(idKomen){
-        fetch(`../delete-komen/${idKomen}`).then( function(){
+        fetch(`../../delete-komen/${idKomen}/`).then( function(){
             console.log("admin berhasil")
             refreshKomen({{book.pk}})
         })
