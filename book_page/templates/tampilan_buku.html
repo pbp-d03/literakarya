@@ -1,61 +1,63 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block meta %}
-    <style>
-        .card-img-top {
-            width: 100%;
-            height: 20vw;
-            object-fit: cover;
-        }
-        a{
-            text-decoration: none;
-        }
-        .card-title:hover,
-        .card-text:hover,
-        #itemsatu:hover,#itemdua:hover{
-            text-decoration: underline;
-        }
-        .card-body{
-            color: black;
-        }
-    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <link rel="stylesheet" href="{% static 'css/tampilan_buku.css' %}"/>
 {% endblock meta %}
     
 {% block content %}
-<div class = "container py-4">
-    <h3 class="text-center" id = judul>HALLLO</h3>
+<div id = "main" class = "container py-4">
+    <div id="judul-page">
+        <div class="text-center" id = judul>Welcome <span style="color:chocolate;">{{request.user}}</span></div>
     
-    <div class="container text-center py-2">
-        <h5>Hallo Kamu Berada Di Koleksi Semua Buku!</h5>
-        
+        <div class="container text-center py-2">
+            <div>
+                <div>Find Your Fav Genres!</div>
+            </div>
+            <form class="d-flex" action="{% url 'book_page:show_list_books' %}" method=POST>
+                {% csrf_token %}
+                <input class="form-control me-2" type="search" placeholder="Search Genres Book" name="searched">
+                <button class="btn btn-dark ml-3" type="submit">
+                    <i class="fa fa-search fa-lg"></i>
+                </button>
+            </form>
+        </div>
     </div>
+    
     <div class="container py-2">
         <div class="row row-cols-1 row-cols-md-3 g-4 py-3">
+            
+            {% if banyak_buku == 0 %}
+            <div class="container text-center py-2">
+                <h5>Sayang Sekali Buku Kamu Belum Ada Disini!!</h5>
+            </div>
+            {% endif %}
+            
             {% for book,desc in books  %}
                 <div class="col">
                     <div class="card text-center">
                         <a href="book/{{book.pk}}">
                             <img src={{book.gambar_buku}} class="card-img-top" alt="gambar_buku">
                             <div class="card-body">
-                                <h5 class="card-title">{{book.nama_buku}}</h5>
-                                <p class="card-text" id = "desc">{{desc}}...</p>
+                                <div class="card-title">{{book.nama_buku}}</div> 
+                                <p class="card-text" id = "desc">{{desc}}.....</p>
                             </div>
                             <ul class="list-group list-group-flush">
-                                <li id = "itemsatu" class="list-group-item">By {{book.author}}</li>
-                                <li id = "itemdua" class="list-group-item">Rating: {{book.rating}}</li>
+                                <li id = "author" class="list-group-item">By {{book.author}}</li>
+                                <li id = "rating" class="list-group-item">Rating: {{book.rating}}</li>
                             </ul>
-                            <div class="card-body">
-                                <a href="#" class="btn btn-dark">Bookmark Read Later</a>
+                            <div class="card-bottom">
+                                <p>{{book.genre_1}}, {{book.genre_2}}, {{book.genre_3}}, {{book.genre_4}}, {{book.genre_5}}</p>
                             </div>
                         </a>
                     </div>
                 </div>
             {% endfor %}
+
         </div>
     </div>
 </div>
-<script>
-    
-</script>
 {% endblock content %}
     

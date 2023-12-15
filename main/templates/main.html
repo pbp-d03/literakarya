@@ -28,6 +28,8 @@
             <div class="col-md-8 mb-5">
                 <h1 class="text-white serif text-uppercase mb-4"> Halo {{user.profile.first_name}}, Selamat datang di LiteraKarya!</h1>
                 <p class="text-white mb-5">LiteraKarya adalah platform baca buku online yang memadukan kemudahan akses ke berbagai buku digital dengan elemen-elemen gamifikasi untuk meningkatkan semangat membaca. Dalam upaya memperluas wawasan literasi, LiteraKarya menawarkan berbagai informasi tentang buku, termasuk karya-karya dari penulis Indonesia dan luar negeri. </p>
+                <a href="{% url 'user_profile:cari_buku' %}" class="btn btn-primary">Cari Buku</a>
+                <a href="{% url 'user_profile:rekomen' %}" class="btn btn-primary">Rekomen Buku</a>
             </div>
             </div>
         </div>

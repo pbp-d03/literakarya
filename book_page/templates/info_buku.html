@@ -1,84 +1,28 @@
 {% extends 'base.html' %}
-
+{% load static %}
 
 {% block meta %}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <style>
-        .container{
-            font-family: Copernicus,"Libre Baskerville",Georgia,serif;
-        }
-        .sticky {
-            position: -webkit-sticky;
-            position: sticky;
-            top: 0;
-        }
-        .judul-buku{
-            font-weight: 600;
-            font-size: 2.2rem;
-            line-height: 3rem;
-        }
-        .author{
-            font-weight: 400;
-            font-size: 1.6rem;
-            line-height: 2.2rem;
-        }
-        #rating{
-            font-weight: 600;
-            font-size: 1.4rem;
-            line-height: 2rem;
-        }
-        #jumlah-rating{
-            font:400 0.8rem/1.35714 "Proxima Nova", Montserrat, Arial, sans-serif;
-        }
-        .description{
-            padding-top: 20px;
-            text-align: justify;
-        }
-        .genres{
-            padding-top: 10px;
-        }
-        #daftar-genre{
-            font-family: "Proxima Nova",Montserrat,Arial,sans-serif;
-            font-weight: 400;
-            font-size: 1rem;
-            line-height: 1.8rem;
-            color: grey;
-            margin-right: 5px;
-        }
-        #gen1,#gen2,#gen3,#gen4{
-            font: 600 1rem/1.4375 "Proxima Nova",Montserrat,Arial,sans-serif;
-            display: inline-block;
-            margin-right: 5px;
-            text-decoration: underline;
-        }
-        .judul-comment{
-            font-weight: 400;
-            font-size: 1.8rem;
-            line-height: 3rem;
-        }
-        textarea{
-            width: 100%;
-            -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
-            -moz-box-sizing: border-box;    /* Firefox, other Gecko */
-            box-sizing: border-box;  
-        }
-        .tampil-komen{
-            margin-top: 30px;
-        }
-    </style>
+    <script src="https://kit.fontawesome.com/a51f172ee7.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{% static 'css/info_buku.css' %}"/>
+
 {% endblock meta %}
 
 
 {% block content %}
 <div class = "container py-4">
     <div class="container py-2">
-        <div class="row row-cols-1 row-cols-md-2 g-4 py-3">
+        <div class="row row-cols-1 row-cols-md-3 g-4 py-3">
             <div class="col-md-3">
                 <div class="sticky">
                     <div class="card text-center">
                         <img src={{book.gambar_buku}} class="card-img-top" alt="gambar_buku">
                         <div class="card-body">
-                            <a href="#" class="btn btn-dark">Bookmark Read Later</a>
+                            {% if dibookmark %}
+                                <a onclick="deleteBookmark('{{book.pk}}');refreshpage('{{book.pk}}')"id="bookmark-btn" class="btn btn-success">Happy Reading!</a>
+                            {% else %}
+                                <a onclick="addBookmark('{{book.pk}}');refreshpage('{{book.pk}}')" id="bookmark-btn" class="btn btn-dark">Bookmark Read Later</a>
+                            {% endif %}
                         </div>
                     </div>
                 </div>
@@ -98,15 +42,33 @@
                     <div class="description">
                         {{book.description}}
                     </div>
-                    <div class="genres">
+                    <div class="genres" style="margin-top: 5px;">
                         <span id="daftar-genre">Genres</span>
                         <span id="gen1">{{book.genre_1}}</span>
                         <span id="gen2">{{book.genre_2}}</span>
                         <span id="gen3">{{book.genre_3}}</span>
                         <span id="gen4">{{book.genre_4}}</span>
+                        <span id="gen5">{{book.genre_5}}</span>
                     </div>
+                    <div class="jumlah-halaman" style="margin-top: 5px;">
+                        <div id="halaman">{{book.jumlah_halaman}} Pages </div>
+                    </div>
+                    <div class="publish" style="margin-top: 7px;">
+                        <div id="publish">First published {{book.waktu_publikasi}}</div>
+                    </div>
+                    
+                    {% if book.pk != 1 %}
+                    <a href="{% url 'book_page:show_book' idprev %}">
+                        <i style = "float: left; margin-top: 20px;color: black;" class="fa fa-arrow-left fa-2x fa-beat" aria-hidden="true"></i>
+                    </a>
+                    {% endif %}
+
+                    <a href="{% url 'book_page:show_book' idnext %}">
+                        <i style = "float: right; margin-top: 20px;color: black;" class="fa fa-arrow-right fa-2x fa-beat" aria-hidden="true"></i>
+                    </a>
+
                 </div>
-                <div class="comment-section" style="margin-top: 30px;">
+                <div class="comment-section" style="margin-top: 60px;">
                     <div class="judul-comment">
                         Comment
                     </div>
@@ -114,15 +76,18 @@
                         <input  type="hidden" id="id-buku" value="{{book.pk}}">
                         <form id="form-komen" onsubmit="return false;">
                             {% csrf_token %}
-                            <textarea name="isi_komen" id="text-komen"></textarea>
-                            <input class = "btn btn-dark" id="add-komen" type="submit" onclick="addKomen('{{book.pk}}')" value="Add Komen">
+                            {% comment %} <textarea name="isi_komen" id="text-komen"></textarea> {% endcomment %}
+                            
+                            {{form.isi_komen}}
+                            
+                            <input class = "btn btn-dark " id="add-komen" type="submit" onclick="addKomen('{{book.pk}}')" value="Add Komen">
                         </form>
                     </div>
                     <div class="tampil-komen">
                         <div class="judul-comment">
                             Recent Comments
                         </div>
-                        <div class="row py-2">
+                        <div class="row">
                             <div class="col" id="nampil-komen-here"></div>
                         </div>
                     </div>
@@ -133,31 +98,37 @@
 </div>
 <script>
     async function getKomen(idBuku) {
-        return fetch(`../get-komen/${idBuku}`).then((res) => res.json())
+        return fetch(`../../get-komen/${idBuku}/`).then((res) => res.json())
     }
 
     async function refreshKomen(idBuku) {
         document.getElementById("nampil-komen-here").innerHTML = ""
     
         const komen = await getKomen(idBuku)
-        console.log(komen)
+        console.log(komen.length)
 
         let htmlString = `
             <div class="card border-0">
             <div class="card-body p-1">
-            <div class="row">`
+            <div class="row">
+                <span id="jumlah-komen">Jumlah Komen : ${komen.length}</span>`
+                if(komen.length == 0){
+                    htmlString+=
+                    `<div id="ayo-komen class = "container" style = "text-align: center">Add Your Comment Here!</div>`
 
+                }
+                
         komen.forEach((isi) => {
             htmlString += `
             <div class="d-flex flex-start mt-4">
-                <img class="rounded-circle shadow-1-strong me-3"
-                src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(10).webp" alt="avatar" width="65"
-                height="65" />
+                <div class="rounded-circle shadow-1-strong me-3 py-3">
+                    <i class="fa fa-user fa-2x fa-beat"></i>
+                </div>
                 <div class="flex-grow-1 flex-shrink-1">
                     <div>
                         <div class="d-flex justify-content-between align-items-center">
                             <p class="mb-1">
-                                ${isi.fields.user} <span class="small">- ${isi.fields.date_added}</span>
+                                ${isi.fields.user} <span class="small">${isi.fields.date_added}</span>
                             </p>
                         </div>
                         <p class="small mb-0">
@@ -165,9 +136,13 @@
                         </p>
                     </div>
                     <div class="d-flex justify-content-between align-items-center">
-                        <div class="d-flex align-items-center">
-                            <a href="#!" class="link-muted me-2"><i class="fa fa-thumbs-up me-1"></i>${isi.fields.likes}</a>
-                            <a href="#!" class="link-muted"><i class="fa fa-thumbs-down me-1"></i>${isi.fields.dislikes}</a>
+                        <div class="d-flex align-items-center" id = "likesdislikes">
+                            <a onclick = "likes(${isi.pk})" class="link-muted me-2"><i id = "likes-btn" class="fas fa-thumbs-up fa-bounce me-1"></i>${isi.fields.likes}</a>
+                            `
+                            if("{{request.user}}"=="adminliterakarya"){
+                                htmlString+=`<a onclick = "deleteKomen(${isi.pk})" class="link-muted"><i class="fa fa-trash" aria-hidden="true"></i></a>`
+                            }
+                            htmlString+=`
                         </div>
                     </div>
                 </div>
@@ -183,24 +158,76 @@
         document.getElementById("nampil-komen-here").innerHTML = htmlString
     }
 
-    const id_Buku = document.getElementById("id-buku").value
+    const id_Buku = {{book.pk}}
     refreshKomen(id_Buku)
 
     function addKomen(idBuku) {
-        fetch(`../add-komen/${idBuku}`, {
+        fetch(`../../add-komen/${idBuku}/`, {
             method: "POST",
             body: new FormData(document.querySelector('#form-komen'))
         }).then(function() {
+
         // Refresh comments after adding a comment
         refreshKomen(idBuku);
     })
     .catch(function(error) {
         console.error("Error:", error);
     });
-        document.getElementById("form-komen").reset()
+        document.getElementById("teks-komen").value = "";
         return false
     }
+
+    // Add to bookmark
+    var linkListener = document.querySelectorAll("#bookmark-btn");
+
+    function addBookmark(idBuku) {
+        fetch(`../../add-bookmark/${idBuku}/`, {
+            method: "POST",
+        }).then(function(){ 
+            $("#bookmark-btn").toggleClass('btn-dark btn-success');
+            if ($("#bookmark-btn").text() == "Bookmark Read Later"){
+                $("#bookmark-btn").text("Happy Reading!")
+            }
+            else{
+                $("#bookmark-btn").text("Bookmark Read Later");
+            }   
+        })
+    }
+
+    // Delete Bookmark
+    function deleteBookmark(idBuku) {
+        fetch(`../../delete-bookmark/${idBuku}/`, {
+            method: "DELETE",
+        }).then(function(){ 
+            $("#bookmark-btn").toggleClass('btn-dark btn-success');
+            if ($("#bookmark-btn").text() == "Bookmark Read Later"){
+                $("#bookmark-btn").text("Happy Reading!")
+            }
+            else{
+                $("#bookmark-btn").text("Bookmark Read Later");
+            }   
+        })
+    }
+    //RefreshPage
+    function refreshpage(idBuku){
+        window.location.href = "../../book/"+idBuku+"/";
+    }
+
+    // Likes n dislikes
+    function likes(idKomen){
+        fetch(`../../add-likes/${idKomen}/`).then( function(){
+            console.log("{{request.user}}"=="muhkemallgp")
+            refreshKomen({{book.pk}})
+        })
+    }
+
+    // deleteKomen by Admin
+    function deleteKomen(idKomen){
+        fetch(`../../delete-komen/${idKomen}/`).then( function(){
+            console.log("admin berhasil")
+            refreshKomen({{book.pk}})
+        })
+    }
+
 </script>
 {% endblock content %}
-    
-    

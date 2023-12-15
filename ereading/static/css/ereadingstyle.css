@@ -1,0 +1,47 @@
+body {
+    text-align: center;
+    margin: 10px;
+} 
+
+.custom-select {
+    height: auto;
+    padding: 0.375rem 0.75rem;
+    font-size: 0.875rem;
+} 
+
+.form-control {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #333;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+} 
+
+#selectedBook {
+    display: none;
+} 
+
+.form-table th {
+    text-align: center;
+    vertical-align: middle;
+    font-weight: bold;
+} 
+
+.form-table input, .form-table textarea {
+    width: calc(100% - 20px);
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+} 
+
+.btn {
+    display: inline-block;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+} 
+
+.card {
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(to bottom, #ffffff, #f9f9f9);
+}
