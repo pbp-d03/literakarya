@@ -3,6 +3,7 @@ from django.http import HttpResponseRedirect
 from recommendation.forms import FormRekomendasi
 from recommendation.models import Rekomendasi
 from django.urls import reverse
+from django.http import HttpResponse
 from book_page.models import Book
 from django.core import serializers
 from django.http import JsonResponse 
@@ -29,6 +30,7 @@ def show_recommendation(request):
 
     return render(request, "recommendation.html", context)
 
+@csrf_exempt
 @login_required(login_url='/login/')  # Make sure the user is logged in
 def membuat_rekomendasi(request):
     form = FormRekomendasi(request.POST or None)
