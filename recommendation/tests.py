@@ -4,7 +4,6 @@ from recommendation.models import Rekomendasi
 from book_page.models import Book
 
 class RekomendasiTestCase(TestCase):
-    
     def setUp(self):
         self.user1 = User.objects.create_user(username='user1', password='password1')
         self.book1 = Book.objects.create(nama_buku='Book1', genre_1='Genre1') # tambahkan field lain sesuai dengan model Book Anda
