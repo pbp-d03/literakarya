@@ -1,3 +1,4 @@
+import json
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponseRedirect
 from recommendation.forms import FormRekomendasi
@@ -10,6 +11,7 @@ from django.http import JsonResponse
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.csrf import csrf_exempt
+from django.views.decorators.http import require_POST
 
 # Create your views here.
 @login_required(login_url='/login')
@@ -59,13 +61,78 @@ def membuat_rekomendasi(request):
     context = {'form': form, 'books_by_genre': books_by_genre}
     return render(request, "bikin.html", context)
 
+@csrf_exempt
+@require_POST
+@login_required(login_url='/login/')  # Pastikan pengguna telah terautentikasi
+def membuat_rekomendasi_flutter(request):
+    if request.method == 'POST':
+        try:
+            data = json.loads(request.body)
+            form = FormRekomendasi(data)
+            
+            if form.is_valid():
+                rekomendasi = form.save(commit=False)
+                rekomendasi.user = request.user  # Gunakan pengguna yang terautentikasi
+                rekomendasi.save()
+                return JsonResponse({'status': 'success', 'message': 'Rekomendasi berhasil dibuat'}, status=200)
+            else:
+                return JsonResponse({'status': 'error', 'errors': form.errors}, status=400)
+
+        except json.JSONDecodeError:
+            return JsonResponse({'status': 'error', 'message': 'Invalid JSON'}, status=400)
+    else:
+        return JsonResponse({'status': 'error', 'message': 'Invalid request method'}, status=405)
+
 def show_json(request):
     data = Rekomendasi.objects.all()
-    return HttpResponse(serializers.serialize("json", data), content_type="application/json")
+    response = []
+
+    for rekomendasi in data:
+        book_title = rekomendasi.judul_buku.nama_buku  # Access the book title
+        response.append({
+            'model': 'recommendation.rekomendasi',
+            'pk': rekomendasi.pk,
+            'fields': {
+                'user': rekomendasi.user.id,
+                'gambar_buku': rekomendasi.get_book_image(),  # Get the book image URL/path
+                'genre_buku': rekomendasi.genre_buku,
+                'judul_buku': book_title,  # Include the book title here
+                'nilai_buku': str(rekomendasi.nilai_buku),
+                'isi_rekomendasi': rekomendasi.isi_rekomendasi,
+                'tanggal': rekomendasi.tanggal.isoformat(),
+                'likes': list(rekomendasi.likes.values_list('id', flat=True)),
+            }
+        })
+
+    return JsonResponse(response, safe=False)  # Return the manually built response as JSON
+
 
 def show_json_by_id(request, id):
     data = Rekomendasi.objects.filter(pk=id)
-    return HttpResponse(serializers.serialize("json", data), content_type="application/json")
+    response = []
+
+    for rekomendasi in data:
+        book_title = rekomendasi.judul_buku.nama_buku  # Access the book title
+        response.append({
+            'model': 'recommendation.rekomendasi',
+            'pk': rekomendasi.pk,
+            'fields': {
+                'user': rekomendasi.user.id,
+                'gambar_buku': rekomendasi.get_book_image(),  # Get the book image URL/path
+                'genre_buku': rekomendasi.genre_buku,
+                'judul_buku': book_title,  # Include the book title here
+                'nilai_buku': str(rekomendasi.nilai_buku),
+                'isi_rekomendasi': rekomendasi.isi_rekomendasi,
+                'tanggal': rekomendasi.tanggal.isoformat(),
+                'likes': list(rekomendasi.likes.values_list('id', flat=True)),
+            }
+        })
+
+    return JsonResponse(response, safe=False)  # Return the manually built response as JSON
+
+def get_genres(request):
+    genres = Book.objects.values_list('genre_1', flat=True).distinct()
+    return JsonResponse(list(genres), safe=False)
 
 def get_books_by_genre(request, genre):
     books = Book.objects.filter(genre_1=genre).values('id', 'nama_buku')
