@@ -140,8 +140,8 @@ def edit_profile_flutter(request, id):
     if request.method == 'POST':
         profile = get_object_or_404(Profile, pk=id, user=request.user)
         data = json.loads(request.body)
-        profile.first_name = data.get('judul_catatan', profile.first_name)
-        profile.last_name = data.get('judul_buku', profile.last_name)
+        profile.first_name = data.get('first_name', profile.first_name)
+        profile.last_name = data.get('last_name', profile.last_name)
         profile.bio = data.get('bio', profile.bio)
         profile.address = data.get('address', profile.address)
         profile.favorite_genre1 = data.get('favorite_genre1', profile.favorite_genre1)
