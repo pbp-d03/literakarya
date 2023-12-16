@@ -1,3 +1,4 @@
+import json
 from django.shortcuts import get_object_or_404, render, redirect
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse, HttpResponseRedirect, JsonResponse
@@ -113,3 +114,41 @@ def get_json(request):
         profiles = Profile.objects.filter(user=request.user) # Jika user bukan admin.
 
     return HttpResponse(serializers.serialize('json', profiles), content_type="application/json")
+
+@csrf_exempt
+def create_profile_flutter(request):
+    if request.method == 'POST':
+        data = json.loads(request.body)
+        new_profile = Profile.objects.create(
+            user = request.user,
+            first_name = data["first_name"],
+            last_name = data["last_name"],
+            bio = data["bio"],
+            address = data["address"],
+            favorite_genre1 = data["favorite_genre1"],
+            favorite_genre2 = data["favorite_genre2"],
+            favorite_genre3 = data["favorite_genre3"],
+        )
+        new_profile.save()
+
+        return JsonResponse({"status": "success"}, status=200)
+    else:
+        return JsonResponse({"status": "error"}, status=401)
+    
+@csrf_exempt
+def edit_profile_flutter(request, id):
+    if request.method == 'POST':
+        profile = get_object_or_404(Profile, pk=id, user=request.user)
+        data = json.loads(request.body)
+        profile.first_name = data.get('judul_catatan', profile.first_name)
+        profile.last_name = data.get('judul_buku', profile.last_name)
+        profile.bio = data.get('bio', profile.bio)
+        profile.address = data.get('address', profile.address)
+        profile.favorite_genre1 = data.get('favorite_genre1', profile.favorite_genre1)
+        profile.favorite_genre2 = data.get('favorite_genre2', profile.favorite_genre2)
+        profile.favorite_genre3 = data.get('favorite_genre3', profile.favorite_genre3)
+        profile.save()
+        return JsonResponse({"status": "success"}, status=200)
+
+    else:
+        return JsonResponse({"status": "error"}, status=401)
