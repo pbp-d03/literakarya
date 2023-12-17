@@ -185,6 +185,6 @@ def delete_reply_flutter(request, id):
     if request.method == 'DELETE':
         reply = get_object_or_404(Reply, pk=id)
         reply.delete()
-        return JsonResponse({"status": "success"}, status=204)  # Status code changed to 204 for successful deletion
+        return JsonResponse({"status": "success"}, status=204)
     else:
         return JsonResponse({"status": "error"}, status=405)
