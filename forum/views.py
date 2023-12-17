@@ -1,5 +1,6 @@
+import json
 from django.http import HttpResponseRedirect, JsonResponse
-from django.shortcuts import redirect, render
+from django.shortcuts import get_object_or_404, redirect, render
 from django.urls import reverse
 from book_page.models import Book
 from .models import Post, Reply
@@ -135,3 +136,34 @@ def delete_reply(request, id):
     reply = Reply.objects.get(pk=id)
     reply.delete()
     return HttpResponseRedirect(reverse('forum:show_forum'))
+
+@csrf_exempt
+def create_post_flutter(request):
+    if request.method == 'POST':
+        data = json.loads(request.body)
+            # user = op,
+            # subject = judul,
+            # topic = kategori,
+            # message = pesan,
+            # date = tanggal
+        new_post = Post.objects.create(
+            user = request.user,
+            subject = data["subject"],
+            topic = data["topic"],
+            message = data["message"],
+            date = timezone.now()
+        )
+        new_post.save()
+
+        return JsonResponse({"status": "success"}, status=200)
+    else:
+        return JsonResponse({"status": "error"}, status=401)
+    
+@csrf_exempt
+def delete_post_flutter(request, id):
+    if request.method == 'DELETE':  # Use DELETE instead of POST
+        post = get_object_or_404(Post, pk=id)
+        post.delete()
+        return JsonResponse({"status": "success"}, status=204)  # Status code changed to 204 for successful deletion
+    else:
+        return JsonResponse({"status": "error"}, status=405)  # 405 Method Not Allowed for other HTTP methods
