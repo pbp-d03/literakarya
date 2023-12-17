@@ -13,5 +13,5 @@ urlpatterns = [
     path('json/all-replies/<int:id>', get_replies_json, name="get_replies"),
     path('create-post-flutter/', create_post_flutter, name='create_post_flutter'),
     path('create-reply-flutter/', create_reply_flutter, name='create_reply_flutter'),
-    path('delete-post-flutter/', delete_post_flutter, name='delete_post_flutter'),
+    path('delete-post-flutter/<int:id>/', delete_post_flutter, name='delete_post_flutter'),
 ]
