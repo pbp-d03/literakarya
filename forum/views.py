@@ -173,9 +173,18 @@ def create_reply_flutter(request):
         
 @csrf_exempt
 def delete_post_flutter(request, id):
-    if request.method == 'DELETE':  # Use DELETE instead of POST
+    if request.method == 'DELETE':
         post = get_object_or_404(Post, pk=id)
         post.delete()
         return JsonResponse({"status": "success"}, status=204)  # Status code changed to 204 for successful deletion
+    else:
+        return JsonResponse({"status": "error"}, status=405)
+
+@csrf_exempt
+def delete_reply_flutter(request, id):
+    if request.method == 'DELETE':
+        reply = get_object_or_404(Reply, pk=id)
+        reply.delete()
+        return JsonResponse({"status": "success"}, status=204)
     else:
         return JsonResponse({"status": "error"}, status=405)
