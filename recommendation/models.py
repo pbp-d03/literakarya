@@ -16,6 +16,9 @@ class Rekomendasi(models.Model):
     likes = models.ManyToManyField(User, related_name='rekomendasi_likes')
     tanggal = models.DateTimeField(auto_now_add=True)
 
+    def get_book_image(self):
+        return self.judul_buku.gambar_buku
+    
     def total_likes(self):
         return self.likes.count()
     
