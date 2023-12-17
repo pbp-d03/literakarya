@@ -141,11 +141,6 @@ def delete_reply(request, id):
 def create_post_flutter(request):
     if request.method == 'POST':
         data = json.loads(request.body)
-            # user = op,
-            # subject = judul,
-            # topic = kategori,
-            # message = pesan,
-            # date = tanggal
         new_post = Post.objects.create(
             user = request.user,
             subject = data["subject"],
@@ -158,7 +153,24 @@ def create_post_flutter(request):
         return JsonResponse({"status": "success"}, status=200)
     else:
         return JsonResponse({"status": "error"}, status=401)
-    
+
+@csrf_exempt
+def create_reply_flutter(request):
+    if request.method == 'POST':
+        data = json.loads(request.body)
+        post = Post.objects.get(pk=int(data["post_id"]))
+        new_reply = Reply.objects.create(
+            user=request.user,
+            post=post,
+            body=data["body"],
+            date=timezone.now()
+        )
+        new_reply.save()
+
+        return JsonResponse({"status": "success"}, status=200)
+    else:
+        return JsonResponse({"status": "error"}, status=401)
+        
 @csrf_exempt
 def delete_post_flutter(request, id):
     if request.method == 'DELETE':  # Use DELETE instead of POST
@@ -166,4 +178,4 @@ def delete_post_flutter(request, id):
         post.delete()
         return JsonResponse({"status": "success"}, status=204)  # Status code changed to 204 for successful deletion
     else:
-        return JsonResponse({"status": "error"}, status=405)  # 405 Method Not Allowed for other HTTP methods
+        return JsonResponse({"status": "error"}, status=405)
