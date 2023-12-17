@@ -110,16 +110,21 @@ def delete_profile(request, id):
 def get_json(request):
     profile = request.user.profile
     if profile.first_name is None:
-            profiles.first_name = ''
-            profiles.last_name = ''
-            profiles.bio = ''
-            profiles.address = ''
-            profiles.favorite_genre1 = ''
-            profiles.favorite_genre2 = ''
-            profiles.favorite_genre3 = ''
+            profile.first_name = ''
+            profile.last_name = ''
+            profile.bio = ''
+            profile.address = ''
+            profile.favorite_genre1 = ''
+            profile.favorite_genre2 = ''
+            profile.favorite_genre3 = ''
             profile.save()
     profiles = Profile.objects.filter(user=request.user)
     return HttpResponse(serializers.serialize('json', profiles), content_type="application/json")
+
+def get_allaccount_json(request):
+    if request.user.username == "adminliterakarya":
+        allaccount = User.objects.all()
+    return HttpResponse(serializers.serialize('json', allaccount), content_type="application/json")
 
 @csrf_exempt
 def create_profile_flutter(request):
