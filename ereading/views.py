@@ -125,18 +125,17 @@ def reject_ereading(request):
 # Proyek Akhir Semester
 @csrf_exempt
 def get_json_user(request, uname):
+    global ereading
     if uname == "adminliterakarya":
-        ereading = Ereading.objects.all() # Jika user adalah admin.
+        ereading = Ereading.objects.all()
 
     else:
         ereadings = Ereading.objects.all()
-        for ereading in ereadings:
-            if ereading.user.username == uname:
-                user_id = ereading.user
+        for e in ereadings:
+            if e.user.username == uname:
+                user_id = e.user
                 ereading = Ereading.objects.filter(user = user_id)
                 break
-            else:
-                ereading = []
 
     return HttpResponse(serializers.serialize("json", ereading), content_type="application/json")
 
