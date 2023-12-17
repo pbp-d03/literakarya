@@ -108,26 +108,17 @@ def delete_profile(request, id):
     return HttpResponseRedirect(reverse('user_profile:profile'))
 
 def get_json(request):
-    if request.user.username == "adminliterakarya":
-        profiles = Profile.objects.filter(user=request.user) # Jika user adalah admin.
-        profiles.model.first_name = 'admin'
-        profiles.model.last_name = 'literakarya'
-        profiles.model.bio = 'penguasa web'
-        profiles.model.address = 'balgebun'
-        profiles.model.favorite_genre1 = 'Fiction'
-        profiles.model.favorite_genre2 = 'Novels'
-        profiles.model.favorite_genre3 = 'Classics'
-    else:
-        profiles = Profile.objects.filter(user=request.user) # Jika user bukan admin.
-        if profiles.model.first_name is None:
-            profiles.model.first_name = ''
-            profiles.model.last_name = ''
-            profiles.model.bio = ''
-            profiles.model.address = ''
-            profiles.model.favorite_genre1 = ''
-            profiles.model.favorite_genre2 = ''
-            profiles.model.favorite_genre3 = ''
-
+    profile = request.user.profile
+    if profile.first_name is None:
+            profiles.first_name = ''
+            profiles.last_name = ''
+            profiles.bio = ''
+            profiles.address = ''
+            profiles.favorite_genre1 = ''
+            profiles.favorite_genre2 = ''
+            profiles.favorite_genre3 = ''
+            profile.save()
+    profiles = Profile.objects.filter(user=request.user)
     return HttpResponse(serializers.serialize('json', profiles), content_type="application/json")
 
 @csrf_exempt
