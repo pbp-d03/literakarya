@@ -10,7 +10,7 @@
             {% if account.username != 'adminliterakarya' %}
               <li class="list-group-item d-flex justify-content-between align-items-center">
                 {{ account.username }}
-                <form action="{% url 'user_profile:delete_profile' account.id %}" method="post" style="display: inline;">
+                <form action="{% url 'user_profile:delete_account' account.id %}" method="post" style="display: inline;">
                   {% csrf_token %}
                   <button type="submit" class="btn btn-danger btn-sm ml-2">Delete Account</button>
                 </form>

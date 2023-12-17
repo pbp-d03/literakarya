@@ -101,22 +101,22 @@ def rekomen(request):
     return render(request, 'rekomen.html', context)
 
 @login_required
-def delete_profile(request, id):
+def delete_account(request, id):
     if request.method == "POST":
-        item = User.objects.get(pk=id)
-        item.delete()
+        account = User.objects.get(pk=id)
+        account.delete()
     return HttpResponseRedirect(reverse('user_profile:profile'))
 
 def get_json(request):
     profile = request.user.profile
     if profile.first_name is None:
-            profile.first_name = ''
-            profile.last_name = ''
-            profile.bio = ''
-            profile.address = ''
-            profile.favorite_genre1 = ''
-            profile.favorite_genre2 = ''
-            profile.favorite_genre3 = ''
+            profile.first_name = 'Firstname'
+            profile.last_name = 'Lastname'
+            profile.bio = 'Bio'
+            profile.address = 'Address'
+            profile.favorite_genre1 = 'Fiction'
+            profile.favorite_genre2 = 'Novels'
+            profile.favorite_genre3 = 'Classics'
             profile.save()
     profiles = Profile.objects.filter(user=request.user)
     return HttpResponse(serializers.serialize('json', profiles), content_type="application/json")
@@ -125,6 +125,15 @@ def get_allaccount_json(request):
     if request.user.username == "adminliterakarya":
         allaccount = User.objects.all()
     return HttpResponse(serializers.serialize('json', allaccount), content_type="application/json")
+
+@csrf_exempt
+def delete_account_flutter(request, id):
+    if request.method == 'DELETE':  # Use DELETE instead of POST
+        account = get_object_or_404(User, pk=id)
+        account.delete()
+        return JsonResponse({"status": "success"}, status=204)  # Status code changed to 204 for successful deletion
+    else:
+        return JsonResponse({"status": "error"}, status=405)  # 405 Method Not Allowed for other HTTP methods
 
 @csrf_exempt
 def create_profile_flutter(request):
@@ -163,3 +172,4 @@ def edit_profile_flutter(request, id):
 
     else:
         return JsonResponse({"status": "error"}, status=401)
+
