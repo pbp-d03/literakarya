@@ -1,6 +1,6 @@
 from django.utils import timezone
 from django.shortcuts import render
-from django.http import HttpResponse, HttpResponseNotFound
+from django.http import HttpResponse, HttpResponseNotFound, JsonResponse
 from django.core import serializers
 from ereading.forms import EreadingForm
 from ereading.models import Ereading
@@ -126,7 +126,6 @@ def reject_ereading(request):
 @csrf_exempt
 def get_json_user(request, uname):
     if uname == "adminliterakarya":
-        print(uname)
         ereading = Ereading.objects.all() # Jika user adalah admin.
 
     else:
@@ -140,3 +139,16 @@ def get_json_user(request, uname):
                 ereading = []
 
     return HttpResponse(serializers.serialize("json", ereading), content_type="application/json")
+
+@csrf_exempt
+def add_ereading_flutter(request):
+    if request.method == "POST":
+        formdata = json.loads(request.body)
+        form = EreadingForm(formdata or None)
+        ereading = form.save(commit=False)
+        ereading.user = request.user
+        ereading.save()
+        return JsonResponse({"status": "success"}, status=200)
+    
+    else:
+        return JsonResponse({"status": "error"}, status=401)
