@@ -100,7 +100,7 @@ def rekomen(request):
 
     return render(request, 'rekomen.html', context)
 
-@login_required
+@csrf_exempt
 def delete_account(request, id):
     if request.method == "POST":
         account = User.objects.get(pk=id)
