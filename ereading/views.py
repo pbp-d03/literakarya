@@ -125,19 +125,20 @@ def reject_ereading(request):
 # Proyek Akhir Semester
 @csrf_exempt
 def get_json_user(request, uname):
-    global ereading
+    global ereading, filteruser
     if uname == "adminliterakarya":
         ereading = Ereading.objects.all()
+        return HttpResponse(serializers.serialize("json", ereading), content_type="application/json")
 
     else:
         ereadings = Ereading.objects.all()
         for e in ereadings:
             if e.user.username == uname:
-                user_id = e.user
-                ereading = Ereading.objects.filter(user = user_id)
+                filteruser = e.user
                 break
-
-    return HttpResponse(serializers.serialize("json", ereading), content_type="application/json")
+        
+        ereading = Ereading.objects.filter(user = filteruser)
+        return HttpResponse(serializers.serialize("json", ereading), content_type="application/json")
 
 @csrf_exempt
 def add_ereading_flutter(request):
