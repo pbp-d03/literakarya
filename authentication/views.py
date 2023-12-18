@@ -30,7 +30,7 @@ def login(request):
     else:
         return JsonResponse({
             "status": False,
-            "message": "Login gagal, periksa kembali email atau kata sandi."
+            "message": "Login gagal, periksa kembali username atau kata sandi."
         }, status=401)
 
 @csrf_exempt
