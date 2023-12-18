@@ -1,5 +1,5 @@
 from django.urls import path, include
-from user_profile.views import profile, create_profile, cari_buku, rekomen, delete_account, get_json, create_profile_flutter, edit_profile_flutter, get_allaccount_json
+from user_profile.views import profile, create_profile, cari_buku, rekomen, delete_account, get_json, create_profile_flutter, edit_profile_flutter, get_allaccount_json, delete_account_flutter
 
 app_name = "user_profile"
 urlpatterns = [
@@ -12,4 +12,5 @@ urlpatterns = [
     path('get-allaccount/', get_allaccount_json, name='get_allaccount_json'),
     path('create-profile-flutter/', create_profile_flutter, name='create_profile_flutter'),
     path('edit-profile-flutter/<int:id>/', edit_profile_flutter, name='edit_profile_flutter'),
+    path('delete-account-flutter/<int:id>/', delete_account_flutter, name="delete_account_flutter"),
 ]
