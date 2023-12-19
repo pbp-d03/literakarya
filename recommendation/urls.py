@@ -1,5 +1,5 @@
 from django.urls import path
-from recommendation.views import show_recommendation, get_genres, membuat_rekomendasi, show_json, show_json_by_id, get_books_by_genre, edit_rekom, hapus_rekom, like_view, membuat_rekomendasi_flutter
+from recommendation.views import show_recommendation, get_genres, membuat_rekomendasi, show_json, show_json_by_id, get_books_by_genre, edit_rekom, hapus_rekom, like_view, membuat_rekomendasi_flutter, like_unlike_flutter, edit_rekom_flutter, hapus_rekom_flutter
 
 app_name = 'recommendation'
 
@@ -14,4 +14,7 @@ urlpatterns = [
     path('hapus-rekom/<int:id>', hapus_rekom, name='hapus_rekom'), 
     path('like/<int:pk>/', like_view, name='like_view'),
     path('get_genres/', get_genres, name='get_genres'),
+    path('like_flutter/<int:pk>/',like_unlike_flutter,name='like_flutter'),
+    path('edit_rekom_flutter/<int:id>/',edit_rekom_flutter,name='edit_rekom_flutter'),
+    path('hapus_rekom_flutter/<int:rekomendasi_id>/', hapus_rekom_flutter, name='hapus_rekom_flutter')
 ]
