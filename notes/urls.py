@@ -14,5 +14,4 @@ urlpatterns = [
     path('json-by-user/',show_json_by_user, name='show_json_by_user'),
     path('delete-note-flutter/<int:id>/', delete_note_flutter, name="delete_note_flutter"),
     path('edit-note-flutter/<int:id>/', edit_note_flutter, name="edit_note_flutter"),
-    
 ]
